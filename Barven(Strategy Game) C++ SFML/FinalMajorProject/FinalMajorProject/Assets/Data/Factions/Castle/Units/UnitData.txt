@@ -1,0 +1,7 @@
+Assets\Data\Factions\Castle\Units\Unit0.json
+Assets\Data\Factions\Castle\Units\Unit1.json
+Assets\Data\Factions\Castle\Units\Unit2.json
+Assets\Data\Factions\Castle\Units\Unit3.json
+Assets\Data\Factions\Castle\Units\Unit4.json
+Assets\Data\Factions\Castle\Units\Unit5.json
+Assets\Data\Factions\Castle\Units\Unit6.json

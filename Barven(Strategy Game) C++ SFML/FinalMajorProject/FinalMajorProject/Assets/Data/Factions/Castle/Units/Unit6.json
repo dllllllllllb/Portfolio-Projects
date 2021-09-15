@@ -1,0 +1,21 @@
+{
+  "AIValue" :  8776,
+  "ammunition": 0,
+  "attack": 30,
+  "cost": 5000,
+  "defence": 30,
+  "faction": "Castle",
+  "growthPerWeek": 1,
+  "health": 250,
+  "index": 6,
+  "isFlying": 1,
+  "isRanged": 0,
+  "mapSprite": "Assets\\Sprites\\Units\\CastleUnit6MapSprite.png",
+  "maxDamage": 50,
+  "minDamage": 50,
+  "range": 1,
+  "speed": 18,
+  "sprite": "Assets\\Sprites\\Units\\CastleUnit6Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\CastleUnit6Icon.png",
+  "unitName": "Archangel"
+}

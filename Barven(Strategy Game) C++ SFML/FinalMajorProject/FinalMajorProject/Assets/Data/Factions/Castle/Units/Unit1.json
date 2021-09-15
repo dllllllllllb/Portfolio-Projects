@@ -1,0 +1,21 @@
+{
+  "AIValue": 184,
+  "ammunition": 24,
+  "attack": 6,
+  "cost": 100,
+  "defence": 3,
+  "faction": "Castle",
+  "growthPerWeek": 9,
+  "health": 10,
+  "index": 1,
+  "isFlying": 0,
+  "isRanged": 1,
+  "mapSprite": "Assets\\Sprites\\Units\\CastleUnit1MapSprite.png",
+  "maxDamage": 6,
+  "minDamage": 2,
+  "range": 8,
+  "speed": 6,
+  "sprite": "Assets\\Sprites\\Units\\CastleUnit1Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\CastleUnit1Icon.png",
+  "unitName": "Marksman"
+}

@@ -1,0 +1,21 @@
+{
+  "AIValue": 2100,
+  "ammunition": 0,
+  "attack": 16,
+  "cost": 1200,
+  "defence": 16,
+  "faction": "Castle",
+  "growthPerWeek": 2,
+  "health": 100,
+  "index": 5,
+  "isFlying": 0,
+  "isRanged": 0,
+  "mapSprite": "Assets\\Sprites\\Units\\CastleUnit5MapSprite.png",
+  "maxDamage": 25,
+  "minDamage": 20,
+  "range": 1,
+  "speed": 9,
+  "sprite": "Assets\\Sprites\\Units\\CastleUnit5Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\CastleUnit5Icon.png",
+  "unitName": "Champion"
+}

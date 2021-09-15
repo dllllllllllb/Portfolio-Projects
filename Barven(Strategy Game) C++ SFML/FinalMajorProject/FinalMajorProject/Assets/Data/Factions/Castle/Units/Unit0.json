@@ -1,0 +1,21 @@
+{
+  "AIValue": 80,
+  "ammunition": 0,
+  "attack": 4,
+  "cost": 60,
+  "defence": 5,
+  "faction": "Castle",
+  "growthPerWeek": 14,
+  "health": 10,
+  "index": 0,
+  "isFlying": 0,
+  "isRanged": 0,
+  "mapSprite": "Assets\\Sprites\\Units\\CastleUnit0MapSprite.png",
+  "maxDamage": 3,
+  "minDamage": 1,
+  "range": 1,
+  "speed": 4,
+  "sprite": "Assets\\Sprites\\Units\\CastleUnit0Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\CastleUnit0Icon.png",
+  "unitName": "Pikeman"
+}

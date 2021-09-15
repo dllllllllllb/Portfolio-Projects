@@ -1,0 +1,7 @@
+Assets\Data\Factions\Inferno\Units\Unit0.json
+Assets\Data\Factions\Inferno\Units\Unit1.json
+Assets\Data\Factions\Inferno\Units\Unit2.json
+Assets\Data\Factions\Inferno\Units\Unit3.json
+Assets\Data\Factions\Inferno\Units\Unit4.json
+Assets\Data\Factions\Inferno\Units\Unit5.json
+Assets\Data\Factions\Inferno\Units\Unit6.json

@@ -1,0 +1,21 @@
+{
+  "AIValue": 445,
+  "ammunition": 0,
+  "attack": 10,
+  "cost": 250,
+  "defence": 10,
+  "faction": "Inferno",
+  "growthPerWeek": 4,
+  "health": 35,
+  "index": 3,
+  "isFlying": 0,
+  "isRanged": 0,
+  "mapSprite": "Assets\\Sprites\\Units\\InfernoUnit3MapSprite.png",
+  "maxDamage": 9,
+  "minDamage": 7,
+  "range": 1,
+  "speed": 5,
+  "sprite": "Assets\\Sprites\\Units\\InfernoUnit3Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\InfernoUnit3Icon.png",
+  "unitName": "Demon"
+}

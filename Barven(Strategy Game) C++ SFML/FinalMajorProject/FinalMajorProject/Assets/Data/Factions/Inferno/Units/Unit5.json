@@ -1,0 +1,21 @@
+{
+  "AIValue": 1670,
+  "ammunition": 0,
+  "attack": 16,
+  "cost": 900,
+  "defence": 12,
+  "faction": "Inferno",
+  "growthPerWeek": 2,
+  "health": 90,
+  "index": 5,
+  "isFlying": 1,
+  "isRanged": 0,
+  "mapSprite": "Assets\\Sprites\\Units\\InfernoUnit5MapSprite.png",
+  "maxDamage": 24,
+  "minDamage": 16,
+  "range": 1,
+  "speed": 9,
+  "sprite": "Assets\\Sprites\\Units\\InfernoUnit5Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\InfernoUnit5Icon.png",
+  "unitName": "Efreet"
+}

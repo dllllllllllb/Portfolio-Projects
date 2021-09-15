@@ -1,0 +1,2 @@
+Assets\Data\Factions\Castle\Units\UnitData.txt
+Assets\Data\Factions\Inferno\Units\UnitData.txt

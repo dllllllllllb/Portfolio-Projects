@@ -1,0 +1,59 @@
+{
+	"mapSprite": "Assets\\Sprites\\Towns\\Castle\\castleMapSprite.png",
+	"unitBuildingsNames": [
+		"Town Hall",
+		"Fort",
+		"Market Place",
+		"Artefact Shop",
+		"Magic Guild",
+		"Guardhouse",
+		"Archers' Tower",
+		"Griffin Tower",
+		"Barracks",
+		"Monastery",
+		"Training Grounds",
+		"Portal of Glory"
+	],
+	"buildingsSprites": [
+		"Assets\\Sprites\\Towns\\Castle\\castleBuildingTownHall.png",
+		"Assets\\Sprites\\Towns\\Castle\\castleBuildingFort.png",
+		"Assets\\Sprites\\Towns\\Castle\\castleBuildingMarket.png",
+		"Assets\\Sprites\\Towns\\Castle\\castleBuildingArtefactShop.png",
+		"Assets\\Sprites\\Towns\\Castle\\castleBuildingMageGuild.png",
+		"Assets\\Sprites\\Towns\\Castle\\castleBuildingUnit0.png",
+		"Assets\\Sprites\\Towns\\Castle\\castleBuildingUnit1.png",
+		"Assets\\Sprites\\Towns\\Castle\\castleBuildingUnit2.png",
+		"Assets\\Sprites\\Towns\\Castle\\castleBuildingUnit3.png",
+		"Assets\\Sprites\\Towns\\Castle\\castleBuildingUnit4.png",
+		"Assets\\Sprites\\Towns\\Castle\\castleBuildingUnit5.png",
+		"Assets\\Sprites\\Towns\\Castle\\castleBuildingUnit6.png"
+	],
+	"townIcon": "Assets\\Sprites\\Towns\\Castle\\castleIcon.png",
+	"unitBuildingCostGold": [
+		500,
+		1000,
+		1000,
+		2000,
+		3000,
+		8000,
+		20000
+	],
+	"unitBuildingCostWood": [
+		0,
+		10,
+		0,
+		0,
+		5,
+		30,
+		0
+	],
+	"unitBuildingCostStone": [
+		10,
+		10,
+		5,
+		5,
+		5,
+		0,
+		0
+	]
+}

@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Game for module 1", ".", "{A11385DB-BF14-42C2-913E-69129FB65921}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_52019"
+		Debug.AspNetCompiler.PhysicalPath = "..\Game for module 1\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52019\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_52019"
+		Release.AspNetCompiler.PhysicalPath = "..\Game for module 1\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52019\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "52019"
+		SlnRelativePath = "..\Game for module 1\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A11385DB-BF14-42C2-913E-69129FB65921}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A11385DB-BF14-42C2-913E-69129FB65921}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B7F5DB2-0545-407F-871F-E2F2F507E4F8}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,59 @@
+{
+  "mapSprite": "Assets\\Sprites\\Towns\\Inferno\\InfernoMapSprite.png",
+  "unitBuildingsNames": [
+    "Town Hall",
+    "Fort",
+    "Market Place",
+    "Artefact Shop",
+    "Magic Guild",
+    "Imp Crucible",
+    "Hall of Sins",
+    "Kennels",
+    "Demon Gate",
+    "Hell Hole",
+    "Fire Lake",
+    "Forsaken Place"
+  ],
+  "buildingsSprites": [
+    "Assets\\Sprites\\Towns\\Inferno\\InfernoBuildingTownHall.png",
+    "Assets\\Sprites\\Towns\\Inferno\\InfernoBuildingFort.png",
+    "Assets\\Sprites\\Towns\\Inferno\\InfernoBuildingMarket.png",
+    "Assets\\Sprites\\Towns\\Inferno\\InfernoBuildingArtefactShop.png",
+    "Assets\\Sprites\\Towns\\Inferno\\InfernoBuildingMageGuild.png",
+    "Assets\\Sprites\\Towns\\Inferno\\InfernoBuildingUnit0.png",
+    "Assets\\Sprites\\Towns\\Inferno\\InfernoBuildingUnit1.png",
+    "Assets\\Sprites\\Towns\\Inferno\\InfernoBuildingUnit2.png",
+    "Assets\\Sprites\\Towns\\Inferno\\InfernoBuildingUnit3.png",
+    "Assets\\Sprites\\Towns\\Inferno\\InfernoBuildingUnit4.png",
+    "Assets\\Sprites\\Towns\\Inferno\\InfernoBuildingUnit5.png",
+    "Assets\\Sprites\\Towns\\Inferno\\InfernoBuildingUnit6.png"
+  ],
+  "townIcon": "Assets\\Sprites\\Towns\\Inferno\\infernoIcon.png",
+  "unitBuildingCostGold": [
+    1000,
+    1000,
+    1500,
+    2000,
+    3000,
+    4000,
+    20000
+  ],
+  "unitBuildingCostWood": [
+    0,
+    5,
+    10,
+    5,
+    0,
+    5,
+    15
+  ],
+  "unitBuildingCostStone": [
+    5,
+    5,
+    0,
+    5,
+    10,
+    15,
+    15
+  ]
+}

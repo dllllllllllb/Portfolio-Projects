@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{85aee435-d40f-4138-9f2d-68db59d36121}</ProjectGuid>
+    <RootNamespace>FinalMajorProject</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\SFML\SFML-2.5.1\include;D:\Programs\Visual Leak Detector\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\SFML\SFML-2.5.1\lib;D:\Programs\Visual Leak Detector\lib\Win32</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-network-d.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\SFML\SFML-2.5.1\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\SFML\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;sfml-audio-s.lib;sfml-network-s.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\SFML\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;sfml-network.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;sfml-network-d.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\SFML\SFML-2.5.1\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;sfml-network.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\SFML\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AnimatedObject.cpp" />
+    <ClCompile Include="Bar.cpp" />
+    <ClCompile Include="BasicButton.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="CombatAI.cpp" />
+    <ClCompile Include="CombatCursor.cpp" />
+    <ClCompile Include="CombatEndPopUp.cpp" />
+    <ClCompile Include="CombatHandler.cpp" />
+    <ClCompile Include="CombatUnit.cpp" />
+    <ClCompile Include="ConfirmationWindow.cpp" />
+    <ClCompile Include="Cursor.cpp" />
+    <ClCompile Include="DataHandler.cpp" />
+    <ClCompile Include="DataHandlerOLD.cpp" />
+    <ClCompile Include="DevTools.cpp" />
+    <ClCompile Include="DropDownList.cpp" />
+    <ClCompile Include="FactionBuildingData.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameEnd.cpp" />
+    <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="HeroData.cpp" />
+    <ClCompile Include="HeroMovementFeedback.cpp" />
+    <ClCompile Include="HeroPanel.cpp" />
+    <ClCompile Include="HeroStatsDisplay.cpp" />
+    <ClCompile Include="IconButton.cpp" />
+    <ClCompile Include="IconButtonList.cpp" />
+    <ClCompile Include="LandscapeMapObject.cpp" />
+    <ClCompile Include="LogsConsole.cpp" />
+    <ClCompile Include="MapAI.cpp" />
+    <ClCompile Include="MapAIHeroData.cpp" />
+    <ClCompile Include="MapAIPlayerData.cpp" />
+    <ClCompile Include="MapCreator.cpp" />
+    <ClCompile Include="MapCreatorSaveWindow.cpp" />
+    <ClCompile Include="MapHandler.cpp" />
+    <ClCompile Include="MapObject.cpp" />
+    <ClCompile Include="MapObjectEditorWindow.cpp" />
+    <ClCompile Include="MapObjectsInformationBox.cpp" />
+    <ClCompile Include="MapQuadrantData.cpp" />
+    <ClCompile Include="MapUI.cpp" />
+    <ClCompile Include="MoveableObject.cpp" />
+    <ClCompile Include="PathFindingTool.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerHandler.cpp" />
+    <ClCompile Include="PlayerSettingsTable.cpp" />
+    <ClCompile Include="GameSetUpScreen.cpp" />
+    <ClCompile Include="PopUpTextBox.cpp" />
+    <ClCompile Include="PurchaseUnitWindow.cpp" />
+    <ClCompile Include="RecourceTradingButton.cpp" />
+    <ClCompile Include="ResourceMapObject.cpp" />
+    <ClCompile Include="ResourceMineData.cpp" />
+    <ClCompile Include="ResourceMineMapObject.cpp" />
+    <ClCompile Include="Resources.cpp" />
+    <ClCompile Include="ResourcesBar.cpp" />
+    <ClCompile Include="Slider.cpp" />
+    <ClCompile Include="SliderHandle.cpp" />
+    <ClCompile Include="SpecialBuildingInteractions.cpp" />
+    <ClCompile Include="SpecialBuildingMapObject.cpp" />
+    <ClCompile Include="Text.cpp" />
+    <ClCompile Include="TextBox.cpp" />
+    <ClCompile Include="TextBoxTitle.cpp" />
+    <ClCompile Include="TextInputBox.cpp" />
+    <ClCompile Include="TickBox.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="TileHandler.cpp" />
+    <ClCompile Include="FactionData.cpp" />
+    <ClCompile Include="Town.cpp" />
+    <ClCompile Include="TownBuilding.cpp" />
+    <ClCompile Include="TownBuildingData.cpp" />
+    <ClCompile Include="TownBuildingUpgrade.cpp" />
+    <ClCompile Include="TownData.cpp" />
+    <ClCompile Include="UnitsPanel.cpp" />
+    <ClCompile Include="TownMapObject.cpp" />
+    <ClCompile Include="TownRecruitment.cpp" />
+    <ClCompile Include="TownTrading.cpp" />
+    <ClCompile Include="TurnHandler.cpp" />
+    <ClCompile Include="UIElement.cpp" />
+    <ClCompile Include="CollidableObject.cpp" />
+    <ClCompile Include="Fonts.cpp" />
+    <ClCompile Include="framework.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Textures.cpp" />
+    <ClCompile Include="UIHandler.cpp" />
+    <ClCompile Include="UITool.cpp" />
+    <ClCompile Include="Unit.cpp" />
+    <ClCompile Include="UnitCard.cpp" />
+    <ClCompile Include="UnitCreationTool.cpp" />
+    <ClCompile Include="UnitData.cpp" />
+    <ClCompile Include="UnitInformationCard.cpp" />
+    <ClCompile Include="UnitMapObject.cpp" />
+    <ClCompile Include="UnitRecruitmentButton.cpp" />
+    <ClCompile Include="UnitTurnOrderBar.cpp" />
+    <ClCompile Include="ViewManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AnimatedObject.h" />
+    <ClInclude Include="Bar.h" />
+    <ClInclude Include="BasicButton.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="CombatAI.h" />
+    <ClInclude Include="CombatCursor.h" />
+    <ClInclude Include="CombatCursorEnum.h" />
+    <ClInclude Include="CombatEndPopUp.h" />
+    <ClInclude Include="CombatEndPopUpSettings.h" />
+    <ClInclude Include="CombatHandler.h" />
+    <ClInclude Include="CombatHandlerButtonsEnum.h" />
+    <ClInclude Include="CombatHandlerSettings.h" />
+    <ClInclude Include="CombatTypeEnum.h" />
+    <ClInclude Include="CombatUnit.h" />
+    <ClInclude Include="CombatUnitSettings.h" />
+    <ClInclude Include="ConfirmationWindow.h" />
+    <ClInclude Include="ConstantVariables.h" />
+    <ClInclude Include="Cursor.h" />
+    <ClInclude Include="DataHandler.h" />
+    <ClInclude Include="DataHandlerOLD.h" />
+    <ClInclude Include="DataHandlerSettings.h" />
+    <ClInclude Include="DevTools.h" />
+    <ClInclude Include="DevToolsEnum.h" />
+    <ClInclude Include="DevToolsSettings.h" />
+    <ClInclude Include="DirectionEnum.h" />
+    <ClInclude Include="DropDownList.h" />
+    <ClInclude Include="DropDownListSettings.h" />
+    <ClInclude Include="FactionBuildingData.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameEnd.h" />
+    <ClInclude Include="GameEndSettings.h" />
+    <ClInclude Include="GameSetUpScreenSettings.h" />
+    <ClInclude Include="Hero.h" />
+    <ClInclude Include="HeroData.h" />
+    <ClInclude Include="HeroMovementFeedback.h" />
+    <ClInclude Include="HeroPanel.h" />
+    <ClInclude Include="HeroPanelSettings.h" />
+    <ClInclude Include="HeroSettings.h" />
+    <ClInclude Include="HeroStatsDisplay.h" />
+    <ClInclude Include="HeroStatsDisplaySettings.h" />
+    <ClInclude Include="HeroStatsEnum.h" />
+    <ClInclude Include="IconButton.h" />
+    <ClInclude Include="IconButtonList.h" />
+    <ClInclude Include="json.hpp" />
+    <ClInclude Include="LandscapeMapObject.h" />
+    <ClInclude Include="LandscapeTypeEnum.h" />
+    <ClInclude Include="LogsConsole.h" />
+    <ClInclude Include="MapAI.h" />
+    <ClInclude Include="MapAIHeroData.h" />
+    <ClInclude Include="MapAIPlayerData.h" />
+    <ClInclude Include="MapAIPriorityEnum.h" />
+    <ClInclude Include="MapAISettings.h" />
+    <ClInclude Include="MapCreator.h" />
+    <ClInclude Include="MapCreatorEnum.h" />
+    <ClInclude Include="MapCreatorSaveWindow.h" />
+    <ClInclude Include="MapCreatorSaveWindowSettings.h" />
+    <ClInclude Include="MapCreatorSettings.h" />
+    <ClInclude Include="MapHandler.h" />
+    <ClInclude Include="MapHandlerSettings.h" />
+    <ClInclude Include="MapObject.h" />
+    <ClInclude Include="MapObjectDataEnums.h" />
+    <ClInclude Include="MapObjectEditorSettings.h" />
+    <ClInclude Include="MapObjectEditorWindow.h" />
+    <ClInclude Include="MapObjectsEnum.h" />
+    <ClInclude Include="MapObjectsInformationBox.h" />
+    <ClInclude Include="MapQuadrantData.h" />
+    <ClInclude Include="MapUI.h" />
+    <ClInclude Include="MapUIButtonsEnum.h" />
+    <ClInclude Include="MapUISettings.h" />
+    <ClInclude Include="MoveableObject.h" />
+    <ClInclude Include="PathFindingTool.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerHandler.h" />
+    <ClInclude Include="PlayerSettingsTable.h" />
+    <ClInclude Include="PlayerSettingsTableSettings.h" />
+    <ClInclude Include="GameSetUpScreen.h" />
+    <ClInclude Include="PopUpTextBox.h" />
+    <ClInclude Include="PurchaseUnitSettings.h" />
+    <ClInclude Include="PurchaseUnitWindow.h" />
+    <ClInclude Include="RecourceTradingButton.h" />
+    <ClInclude Include="ResourceMapObject.h" />
+    <ClInclude Include="ResourceMineData.h" />
+    <ClInclude Include="ResourceMineMapObject.h" />
+    <ClInclude Include="Resources.h" />
+    <ClInclude Include="ResourcesBar.h" />
+    <ClInclude Include="ResourcesBarSettings.h" />
+    <ClInclude Include="ResourcesEnum.h" />
+    <ClInclude Include="ResourcesPerTurnSettings.h" />
+    <ClInclude Include="ResourceTradingButtonSettings.h" />
+    <ClInclude Include="Slider.h" />
+    <ClInclude Include="SliderHandle.h" />
+    <ClInclude Include="SpecialBuildingEnum.h" />
+    <ClInclude Include="SpecialBuildingInteractions.h" />
+    <ClInclude Include="SpecialBuildingInteractionsSettings.h" />
+    <ClInclude Include="SpecialBuildingMapObject.h" />
+    <ClInclude Include="Text.h" />
+    <ClInclude Include="TextAlignmentEnum.h" />
+    <ClInclude Include="TextBox.h" />
+    <ClInclude Include="TextBoxTitle.h" />
+    <ClInclude Include="TickBox.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="TileDataEnum.h" />
+    <ClInclude Include="TileHandler.h" />
+    <ClInclude Include="TilePropertiesEnum.h" />
+    <ClInclude Include="FactionData.h" />
+    <ClInclude Include="Town.h" />
+    <ClInclude Include="TownBuilding.h" />
+    <ClInclude Include="TownBuildingData.h" />
+    <ClInclude Include="TownBuildingEnum.h" />
+    <ClInclude Include="TownBuildingSettings.h" />
+    <ClInclude Include="TownBuildingUpgrade.h" />
+    <ClInclude Include="TownData.h" />
+    <ClInclude Include="TownEnum.h" />
+    <ClInclude Include="UnitsPanel.h" />
+    <ClInclude Include="TownHeroesUnitsPanelSettings.h" />
+    <ClInclude Include="TownMapObject.h" />
+    <ClInclude Include="TownRecruitment.h" />
+    <ClInclude Include="TownRecruitmentSettings.h" />
+    <ClInclude Include="TownSettings.h" />
+    <ClInclude Include="TownTrading.h" />
+    <ClInclude Include="TownTradingSettings.h" />
+    <ClInclude Include="TurnHandler.h" />
+    <ClInclude Include="UIHandler.h" />
+    <ClInclude Include="UILayerEnum.h" />
+    <ClInclude Include="UITool.h" />
+    <ClInclude Include="TextInputBox.h" />
+    <ClInclude Include="UIElement.h" />
+    <ClInclude Include="CollidableObject.h" />
+    <ClInclude Include="Fonts.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="GameStateEnum.h" />
+    <ClInclude Include="GlobalVariables.h" />
+    <ClInclude Include="Macros.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Textures.h" />
+    <ClInclude Include="UIToolSettings.h" />
+    <ClInclude Include="Unit.h" />
+    <ClInclude Include="UnitCard.h" />
+    <ClInclude Include="UnitCreationTool.h" />
+    <ClInclude Include="UnitData.h" />
+    <ClInclude Include="UnitDataEnum.h" />
+    <ClInclude Include="UnitInformationCard.h" />
+    <ClInclude Include="UnitInformationCardSettings.h" />
+    <ClInclude Include="UnitMapObject.h" />
+    <ClInclude Include="UnitRecruitmentButton.h" />
+    <ClInclude Include="UnitCreationSettings.h" />
+    <ClInclude Include="UnitSpecialPropertyEnum.h" />
+    <ClInclude Include="UnitTurnOrderBar.h" />
+    <ClInclude Include="UnitTurnOrderBarSettings.h" />
+    <ClInclude Include="ViewManager.h" />
+    <ClInclude Include="ViewManagerSettings.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

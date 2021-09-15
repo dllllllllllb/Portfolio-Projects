@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Enums">
+      <UniqueIdentifier>{f304d4a9-651c-4ba7-885d-73af1aee0811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{181b23ae-d4ab-4e17-9e6b-74bc564659d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{e75aa804-1fe1-4b1d-b78f-4510e69d4f49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{415bee14-205c-4d3b-a6d8-f3401ce0c2e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Miscellaneous">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Game\Player">
+      <UniqueIdentifier>{3079ae61-d787-448c-abca-15622ea00889}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Enemies">
+      <UniqueIdentifier>{b97d838e-4ad5-4692-ab47-e91cce8b40b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Drops">
+      <UniqueIdentifier>{efe46323-5a44-486d-8ede-10e78cdafe24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Waves">
+      <UniqueIdentifier>{417f7c6d-ba66-449b-8c76-fc329851eec8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Bullets">
+      <UniqueIdentifier>{d4e84a97-64e9-4df0-a225-0fd5449728fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\UI">
+      <UniqueIdentifier>{2fa25101-f4e8-4a42-b339-350f90a2df3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Shop">
+      <UniqueIdentifier>{83f6f8c1-ec55-4f25-b88b-cb2894329216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Background">
+      <UniqueIdentifier>{70daf413-9f58-4d08-8081-b9cab515e4ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="High Score Table">
+      <UniqueIdentifier>{5c5f54eb-bd9a-4eb9-bf43-d22fdbccf2a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tutorial">
+      <UniqueIdentifier>{bc35c119-225d-4646-8bf9-c91de92e584a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Framework.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Textures.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="WaveHandler.cpp">
+      <Filter>Game\Waves</Filter>
+    </ClCompile>
+    <ClCompile Include="WaveData.cpp">
+      <Filter>Game\Waves</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Game\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyHandler.cpp">
+      <Filter>Game\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyDrop.cpp">
+      <Filter>Game\Drops</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletPool.cpp">
+      <Filter>Game\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Game\Bullets</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemyDropHandler.cpp">
+      <Filter>Game\Drops</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="UserInterface.cpp">
+      <Filter>Game\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Shop.cpp">
+      <Filter>Game\Shop</Filter>
+    </ClCompile>
+    <ClCompile Include="BackgroundStar.cpp">
+      <Filter>Engine\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Engine\Background</Filter>
+    </ClCompile>
+    <ClCompile Include="ShopButton.cpp">
+      <Filter>Game\Shop</Filter>
+    </ClCompile>
+    <ClCompile Include="HighScoreTable.cpp">
+      <Filter>High Score Table</Filter>
+    </ClCompile>
+    <ClCompile Include="HighScoreData.cpp">
+      <Filter>High Score Table</Filter>
+    </ClCompile>
+    <ClCompile Include="Tutorial.cpp">
+      <Filter>Tutorial</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Helpers.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyDropTypeEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyStateEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Textures.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="WaveHandler.h">
+      <Filter>Game\Waves</Filter>
+    </ClInclude>
+    <ClInclude Include="WaveData.h">
+      <Filter>Game\Waves</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Game\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyHandler.h">
+      <Filter>Game\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyDrop.h">
+      <Filter>Game\Drops</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Game\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletPool.h">
+      <Filter>Game\Bullets</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyDropHandler.h">
+      <Filter>Game\Drops</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterface.h">
+      <Filter>Game\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerValuesEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="UserInterfaceValuesEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Shop.h">
+      <Filter>Game\Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundStar.h">
+      <Filter>Engine\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Engine\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="ShopButton.h">
+      <Filter>Game\Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerWeaponsEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletTrajectory.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyType.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="HighScoreTable.h">
+      <Filter>High Score Table</Filter>
+    </ClInclude>
+    <ClInclude Include="HighScoreData.h">
+      <Filter>High Score Table</Filter>
+    </ClInclude>
+    <ClInclude Include="Tutorial.h">
+      <Filter>Tutorial</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

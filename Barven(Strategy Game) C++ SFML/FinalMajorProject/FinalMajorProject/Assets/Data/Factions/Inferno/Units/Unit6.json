@@ -1,0 +1,21 @@
+{
+  "AIValue": 7115,
+  "ammunition": 0,
+  "attack": 26,
+  "cost": 4500,
+  "defence": 28,
+  "faction": "Inferno",
+  "growthPerWeek": 1,
+  "health": 200,
+  "index": 6,
+  "isFlying": 1,
+  "isRanged": 0,
+  "mapSprite": "Assets\\Sprites\\Units\\InfernoUnit6MapSprite.png",
+  "maxDamage": 40,
+  "minDamage": 30,
+  "range": 1,
+  "speed": 17,
+  "sprite": "Assets\\Sprites\\Units\\InfernoUnit6Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\InfernoUnit6Icon.png",
+  "unitName": "Arch Devil"
+}

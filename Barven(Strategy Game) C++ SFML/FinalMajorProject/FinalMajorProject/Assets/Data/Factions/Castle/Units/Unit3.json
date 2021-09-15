@@ -1,0 +1,21 @@
+{
+  "AIValue": 588,
+  "ammunition": 0,
+  "attack": 12,
+  "cost": 400,
+  "defence": 12,
+  "faction": "Castle",
+  "growthPerWeek": 4,
+  "health": 35,
+  "index": 3,
+  "isFlying": 0,
+  "isRanged": 0,
+  "mapSprite": "Assets\\Sprites\\Units\\CastleUnit3MapSprite.png",
+  "maxDamage": 10,
+  "minDamage": 7,
+  "range": 1,
+  "speed": 6,
+  "sprite": "Assets\\Sprites\\Units\\CastleUnit3Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\CastleUnit3Icon.png",
+  "unitName": "Crusader"
+}

@@ -1,0 +1,21 @@
+{
+  "AIValue": 582,
+  "ammunition": 12,
+  "attack": 12,
+  "cost": 400,
+  "defence": 7,
+  "faction": "Castle",
+  "growthPerWeek": 3,
+  "health": 30,
+  "index": 4,
+  "isFlying": 0,
+  "isRanged": 1,
+  "mapSprite": "Assets\\Sprites\\Units\\CastleUnit4MapSprite.png",
+  "maxDamage": 12,
+  "minDamage": 10,
+  "range": 8,
+  "speed": 5,
+  "sprite": "Assets\\Sprites\\Units\\CastleUnit4Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\CastleUnit4Icon.png",
+  "unitName": "Monk"
+}

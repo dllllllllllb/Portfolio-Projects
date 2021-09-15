@@ -1,0 +1,21 @@
+{
+  "AIValue": 240,
+  "ammunition": 24,
+  "attack": 7,
+  "cost": 175,
+  "defence": 4,
+  "faction": "Inferno",
+  "growthPerWeek": 8,
+  "health": 13,
+  "index": 1,
+  "isFlying": 0,
+  "isRanged": 1,
+  "mapSprite": "Assets\\Sprites\\Units\\InfernoUnit1MapSprite.png",
+  "maxDamage": 4,
+  "minDamage": 2,
+  "range": 6,
+  "speed": 6,
+  "sprite": "Assets\\Sprites\\Units\\InfernoUnit1Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\InfernoUnit1Icon.png",
+  "unitName": "Magog"
+}

@@ -1,0 +1,21 @@
+{
+  "AIValue": 765,
+  "ammunition": 0,
+  "attack": 13,
+  "cost": 500,
+  "defence": 13,
+  "faction": "Inferno",
+  "growthPerWeek": 3,
+  "health": 45,
+  "index": 4,
+  "isFlying": 0,
+  "isRanged": 0,
+  "mapSprite": "Assets\\Sprites\\Units\\InfernoUnit4MapSprite.png",
+  "maxDamage": 17,
+  "minDamage": 13,
+  "range": 1,
+  "speed": 7,
+  "sprite": "Assets\\Sprites\\Units\\InfernoUnit4Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\InfernoUnit4Icon.png",
+  "unitName": "Pit Fiend"
+}

@@ -1,0 +1,187 @@
+===========================================================================================
+Menu
+===========================================================================================
+"Play" button takes you to a black screen as its not implemented yet.
+"Option" WIP
+"Dev Tools" button takes you to Dev Tools menu
+
+===========================================================================================
+Dev Tools
+===========================================================================================
+Every button in this section takes you to the appropriate tool developed, Test Title text
+box is simply to test if any changes to the UI classes have an unwanted effect.
+The back button takes you to the menu screen.
+
+===========================================================================================
+UI Tool
+===========================================================================================
+Press on a button to enter your value for selected variable
+When a button is pressed, it will change colour to yellow, when a button is yellow, it will
+register all keys hit. It is set to only take one key stroke at a time.
+Buttons at the top can only take integers, the UI element that is edited can have anything
+written inside it.
+Once you type in your values, press apply to change UI elements properties.
+
+===========================================================================================
+Path Finding
+===========================================================================================
+Left mouse button to toggle if tile is an obstacle
+Shift + left mouse button to set a start position
+Left control + left mouse button to set an end position
+Press solve for the A* algorithm to find shortest path from start to end position.
+
+Tiles:
+Dark Blue = Not visited
+Light Blue = Visited
+Grey = Obstacle
+Green = Start
+Red = End
+
+===========================================================================================
+Unit Creator Tool
+===========================================================================================
+This is heavily outdated, it won't make playable units however it will still make appropriate
+JSON files with parameters typed in. 
+
+==========================================================================================
+Town Tool
+==========================================================================================
+Only "Build", "Recruit" and "Trade" buttons work. Spells and Artefacts are WIP
+
+By default, faction "0" is selected, which is the "Castle" faction. If you want to load
+an "Inferno" faction, you will need to change faction index (m_factionIndex) inside 
+Town.cpp in the initializer list to "1". 
+
+Bulid :
+Hover over building to get information on its level and upgrade cost.
+Click to get a confirmation window to upgrade.
+You can only upgrade once per turn.
+Colour key:
+	Green - Available to purchase
+	Red - Not enough resources to purchase
+	Yellow - Fully upgraded
+	Black - Can't build again this turn
+
+Recruit :
+LMB to select a unit from the list on the left side of the screen, it will display selected
+units sprite, name, stats and how many you can recruit.
+
+Use the slider by pressing and holding the handle to decide how many units you want to
+recruit. Then press the recruit units button for a confirmation window.
+
+If you don't meet the requirements to recruit a unit, an appropriate error message will show.
+
+When recruiting units they will go to the town unit panel first from where you can transfer
+them to your hero. You can merge the same units or leave them behind in the town.
+You can right click a unit slot to get a unit information window.
+
+==========================================================================================
+Map Creator
+==========================================================================================
+IMPORTANT** Only change the size of the map before placing any objects on the map **IMPORTANT
+IMPORTANT** Rendering isn't optimised yet, large number of tiles can cause FPS drops **IMPORTANT
+IMPORTANT** You need at least one town for every player the map is made for **IMPORTANT
+IMPORTANT** Game is made for maximum 8 players **IMPORTANT
+
+Some buttons show a drop down menu with more options for the appropriate category.
+When an object is selected place it on the map by pressing LMB.
+
+You can't place object on top of eachother apart from the landscape objects(Trees/Rocky/Other)
+To see which tiles are occupied by the object, press "left control"
+
+When you toggle tile property view (left control to toggle) you will see red squares(obstacle)
+and yellow square(occupied).
+To select an object, you need to click on the yellow square of an object
+If this object has any variables to edit, an editor window will pop up
+
+Editor window shows the name of the variable, and its current value. To change that value,
+press on the appropriate button and type in your value. All editable variables are integers.
+
+When landscape objects(Trees/Rocky/Other) are selected, editor window wont pop up but they 
+are selected.
+
+If you want to delete an object. Select it by clicking on objects yellow square and press 
+"delete" key on your keyboard
+
+When you're happy with your map, press the save button in top right corner
+Enter your map name, number of players and press accept.
+
+Your map will be saved in "Assets/Data/Maps" folder with your name as a JSON file
+
+===========================================================================================
+Play
+===========================================================================================
+Select a map in the top right corner, if you made one after opening the game, click on the
+refresh button to see your map.
+
+THERE IS ONE PLAYABLE MAP: NO MANS LAND
+OTHER MAPS ARE FOR TESTING PURPOSES
+
+Based on number of player for the selected map, a number of rows(coresponding to number of 
+players) will activate and you will be able to interact with them.
+
+There are 4 collumns
+	Player name: Type in your name
+	Faction: Loop through available factions or leave it at random
+	Bonus: Loop through available bonuses or leave it at random
+	AI: Tick if you want this player ot be AI (Playable but AI is not tuned properly)
+
+After selecting wanted settings press "Start Game".
+
+===========================================================================================
+Game
+===========================================================================================
+***Starting resources are inflated for the ease of testing / playthrough***
+
+Controls:
+	Space: Interacts with an object the player is on if applicable(mosty used to enter towns)
+	Tab: Opens and closes MapUI
+	Left Control: Shows movement range, won't work if path is longer than remaining movement points (STILL WIP)
+	Right Click: Selects clicked hero and displays interactable hero panel and shows relevant map object information
+	Left Click: Interacts with the map and its objects
+
+Map UI:
+	Date: Shows current date; every 7 days new recruits are available
+	Resources Gained Per Turn: Shows how many resources the player gets every turn
+	List of Towns: Press to interact with selected town without the need to be in it with your hero
+	List of Heros: Press to move camera to the hero and open up Hero panel
+	Hourglass: Changes turn
+	Save Icon: WIP
+	Settings: WIP
+	Exit: Takes you back to the menu
+
+Hero Panel:
+	Hero Level: Shows heros level
+	Hero Stats: Shows heros stats (Attack, Defence, Spell Power(WIP), Wisdom(WIP))
+	Unit panel: Allows to set units positions in heros army and see their stats
+	Close button: Closes Hero Panel
+
+IMPORTANT** To see what interactions specific objects do, please watch the demo **IMPORTANT
+
+===========================================================================================
+Combat
+===========================================================================================
+Combat Logs:
+	Show last couple of actions taken by each unit
+
+Turn Order Bar:
+	Shows order in which units take turn (From left to right)
+	Green border means the unit belongs to the player on the left, Red border -> on the right
+
+Action Buttons:
+	Crossed Swords: Sets all units belonging to the current players turn to be controlled by AI (Can't be turned off if turned on)
+	Shield: Defend action, increases the defence of current unit by 1
+	Hourglass: Waits the turn and puts it in first appropriate place determined by units speed
+		   (The faster the unit, the further back in the que it will be send, allowing to take 2 turns in a row)
+
+Left click to interact
+Right click to see units stats
+
+Some units are ranged so they don't need to move to attack, some need to be at leas 1 tile away from the enemy
+Units can move to any highlighted tiles
+
+Text box with numbers indicates number of units remaining
+
+Once the combat is finished, a popup will show saying outcome of the battle.
+
+If you lose, your units will be wiped out and your hero will die

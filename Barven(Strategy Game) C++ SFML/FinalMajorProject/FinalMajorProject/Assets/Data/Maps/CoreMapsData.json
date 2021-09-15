@@ -1,0 +1,24 @@
+{
+ "maps": [
+  {
+   "mapDirectory": "Assets\\Data\\Maps\\No Mans Land.json",
+   "mapName": "No Mans Land",
+   "maxNumberOfPlayers": 2
+  },
+  {
+   "mapDirectory": "Assets\\Data\\Maps\\Yo.json",
+   "mapName": "Yo",
+   "maxNumberOfPlayers": 1
+  },
+  {
+   "mapDirectory": "Assets\\Data\\Maps\\Town Combat Test.json",
+   "mapName": "Town Combat Test",
+   "maxNumberOfPlayers": 2
+  },
+  {
+   "mapDirectory": "Assets\\Data\\Maps\\TestMap.json",
+   "mapName": "TestMap",
+   "maxNumberOfPlayers": 1
+  }
+ ]
+}

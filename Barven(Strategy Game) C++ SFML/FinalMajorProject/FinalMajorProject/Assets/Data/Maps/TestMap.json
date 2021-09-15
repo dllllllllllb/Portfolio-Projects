@@ -1,0 +1,6176 @@
+{
+ "landscapeObjects": [
+  {
+   "objectIndex": 0,
+   "objectType": 1,
+   "tileIndex": 614
+  },
+  {
+   "objectIndex": 5,
+   "objectType": 2,
+   "tileIndex": 913
+  },
+  {
+   "objectIndex": 1,
+   "objectType": 2,
+   "tileIndex": 916
+  },
+  {
+   "objectIndex": 0,
+   "objectType": 2,
+   "tileIndex": 919
+  },
+  {
+   "objectIndex": 0,
+   "objectType": 3,
+   "tileIndex": 185
+  },
+  {
+   "objectIndex": 1,
+   "objectType": 3,
+   "tileIndex": 337
+  },
+  {
+   "objectIndex": 3,
+   "objectType": 3,
+   "tileIndex": 636
+  },
+  {
+   "objectIndex": 4,
+   "objectType": 3,
+   "tileIndex": 736
+  }
+ ],
+ "mapHeight": 20,
+ "mapName": "TestMap",
+ "mapWidth": 50,
+ "numOfPlayers": 1,
+ "numberOfLandscapeObjects": 8,
+ "numberOfResourceMines": 1,
+ "numberOfResources": 2,
+ "numberOfSpecialBuildings": 2,
+ "numberOfTiles": 1000,
+ "numberOfTownObjects": 1,
+ "numberOfUnitObjects": 13,
+ "resourceMineObjects": [
+  {
+   "mineType": 2,
+   "ownerIndex": -1,
+   "tileIndex": 217
+  }
+ ],
+ "resourceObjects": [
+  {
+   "resourceAmount": 9,
+   "resourceType": 2,
+   "tileIndex": 267
+  },
+  {
+   "resourceAmount": 750,
+   "resourceType": 0,
+   "tileIndex": 270
+  }
+ ],
+ "specialBuildingObjects": [
+  {
+   "buildingType": 0,
+   "isVisited": false,
+   "tileIndex": 504
+  },
+  {
+   "buildingType": 1,
+   "isVisited": false,
+   "tileIndex": 507
+  }
+ ],
+ "tileSize": 32,
+ "tiles": [
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 4
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 1,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 4,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 1
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 2
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 5,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 5,
+   "mapObjectVectorIndex": 1
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 3
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 4
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 5
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 6
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 7
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 8
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 5
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 9
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 10
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 11
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 2,
+   "mapObjectVectorIndex": 12
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 3,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 3,
+   "mapObjectVectorIndex": 1
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 6
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 7
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 1
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 2
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": false,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": true,
+   "isOccupied": true,
+   "mapObjectType": 6,
+   "mapObjectVectorIndex": 3
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  },
+  {
+   "isObstacle": false,
+   "isOccupied": false,
+   "mapObjectType": 0,
+   "mapObjectVectorIndex": 0
+  }
+ ],
+ "townObjects": [
+  {
+   "factionIndex": 0,
+   "ownerIndex": -1,
+   "tileIndex": 207
+  }
+ ],
+ "unitObjects": [
+  {
+   "factionIndex": 0,
+   "numberOfUnits": 13,
+   "tileIndex": 224,
+   "unitIndex": 0
+  },
+  {
+   "factionIndex": 0,
+   "numberOfUnits": 12,
+   "tileIndex": 225,
+   "unitIndex": 1
+  },
+  {
+   "factionIndex": 0,
+   "numberOfUnits": 12,
+   "tileIndex": 226,
+   "unitIndex": 2
+  },
+  {
+   "factionIndex": 1,
+   "numberOfUnits": 50,
+   "tileIndex": 324,
+   "unitIndex": 0
+  },
+  {
+   "factionIndex": 1,
+   "numberOfUnits": 13,
+   "tileIndex": 325,
+   "unitIndex": 1
+  },
+  {
+   "factionIndex": 1,
+   "numberOfUnits": 11,
+   "tileIndex": 326,
+   "unitIndex": 2
+  },
+  {
+   "factionIndex": 1,
+   "numberOfUnits": 10,
+   "tileIndex": 328,
+   "unitIndex": 3
+  },
+  {
+   "factionIndex": 1,
+   "numberOfUnits": 2,
+   "tileIndex": 329,
+   "unitIndex": 4
+  },
+  {
+   "factionIndex": 1,
+   "numberOfUnits": 2,
+   "tileIndex": 332,
+   "unitIndex": 6
+  },
+  {
+   "factionIndex": 0,
+   "numberOfUnits": 13,
+   "tileIndex": 374,
+   "unitIndex": 0
+  },
+  {
+   "factionIndex": 1,
+   "numberOfUnits": 1,
+   "tileIndex": 375,
+   "unitIndex": 1
+  },
+  {
+   "factionIndex": 0,
+   "numberOfUnits": 15,
+   "tileIndex": 377,
+   "unitIndex": 3
+  },
+  {
+   "factionIndex": 1,
+   "numberOfUnits": 15,
+   "tileIndex": 379,
+   "unitIndex": 2
+  }
+ ]
+}

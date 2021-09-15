@@ -1,0 +1,21 @@
+{
+  "AIValue": 351,
+  "ammunition": 0,
+  "attack": 8,
+  "cost": 200,
+  "defence": 8,
+  "faction": "Castle",
+  "growthPerWeek": 7,
+  "health": 25,
+  "index": 2,
+  "isFlying": 1,
+  "isRanged": 0,
+  "mapSprite": "Assets\\Sprites\\Units\\CastleUnit2MapSprite.png",
+  "maxDamage": 6,
+  "minDamage": 3,
+  "range": 1,
+  "speed": 6,
+  "sprite": "Assets\\Sprites\\Units\\CastleUnit2Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\CastleUnit2Icon.png",
+  "unitName": "Griffin"
+}

@@ -1,0 +1,21 @@
+{
+  "AIValue":  60,
+  "ammunition": 0,
+  "attack": 4,
+  "cost": 60,
+  "defence": 4,
+  "faction": "Inferno",
+  "growthPerWeek": 15,
+  "health": 4,
+  "index": 0,
+  "isFlying": 0,
+  "isRanged": 0,
+  "mapSprite": "Assets\\Sprites\\Units\\InfernoUnit0MapSprite.png",
+  "maxDamage": 2,
+  "minDamage": 1,
+  "range": 1,
+  "speed": 7,
+  "sprite": "Assets\\Sprites\\Units\\InfernoUnit0Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\InfernoUnit0Icon.png",
+  "unitName": "Imp"
+}

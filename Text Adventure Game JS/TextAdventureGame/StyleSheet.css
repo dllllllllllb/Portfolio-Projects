@@ -1,0 +1,51 @@
+﻿/*Author: Maciej Dowbor*/
+/*Module Title: Computer Science and Web Technologies Primer*/
+/*Module Code: MED4141*/
+/*Date: 17/10/2019*/
+
+/*Setting up a border box and font*/
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Cooper;
+}
+/*Setting up the layout of buttons and container on the screen and colour of the background*/
+body {
+    display: flex;
+    width: 100vw; /*Automatically adjusts the width and the height of the layout depending on users screen size*/
+    height: 100vh;
+    justify-content: center; /*Alligns everything in the centre*/
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    background-color: #808080;
+}
+/*Formating style of buttons*/
+.button {
+    color: black;
+    background-color: orangered; 
+    border: 2px solid hsl(1, 100%, 30%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    
+}
+/*Changing the border colour of a button when the player hovers over it*/
+.button:hover {
+    border-color: black;
+}
+/*Setting up the layout of the buttons*/
+.buttonGrid {
+    display: grid;
+    grid-gap: 10px;
+    margin-top: 20px;
+    grid-template-columns: repeat(1, auto); /*Displays a buttons on every row*/
+}
+/*Drawing a box behind the buttons*/
+.container {
+    width: 600px;
+    max-width: 600px;
+    background-color: orange;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 5px;
+}

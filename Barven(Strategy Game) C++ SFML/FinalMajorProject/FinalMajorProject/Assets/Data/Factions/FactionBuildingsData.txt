@@ -1,0 +1,2 @@
+Assets\Data\Factions\Castle\Buildings\BuildingsData.json
+Assets\Data\Factions\Inferno\Buildings\BuildingsData.json

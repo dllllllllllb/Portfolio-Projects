@@ -1,0 +1,21 @@
+{
+  "AIValue": 392,
+  "ammunition": 0,
+  "attack": 10,
+  "cost": 250,
+  "defence": 8,
+  "faction": "Inferno",
+  "growthPerWeek": 5,
+  "health": 25,
+  "index": 2,
+  "isFlying": 0,
+  "isRanged": 0,
+  "mapSprite": "Assets\\Sprites\\Units\\InfernoUnit2MapSprite.png",
+  "maxDamage": 7,
+  "minDamage": 2,
+  "range": 1,
+  "speed": 8,
+  "sprite": "Assets\\Sprites\\Units\\InfernoUnit2Sprite.png",
+  "unitIcon": "Assets\\Sprites\\Units\\InfernoUnit2Icon.png",
+  "unitName": "Cerberus"
+}

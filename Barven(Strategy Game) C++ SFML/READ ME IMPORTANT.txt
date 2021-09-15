@@ -1,0 +1,19 @@
+This is still WIP, it has a couple of know bugs (mainly visual although there might be bugs I didn't come acros in my playthroughs and testing)
+
+There is a manual in this folder that explains how to interact with the project
+
+Each document that I contributed to this project on has my name at the top of it (.h and .cpp come in pairs) "Author: Maciej Dowbor"
+Every document is mine unless it states otherwise.
+All Textures/Sprites are downloaded from the internet. Link: https://www.spriters-resource.com/pc_computer/heroes3/
+
+If you want to open and run the debug version of the project you will need to link SFML liblaries to the project
+How to link: https://www.sfml-dev.org/tutorials/2.5/start-vc.php
+
+Project Demo: https://www.youtube.com/watch?v=AtJoMm1wjxk
+Project Walkthrough: https://www.youtube.com/watch?v=lvg9nkDbd5U
+Project Trailer: https://www.youtube.com/watch?v=1q_WasNFHOA
+
+(there might be some features not shown that I forgot about so feel free to play around with the release version)
+
+Map AI is still in development, didn't have enough time to fully implement it so I focused on things that I could get done.
+The game is playable as Hot seat, player vs AI or player vs map monsters.

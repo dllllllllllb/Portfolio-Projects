@@ -1,0 +1,12 @@
+{
+  "mineMapTextures": [
+    "Assets\\Sprites\\MapObjects\\Mines\\goldMine.png",
+    "Assets\\Sprites\\MapObjects\\Mines\\woodMine.png",
+    "Assets\\Sprites\\MapObjects\\Mines\\stoneMine.png"
+  ],
+  "resourceGainPerDay": [
+    1000,
+    2,
+    2
+  ]
+}

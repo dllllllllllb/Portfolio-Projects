@@ -1,0 +1,865 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{ffbe6629-db3f-4237-b45d-3acee2f78a58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enums">
+      <UniqueIdentifier>{93ec8f3a-68ad-45d6-8f7c-77ee5266726f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Miscellaneous">
+      <UniqueIdentifier>{4b690036-cdd5-4219-8881-ed61355d74ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Menu">
+      <UniqueIdentifier>{e4405838-ee04-4fe4-9f57-fab2fc58ef0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DevTools">
+      <UniqueIdentifier>{3b257375-91f4-4ec3-83cd-ff89f55300a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\UI">
+      <UniqueIdentifier>{40d588ba-abb2-44df-aeb8-818e2d7db330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DevTools\UITool">
+      <UniqueIdentifier>{172a3b03-c3ca-4995-9463-a6f4b28d0efc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DevTools\PathFindingTool">
+      <UniqueIdentifier>{b08d8084-ff0e-475f-93f8-d8e92e3f5d74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\PathFinding">
+      <UniqueIdentifier>{b2373940-d5ed-4ad1-81bc-47efa2cbf1cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{0ba6fe8c-4898-4ac1-87ec-d3da03e85fd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Units">
+      <UniqueIdentifier>{a7ecd3e8-69e7-433b-849c-b0f745162a6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Factions">
+      <UniqueIdentifier>{0fd0b35d-fb50-4623-a581-c949516e9dd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DevTools\UnitCreationTool">
+      <UniqueIdentifier>{388cba24-6881-42d3-9e93-7ff60e216d01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Towns">
+      <UniqueIdentifier>{57a50005-d0f4-4e84-a3fc-4df91c6ec3d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\UI\Buttons">
+      <UniqueIdentifier>{c96768e3-ca36-4f66-931d-70d32a37f11c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\UI\Text">
+      <UniqueIdentifier>{90af1c65-8e48-4a1e-99ec-00cb4e14b3b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Settings">
+      <UniqueIdentifier>{ad1b665c-39f6-4e87-a306-4d0e02fd68d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Towns\Data">
+      <UniqueIdentifier>{40e7130e-ae10-49f3-9a7a-d930123b3041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Player">
+      <UniqueIdentifier>{096c6d3a-7573-4c3b-bd50-8a618e1a6238}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Resources">
+      <UniqueIdentifier>{fa658d55-7401-4cda-8dce-d4848bcd36f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Hero">
+      <UniqueIdentifier>{2f501f96-611b-43a7-a50c-f1043d67f271}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\UI\Slider">
+      <UniqueIdentifier>{426a659b-b2dd-4c83-966e-294b0038f480}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\UI\ConfirmationWindow">
+      <UniqueIdentifier>{02badcd1-b47e-4a64-86e8-f6f1bf7cb6f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\UI\PopUps">
+      <UniqueIdentifier>{62812fbe-02cc-4a60-83b4-bf6a8991cc04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\UI\Bar">
+      <UniqueIdentifier>{eef0a377-c62d-41bc-b9e8-703b3266290f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DevTools\Map Creator">
+      <UniqueIdentifier>{b3ac6581-d526-4ed8-a910-c7dd03855d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\ViewManager">
+      <UniqueIdentifier>{2b813037-e6f9-4392-a4fe-60f7dd341c04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\MapObjects">
+      <UniqueIdentifier>{2d367ddf-4441-4b4e-8591-a60e70431917}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\UI\PlayScreenUI">
+      <UniqueIdentifier>{a60e6ec6-0a94-4758-a4a3-88354396edea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameSetUpScreen">
+      <UniqueIdentifier>{2437d069-505d-4733-b7cf-12afa848b512}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\UI\DropDownList">
+      <UniqueIdentifier>{4998d0b4-1a54-4cb7-89ae-ce85579ca30b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GenericClasses">
+      <UniqueIdentifier>{25f82411-e884-444b-92af-3576578b8f97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Data/Memory">
+      <UniqueIdentifier>{fd3f4904-7ae3-4177-9480-e929781083c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Assets">
+      <UniqueIdentifier>{8c93c6b3-e8e3-44e8-8fda-282f44359c33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\3rdParty">
+      <UniqueIdentifier>{1802d325-015e-47d5-a928-1ca290855771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Cursor">
+      <UniqueIdentifier>{3e03adfb-9acb-4258-881d-27b9c07500d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\TurnHandler">
+      <UniqueIdentifier>{87d0cbdf-d32b-4a8b-860a-a76ec5b6b1f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Map">
+      <UniqueIdentifier>{4c477a22-c095-4690-a613-af055af4d9bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Special UI Elements">
+      <UniqueIdentifier>{9d09c82d-6252-4b1f-baff-36ed439ddc0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Combat">
+      <UniqueIdentifier>{fe3ffa99-7a0b-447b-8c04-dca3cffba65d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\AI">
+      <UniqueIdentifier>{05c4d9ad-a87a-41ad-8ded-a039717af201}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="DevTools.cpp">
+      <Filter>DevTools</Filter>
+    </ClCompile>
+    <ClCompile Include="UIElement.cpp">
+      <Filter>Engine\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UITool.cpp">
+      <Filter>DevTools\UITool</Filter>
+    </ClCompile>
+    <ClCompile Include="PathFindingTool.cpp">
+      <Filter>DevTools\PathFindingTool</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Engine\PathFinding</Filter>
+    </ClCompile>
+    <ClCompile Include="TileHandler.cpp">
+      <Filter>Engine\PathFinding</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitData.cpp">
+      <Filter>Game\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="FactionData.cpp">
+      <Filter>Game\Factions</Filter>
+    </ClCompile>
+    <ClCompile Include="Unit.cpp">
+      <Filter>Game\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitCreationTool.cpp">
+      <Filter>DevTools\UnitCreationTool</Filter>
+    </ClCompile>
+    <ClCompile Include="Town.cpp">
+      <Filter>Game\Towns</Filter>
+    </ClCompile>
+    <ClCompile Include="TextInputBox.cpp">
+      <Filter>Engine\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="TickBox.cpp">
+      <Filter>Engine\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Engine\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicButton.cpp">
+      <Filter>Engine\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Engine\UI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBox.cpp">
+      <Filter>Engine\UI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="TextBoxTitle.cpp">
+      <Filter>Engine\UI\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="TownBuilding.cpp">
+      <Filter>Game\Towns</Filter>
+    </ClCompile>
+    <ClCompile Include="TownRecruitment.cpp">
+      <Filter>Game\Towns</Filter>
+    </ClCompile>
+    <ClCompile Include="FactionBuildingData.cpp">
+      <Filter>Game\Towns\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="TownBuildingData.cpp">
+      <Filter>Game\Towns\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="PurchaseUnitWindow.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="TownBuildingUpgrade.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitRecruitmentButton.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="TownData.cpp">
+      <Filter>Game\Towns\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources.cpp">
+      <Filter>Game\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>Game\Hero</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourcesBar.cpp">
+      <Filter>Game\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="SliderHandle.cpp">
+      <Filter>Engine\UI\Slider</Filter>
+    </ClCompile>
+    <ClCompile Include="Slider.cpp">
+      <Filter>Engine\UI\Slider</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfirmationWindow.cpp">
+      <Filter>Engine\UI\ConfirmationWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="PopUpTextBox.cpp">
+      <Filter>Engine\UI\PopUps</Filter>
+    </ClCompile>
+    <ClCompile Include="Bar.cpp">
+      <Filter>Engine\UI\Bar</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCreator.cpp">
+      <Filter>DevTools\Map Creator</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewManager.cpp">
+      <Filter>Engine\ViewManager</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitMapObject.cpp">
+      <Filter>Game\MapObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="TownMapObject.cpp">
+      <Filter>Game\MapObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceMineData.cpp">
+      <Filter>Game\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceMineMapObject.cpp">
+      <Filter>Game\MapObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceMapObject.cpp">
+      <Filter>Game\MapObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="LandscapeMapObject.cpp">
+      <Filter>Game\MapObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="IconButton.cpp">
+      <Filter>Engine\UI\Buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObject.cpp">
+      <Filter>Game\MapObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObjectEditorWindow.cpp">
+      <Filter>DevTools\Map Creator</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialBuildingMapObject.cpp">
+      <Filter>Game\MapObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="MapCreatorSaveWindow.cpp">
+      <Filter>DevTools\Map Creator</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerSettingsTable.cpp">
+      <Filter>Engine\UI\PlayScreenUI</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSetUpScreen.cpp">
+      <Filter>Game\GameSetUpScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="DropDownList.cpp">
+      <Filter>Engine\UI\DropDownList</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="MapQuadrantData.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroData.cpp">
+      <Filter>Game\Hero</Filter>
+    </ClCompile>
+    <ClCompile Include="CollidableObject.cpp">
+      <Filter>Engine\GenericClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveableObject.cpp">
+      <Filter>Engine\GenericClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="DataHandler.cpp">
+      <Filter>Engine\Data/Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="DataHandlerOLD.cpp">
+      <Filter>Engine\Data/Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Fonts.cpp">
+      <Filter>Engine\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="framework.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Textures.cpp">
+      <Filter>Engine\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="Cursor.cpp">
+      <Filter>Engine\Cursor</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHandler.cpp">
+      <Filter>Game\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="TurnHandler.cpp">
+      <Filter>Game\TurnHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="UIHandler.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="MapHandler.cpp">
+      <Filter>Game\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialBuildingInteractions.cpp">
+      <Filter>Game\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitCard.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitsPanel.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="TownTrading.cpp">
+      <Filter>Game\Towns</Filter>
+    </ClCompile>
+    <ClCompile Include="RecourceTradingButton.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="CombatHandler.cpp">
+      <Filter>Game\Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="CombatUnit.cpp">
+      <Filter>Game\Units</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTurnOrderBar.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedObject.cpp">
+      <Filter>Engine\GenericClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="CombatCursor.cpp">
+      <Filter>Game\Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitInformationCard.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="CombatEndPopUp.cpp">
+      <Filter>Game\Combat</Filter>
+    </ClCompile>
+    <ClCompile Include="LogsConsole.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="CombatAI.cpp">
+      <Filter>Game\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="IconButtonList.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="MapUI.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroPanel.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroStatsDisplay.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="MapAI.cpp">
+      <Filter>Game\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="MapAIPlayerData.cpp">
+      <Filter>Game\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="MapAIHeroData.cpp">
+      <Filter>Game\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroMovementFeedback.cpp">
+      <Filter>Game\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObjectsInformationBox.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEnd.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameStateEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalVariables.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Macros.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="DevTools.h">
+      <Filter>DevTools</Filter>
+    </ClInclude>
+    <ClInclude Include="DevToolsEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="UIElement.h">
+      <Filter>Engine\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UITool.h">
+      <Filter>DevTools\UITool</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFindingTool.h">
+      <Filter>DevTools\PathFindingTool</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>Engine\PathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="TileHandler.h">
+      <Filter>Engine\PathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="TilePropertiesEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitData.h">
+      <Filter>Game\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitDataEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitSpecialPropertyEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="FactionData.h">
+      <Filter>Game\Factions</Filter>
+    </ClInclude>
+    <ClInclude Include="Unit.h">
+      <Filter>Game\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantVariables.h">
+      <Filter>Miscellaneous</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitCreationTool.h">
+      <Filter>DevTools\UnitCreationTool</Filter>
+    </ClInclude>
+    <ClInclude Include="TextAlignmentEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Town.h">
+      <Filter>Game\Towns</Filter>
+    </ClInclude>
+    <ClInclude Include="TownEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="TownBuildingEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="UILayerEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="TextInputBox.h">
+      <Filter>Engine\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="TickBox.h">
+      <Filter>Engine\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Button.h">
+      <Filter>Engine\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicButton.h">
+      <Filter>Engine\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Engine\UI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBox.h">
+      <Filter>Engine\UI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBoxTitle.h">
+      <Filter>Engine\UI\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="TownBuilding.h">
+      <Filter>Game\Towns</Filter>
+    </ClInclude>
+    <ClInclude Include="TownRecruitment.h">
+      <Filter>Game\Towns</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitCreationSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="UIToolSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="DevToolsSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="TownSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="TownBuildingSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="FactionBuildingData.h">
+      <Filter>Game\Towns\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="TownBuildingData.h">
+      <Filter>Game\Towns\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="PurchaseUnitWindow.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="TownBuildingUpgrade.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitRecruitmentButton.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="TownData.h">
+      <Filter>Game\Towns\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="PurchaseUnitSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourcesEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources.h">
+      <Filter>Game\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>Game\Hero</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourcesBar.h">
+      <Filter>Game\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourcesBarSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="SliderHandle.h">
+      <Filter>Engine\UI\Slider</Filter>
+    </ClInclude>
+    <ClInclude Include="Slider.h">
+      <Filter>Engine\UI\Slider</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfirmationWindow.h">
+      <Filter>Engine\UI\ConfirmationWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="PopUpTextBox.h">
+      <Filter>Engine\UI\PopUps</Filter>
+    </ClInclude>
+    <ClInclude Include="Bar.h">
+      <Filter>Engine\UI\Bar</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCreator.h">
+      <Filter>DevTools\Map Creator</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCreatorSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCreatorEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="TownRecruitmentSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManager.h">
+      <Filter>Engine\ViewManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewManagerSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="TileDataEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitMapObject.h">
+      <Filter>Game\MapObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObjectsEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="TownMapObject.h">
+      <Filter>Game\MapObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceMineData.h">
+      <Filter>Game\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceMineMapObject.h">
+      <Filter>Game\MapObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceMapObject.h">
+      <Filter>Game\MapObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="LandscapeMapObject.h">
+      <Filter>Game\MapObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="LandscapeTypeEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="IconButton.h">
+      <Filter>Engine\UI\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObject.h">
+      <Filter>Game\MapObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObjectEditorWindow.h">
+      <Filter>DevTools\Map Creator</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObjectEditorSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObjectDataEnums.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecialBuildingMapObject.h">
+      <Filter>Game\MapObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecialBuildingEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCreatorSaveWindow.h">
+      <Filter>DevTools\Map Creator</Filter>
+    </ClInclude>
+    <ClInclude Include="MapCreatorSaveWindowSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSetUpScreen.h">
+      <Filter>Game\GameSetUpScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerSettingsTable.h">
+      <Filter>Engine\UI\PlayScreenUI</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerSettingsTableSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="DropDownList.h">
+      <Filter>Engine\UI\DropDownList</Filter>
+    </ClInclude>
+    <ClInclude Include="DropDownListSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSetUpScreenSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="MapHandlerSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroStatsEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="MapQuadrantData.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroData.h">
+      <Filter>Game\Hero</Filter>
+    </ClInclude>
+    <ClInclude Include="CollidableObject.h">
+      <Filter>Engine\GenericClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveableObject.h">
+      <Filter>Engine\GenericClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="DataHandler.h">
+      <Filter>Engine\Data/Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="DataHandlerOLD.h">
+      <Filter>Engine\Data/Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Fonts.h">
+      <Filter>Engine\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Textures.h">
+      <Filter>Engine\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="json.hpp">
+      <Filter>Engine\3rdParty</Filter>
+    </ClInclude>
+    <ClInclude Include="Cursor.h">
+      <Filter>Engine\Cursor</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHandler.h">
+      <Filter>Game\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnHandler.h">
+      <Filter>Game\TurnHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="UIHandler.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="MapHandler.h">
+      <Filter>Game\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecialBuildingInteractions.h">
+      <Filter>Game\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecialBuildingInteractionsSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitsPanel.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitCard.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="TownHeroesUnitsPanelSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="TownTrading.h">
+      <Filter>Game\Towns</Filter>
+    </ClInclude>
+    <ClInclude Include="RecourceTradingButton.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceTradingButtonSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="TownTradingSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="DataHandlerSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatHandler.h">
+      <Filter>Game\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatHandlerSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatUnit.h">
+      <Filter>Game\Units</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatUnitSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTurnOrderBar.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTurnOrderBarSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatHandlerButtonsEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimatedObject.h">
+      <Filter>Engine\GenericClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatCursor.h">
+      <Filter>Game\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatCursorEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitInformationCard.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitInformationCardSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatEndPopUp.h">
+      <Filter>Game\Combat</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatEndPopUpSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="LogsConsole.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatAI.h">
+      <Filter>Game\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="MapUI.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="IconButtonList.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="MapUISettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourcesPerTurnSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="MapUIButtonsEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroPanel.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroStatsDisplay.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroStatsDisplaySettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroPanelSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="MapAI.h">
+      <Filter>Game\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="MapAIPlayerData.h">
+      <Filter>Game\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="MapAIPriorityEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="MapAIHeroData.h">
+      <Filter>Game\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="MapAISettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroMovementFeedback.h">
+      <Filter>Game\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObjectsInformationBox.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatTypeEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEnd.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEndSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
