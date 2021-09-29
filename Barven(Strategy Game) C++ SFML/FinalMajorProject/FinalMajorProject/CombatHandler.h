@@ -254,6 +254,11 @@ public:
 	void endCombat();
 
 	//===========================================================================================
+	//Description: Awards the winner with experience based on the enemies defeated
+	//===========================================================================================
+	void awardExperienceToTheWinner();
+
+	//===========================================================================================
 	//Description: Updates participating armies after the combat is over
 	//===========================================================================================
 	void updateCombatantsArmiesAfterCombat();

@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 02/09/2021
+//Last Accessed: 29/09/2021
 
 #ifndef HEROPANEL_H
 #define HEROPANEL_H
@@ -9,7 +9,9 @@
 #include "HeroPanelSettings.h"
 #include "TextBox.h"
 #include "BasicButton.h"
+#include "IconButton.h"
 #include "Bar.h"
+#include "UpgradeHeroStatsPanel.h"
 
 
 //===========================================================================================
@@ -27,9 +29,12 @@ private:
 	HeroStatsDisplay m_heroStatsDisplay;
 	UnitsPanel m_unitsPanel;
 	BasicButton m_closeButton;
+	IconButton m_addStatsButton;
+	UpgradeHeroStatsPanel m_upgradeHeroStatsPanel;
 
 	bool m_isActive;
 	bool m_canHeroInteractWithUnits;
+	bool m_canHeroUpgradeStats;
 	Hero* m_pSelectedHero;
 
 public:
@@ -52,6 +57,11 @@ public:
 	//Description: Sets hero data and updates appropriate elements
 	//===========================================================================================
 	void setHeroData(Hero* hero, const bool canHeroInteractWithUnits);
+
+	//===========================================================================================
+	//Description: Sets heros stats
+	//===========================================================================================
+	void setHeroStats();
 
 	//===========================================================================================
 	//Description: Updates unit panel and checks if player closed the panel

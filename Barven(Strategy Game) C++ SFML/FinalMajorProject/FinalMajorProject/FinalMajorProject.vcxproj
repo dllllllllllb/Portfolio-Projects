@@ -241,6 +241,7 @@
     <ClCompile Include="UnitMapObject.cpp" />
     <ClCompile Include="UnitRecruitmentButton.cpp" />
     <ClCompile Include="UnitTurnOrderBar.cpp" />
+    <ClCompile Include="UpgradeHeroStatsPanel.cpp" />
     <ClCompile Include="ViewManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -393,6 +394,8 @@
     <ClInclude Include="UnitSpecialPropertyEnum.h" />
     <ClInclude Include="UnitTurnOrderBar.h" />
     <ClInclude Include="UnitTurnOrderBarSettings.h" />
+    <ClInclude Include="UpgradeHeroStatsPanel.h" />
+    <ClInclude Include="UpgradeHeroStatsPanelSetiings.h" />
     <ClInclude Include="ViewManager.h" />
     <ClInclude Include="ViewManagerSettings.h" />
   </ItemGroup>

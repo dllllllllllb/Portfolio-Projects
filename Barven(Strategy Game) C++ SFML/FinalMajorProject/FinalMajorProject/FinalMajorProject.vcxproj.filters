@@ -406,6 +406,9 @@
     <ClCompile Include="GameEnd.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="UpgradeHeroStatsPanel.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameStateEnum.h">
@@ -859,6 +862,12 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="GameEndSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="UpgradeHeroStatsPanel.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="UpgradeHeroStatsPanelSetiings.h">
       <Filter>Settings</Filter>
     </ClInclude>
   </ItemGroup>

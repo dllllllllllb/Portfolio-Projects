@@ -43,6 +43,7 @@ void Textures::load()
 	ASSERT(m_mapUIIconButtons[2].loadFromFile("Assets/Sprites/UI/MapUISettingsIcon.png"));
 	ASSERT(m_mapUIIconButtons[3].loadFromFile("Assets/Sprites/UI/MapUIExitIcon.png"));
 	ASSERT(m_defaultHeroButtonIcon.loadFromFile("Assets/Sprites/UI/defaultHeroButtonIcon.png"));
+	ASSERT(m_plusButton.loadFromFile("Assets/Sprites/UI/plusButton.png"));
 
 
 	//Resource Map Textures

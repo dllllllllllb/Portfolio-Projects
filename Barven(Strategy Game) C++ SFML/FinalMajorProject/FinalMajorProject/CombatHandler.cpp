@@ -1340,6 +1340,32 @@ void CombatHandler::endCombat()
 	m_functionToCallAfterCombatConcluded(m_combatType, m_didAttackerWin);
 }
 
+void CombatHandler::awardExperienceToTheWinner()
+{
+	int experienceToAward = 0;
+	if (m_didAttackerWin || m_combatType == CombatTypeEnum::playerVsPlayer)
+	{
+		for (auto& unit : m_combatUnits)
+		{
+			if (unit->getIsAttacker() != m_didAttackerWin) //Checks if unit is the opposite side of the winner
+			{
+				experienceToAward += unit->getBaseUnitData()->getIntData(UnitDataEnum::AIValue) * unit->getNumOfUnits();
+			}
+		}
+
+		if (m_didAttackerWin)
+		{
+			m_pAttackerHero->addHeroExperience(experienceToAward);
+		}
+		else
+		{
+			m_pDefenderHero->addHeroExperience(experienceToAward);
+		}
+	}
+
+
+}
+
 void CombatHandler::updateCombatantsArmiesAfterCombat()
 {
 	int numOfAttackerUnits = 0;
@@ -1369,6 +1395,7 @@ void CombatHandler::updateCombatantsArmiesAfterCombat()
 	}
 
 
+	//Update Defender
 	switch (m_combatType)
 	{
 	case CombatTypeEnum::playerVsMapUnit:

@@ -11,8 +11,11 @@ HeroPanel::HeroPanel(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFon
 	m_heroStatsDisplay(rWindow, rTextures, rFonts),
 	m_unitsPanel(rWindow, &rTextures, &rFonts),
 	m_closeButton(&rTextures, false),
+	m_addStatsButton(rWindow, &rTextures, true),
+	m_upgradeHeroStatsPanel(rWindow, rTextures, rFonts),
 	m_isActive(false),
 	m_canHeroInteractWithUnits(false),
+	m_canHeroUpgradeStats(false),
 	m_pSelectedHero(nullptr)
 {
 
@@ -47,6 +50,10 @@ void HeroPanel::setUpHeroPanel()
 	int closeButtonHeight = m_closeButton.getGlobalBounds().height;
 	m_closeButton.sf::Sprite::setPosition(posX, posY + settings::c_panelHeight * 0.5f - closeButtonHeight);
 	m_closeButton.CollidableObject::setPosition(posX, posY + settings::c_panelHeight * 0.5f - closeButtonHeight);
+
+	//Add stats button
+	m_addStatsButton.setUpAndResizeToSprite(posX + settings::c_panelWidth * 0.5f - m_textures.m_plusButton.getSize().x, m_heroLevel.UIElement::getPosition().y, m_textures.m_plusButton);
+	m_upgradeHeroStatsPanel.setUpUpgradeHeroStatsPanel();
 }
 
 void HeroPanel::setHeroData(Hero* hero, const bool canHeroInteractWithUnits)
@@ -57,16 +64,24 @@ void HeroPanel::setHeroData(Hero* hero, const bool canHeroInteractWithUnits)
 	//Set hero level
 	m_heroLevel.setTextAndUpdate("Level: " + std::to_string(hero->getHeroLevel()));
 
-	//Set Hero stats
-	for (int i = 0; i < HeroStatsDisplaySettings::c_numOfSkills; i++)
-	{
-		m_heroStatsDisplay.updateHeroStat(i, hero->getHeroStat(static_cast<HeroStatsEnum>(i)));
-	}
+	setHeroStats();
 
 	//Set units
 	m_unitsPanel.setUnitCards(hero->getVectorOfUnits());
 
+	//Check if hero can upgrade their stats
+	m_canHeroUpgradeStats = hero->getStatUpgradePoints() > 0;
+
 	toggleIsActive();
+}
+
+void HeroPanel::setHeroStats()
+{
+	//Set Hero stats
+	for (int i = 0; i < HeroStatsDisplaySettings::c_numOfSkills; i++)
+	{
+		m_heroStatsDisplay.updateHeroStat(i, m_pSelectedHero->getHeroStat(static_cast<HeroStatsEnum>(i)));
+	}
 }
 
 void HeroPanel::update(const sf::Vector2f& mousePosition)
@@ -77,11 +92,29 @@ void HeroPanel::update(const sf::Vector2f& mousePosition)
 		{
 			m_unitsPanel.update(mousePosition);
 		}
-		
-		if (Global::g_isLMBPressed && m_closeButton.collisionCheck(mousePosition))
+
+		if (Global::g_isLMBPressed)
 		{
-			Global::objectPressed();
-			toggleIsActive();
+			if (m_canHeroUpgradeStats)
+			{
+				if (m_addStatsButton.collisionCheck(mousePosition))
+				{
+					Global::objectPressed();
+					m_upgradeHeroStatsPanel.setHeroAndUpdatePanel(*m_pSelectedHero);
+					m_upgradeHeroStatsPanel.toggleIsActive();
+				}
+			}
+
+			if (m_closeButton.collisionCheck(mousePosition))
+			{
+				Global::objectPressed();
+				toggleIsActive();
+			}
+		}
+		if (m_upgradeHeroStatsPanel.update(mousePosition))
+		{
+			setHeroStats();
+			m_canHeroUpgradeStats = m_pSelectedHero->getStatUpgradePoints() > 0;
 		}
 	}
 }
@@ -105,7 +138,15 @@ void HeroPanel::draw()
 		m_heroStatsDisplay.draw();
 		m_background.drawUIBorder();
 		m_unitsPanel.draw();
+
+		if (m_canHeroUpgradeStats)
+		{
+			m_addStatsButton.draw();
+		}
+
 		m_window.draw(m_closeButton);
+
+		m_upgradeHeroStatsPanel.draw();
 	}
 }
 

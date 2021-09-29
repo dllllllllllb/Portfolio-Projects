@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 30/08/2021
+//Last Accessed: 29/09/2021
 
 #ifndef HERO_H
 #define HERO_H
@@ -27,8 +27,13 @@ private:
 	//Hero Movement Variables
 	int m_currentMovementPoints;
 
-	//Hero Stats
+	//Hero Level
 	int m_heroLevel;
+	int m_currentExperience;
+	int m_experienceRequiredToLevelUp;
+
+	//Hero Stats
+	int m_statUpgradePoints;
 	int m_statAttack;
 	int m_statDefence;
 	int m_statMagicPower;
@@ -100,6 +105,26 @@ public:
 	//Description: Return heros level
 	//===========================================================================================
 	const int& getHeroLevel() const;
+
+	//===========================================================================================
+	//Description: Decrement upgrade points
+	//===========================================================================================
+	void decrementStatUpgradePoints();
+
+	//===========================================================================================
+	//Description: Returns number of upgrade points
+	//===========================================================================================
+	const int& getStatUpgradePoints() const;
+
+	//===========================================================================================
+	//Description: Adds heroes experience
+	//===========================================================================================
+	void addHeroExperience(const int& experience);
+
+	//===========================================================================================
+	//Description: Update required experience points to level up
+	//===========================================================================================
+	void updateExperienceRequiredToLevelUp();
 
 	//===========================================================================================
 	//Description: Decrement current movement points

@@ -20,6 +20,10 @@ ViewManager::ViewManager(sf::RenderWindow& rWindow, sf::Mouse& rMouse) :
 	setWindowBoundaries();
 }
 
+ViewManager::~ViewManager()
+{
+}
+
 void ViewManager::setWindowBoundaries()
 {
 	m_windowWidth = m_window.getSize().x - 5;
@@ -182,9 +186,4 @@ void ViewManager::checkMouseDirection()
 	{
 		m_verticalDireciton = DirectionEnum::none;
 	}
-
-}
-
-ViewManager::~ViewManager()
-{
 }

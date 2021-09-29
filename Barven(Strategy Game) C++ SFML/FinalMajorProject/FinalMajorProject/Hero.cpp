@@ -8,6 +8,9 @@ Hero::Hero() :
 	m_currentNumberOfUnits(0),
 	m_currentMovementPoints(settings::c_maxMovementRange),
 	m_heroLevel(1),
+	m_currentExperience(0),
+	m_experienceRequiredToLevelUp(settings::c_baseExperienceRequirementForLevelUp),
+	m_statUpgradePoints(0),
 	m_statAttack(1),
 	m_statDefence(1),
 	m_statMagicPower(1),
@@ -102,11 +105,42 @@ void Hero::updateUnitsStats()
 void Hero::incrementHeroLevel()
 {
 	m_heroLevel++;
+	m_statUpgradePoints++;
+	m_currentExperience -= m_experienceRequiredToLevelUp;
+	updateExperienceRequiredToLevelUp();
 }
 
 const int& Hero::getHeroLevel() const
 {
 	return m_heroLevel;
+}
+
+void Hero::decrementStatUpgradePoints()
+{
+	m_statUpgradePoints--;
+}
+
+const int& Hero::getStatUpgradePoints() const
+{
+	return m_statUpgradePoints;
+}
+
+void Hero::addHeroExperience(const int& experience)
+{
+	//Experience gained from defeated enemies is determined by their AIValue, to keep numbers smaller, experience gained is 
+	// is multiplied by a fraction defined in HeroSettings.h
+	m_currentExperience += experience * settings::c_experienceGainedMultiplier;
+
+	while (m_currentExperience > m_experienceRequiredToLevelUp)
+	{
+		incrementHeroLevel();
+	}
+}
+
+void Hero::updateExperienceRequiredToLevelUp()
+{
+	m_experienceRequiredToLevelUp += settings::c_baseExperienceRequirementForLevelUp;
+	m_experienceRequiredToLevelUp *= settings::c_experienceRequiredMultiplier;
 }
 
 void Hero::decrementMovementPoints(const int& decrementValue)
