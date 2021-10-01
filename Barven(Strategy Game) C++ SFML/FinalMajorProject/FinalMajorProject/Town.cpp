@@ -48,6 +48,7 @@ void Town::initialize()
 	m_visitingHeroUnitsPannel.setUpPanel(settings::c_unitPanelPosition + m_townsUnitsPannel.getUnitPanelWidth(), m_window.getView().getCenter().y, true);
 
 	m_recruitment.initialize();
+	m_recruitment.setFunctionToCallAfterPurchasingAHero(std::bind(&Town::setVisitingHeroData, this, std::placeholders::_1));
 
 	m_confirmationWindow.reposition();
 
@@ -78,19 +79,20 @@ void Town::setTownData(const int& factionIndex, TownData& townData, FactionBuild
 	m_townEnum = TownEnum::townCentre;
 	Global::g_UILayer = UILayerEnum::town;
 	Global::toggleUpdateGame();
+
 	if (isHeroVisiting)
 	{
-		m_pVisitingHero = &player.getSelectedHero();
+		setVisitingHeroData(&player.getSelectedHero());
 	}
 	toggleIsTownActive();
 	m_visitingHeroUnitsPannel.setIsUnitCardSelected(false);
-	m_isHeroVisiting = isHeroVisiting;
 
 	for (int i = 0; i < c_numOfUnitsPerFaction; i++)
 	{
 		m_recruitment.setUnitDataPointer(i, townData.getUnitData(i));
 	}
 	m_recruitment.setPlayerSpecificData(&player, &townData, factionIndex);
+	m_recruitment.setIsHeroInTown(m_isHeroVisiting);
 	m_recruitment.updateRecruitmentButtonsNameAndIcons();
 	m_recruitment.setDefaultPurchaseWindowContent();
 
@@ -103,17 +105,20 @@ void Town::setTownData(const int& factionIndex, TownData& townData, FactionBuild
 
 	m_townsUnitsPannel.setUnitCards(townData.getVectorOfUnitsStationedInsideTheTown());
 
-	if (m_isHeroVisiting)
-	{
-		m_visitingHeroUnitsPannel.setUnitCards(player.getSelectedHero().getVectorOfUnits());
-	}
-	else
+	if (!m_isHeroVisiting)
 	{
 		m_visitingHeroUnitsPannel.resetUnitCards();
 		m_visitingHeroUnitsPannel.resetSelectedIndexes();
 	}
 
 	m_townTrading.setResourcesPointer(&player.getResources());
+}
+
+void Town::setVisitingHeroData(Hero* hero)
+{
+	m_isHeroVisiting = true;
+	m_pVisitingHero = hero;
+	m_visitingHeroUnitsPannel.setUnitCards(hero->getVectorOfUnits());
 }
 
 void Town::reposition()

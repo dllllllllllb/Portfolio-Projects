@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 30/08/2021
+//Last Accessed: 01/10/2021
 
 #ifndef TOWNDATA_H
 #define TOWNDATA_H
@@ -15,6 +15,8 @@
 class TownData
 {
 private:
+	int m_occupiedTileIndex;
+	sf::Vector2f m_townMapPosition;
 	UnitData* m_unitData[c_numOfUnitsPerFaction];
 	TownBuildingData m_townBuildingData;
 	std::vector<int> m_availableUnitsToRecruit;
@@ -70,6 +72,21 @@ public:
 	//Description: Updates available units to recruit based on purchased buildings
 	//===========================================================================================
 	void addWeeklyUnitsToRecruit();
+
+	//===========================================================================================
+	//Description: Sets data relevant to the map
+	//===========================================================================================
+	void setMapData(const int& occupiedTileIndex, const sf::Vector2f& townPosition);
+
+	//===========================================================================================
+	//Description: Returns tile index occupied by the town
+	//===========================================================================================
+	const int& getOccupiedTileIndex() const;
+
+	//===========================================================================================
+	//Description: Returns towns map position
+	//===========================================================================================
+	const sf::Vector2f& getTownMapPosition() const;
 };
 
 #endif // !TOWNDATA_H

@@ -21,6 +21,8 @@ DevTools::DevTools(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts
 	{
 		m_buttons.push_back(std::unique_ptr<Button>(new Button(rWindow, pTextures, pFonts)));
 	}
+	m_player.setDataHandlerPointer(pDataHandler);
+	m_player.setFunctionToCallWhenHeroArrivesAtDestination(std::bind(&DevTools::drawDevTools, this));
 }
 
 DevTools::~DevTools()
@@ -30,7 +32,7 @@ DevTools::~DevTools()
 void DevTools::initialize()
 {
 	setUpButtons();
-	m_player.makeNewHero();
+	m_player.makeNewHero(sf::Vector2f(0,0), 0, false);
 	m_UITool.initialize();
 	m_pathFindingTool.initialize();
 	m_unitCreationTool.initialize();

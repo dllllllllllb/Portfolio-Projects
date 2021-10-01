@@ -94,6 +94,9 @@ void MapHandler::loadTheMap()
 
 				//Make players
 				m_playerHandler.makeNewPlayer(factionID);
+				m_playerHandler.getPlayer(i).setDataHandlerPointer(m_pDataHandler);
+				m_playerHandler.getPlayer(i).setFunctionToCallWhenHeroArrivesAtDestination(std::bind(&MapHandler::objectInteraction, this));
+				m_playerHandler.getPlayer(i).setFunctionToUpdateHeroesMapUI(std::bind(&MapHandler::updateHeroesMapUI, this));
 
 
 				m_playerHandler.getPlayer(i).setIsPlayerAI(m_pGameSetUpScreen->getIfPlayerIsAI(i));
@@ -117,6 +120,7 @@ void MapHandler::loadTheMap()
 		for (int i = 0; i < m_numOfTownMapObjects; i++)
 		{
 			m_townData.push_back(std::unique_ptr<TownData>(new TownData()));
+			m_townData[i]->setMapData(m_townMapObjects[i]->getTileIndex(), m_townMapObjects[i]->getPosition());
 			for (int k = 0; k < c_numOfUnitsPerFaction; k++) //Set Unit Data
 			{
 				m_townData[i]->setUnitData(k, m_pDataHandler->getFactionData(m_townMapObjects[i]->getFactionIndex()).getUnitData(k));
@@ -238,11 +242,7 @@ void MapHandler::loadTheMap()
 			int factionIndex = m_playerHandler.getPlayer(i).getFactionIndex();
 
 			//Create hero and set data
-			m_playerHandler.getPlayer(i).makeNewHero();
-			m_playerHandler.getPlayer(i).getHero(0).setUpHero(m_pDataHandler->getFactionData(factionIndex).getHeroData().getHeroTexture(), m_townMapObjects[i]->getPosition());
-			m_playerHandler.getPlayer(i).getHero(0).setOccupiedTileIndex(m_townMapObjects[i]->getTileIndex());
-			m_playerHandler.getPlayer(i).getHero(0).setFunctionToCallWhenObjectArrivesAtDestination(std::bind(&MapHandler::objectInteraction, this));
-			m_playerHandler.getPlayer(i).getHero(0).setPlayerIndex(i);
+			m_playerHandler.getPlayer(i).makeNewHero(m_townMapObjects[i]->getPosition(), m_townMapObjects[i]->getTileIndex(), false);
 
 			//Add startting units
 			int numberOfUnitsToAdd = 0;

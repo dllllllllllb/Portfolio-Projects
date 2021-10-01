@@ -1,14 +1,17 @@
 //Author: Maciej Dowbor
-//Last Accessed: 30/08/2021
+//Last Accessed: 01/10/2021
 
 #ifndef PLAYER_H
 #define PLAYER_H
+
+#include <functional>
 
 #include "Hero.h"
 #include "Resources.h"
 #include "SFML/Graphics/RenderWindow.hpp"
 #include "TownData.h"
 #include "ResourcesPerTurnSettings.h"
+#include "DataHandler.h"
 
 
 //===========================================================================================
@@ -25,7 +28,9 @@ private:
 	int m_playerIndex;
 	int m_selectedHeroIndex;
 	bool m_isPlayerAI;
-
+	DataHandler* m_pDataHandler;
+	std::function<void()> m_functionToCallWhenHeroArrivesAtDestination;
+	std::function<void()> m_updateHeroesMapUI;
 	std::vector<std::unique_ptr<Hero>> m_heroes;
 
 	//Owned Towns
@@ -168,7 +173,23 @@ public:
 	//===========================================================================================
 	//Description: Creates a new hero
 	//===========================================================================================
-	void makeNewHero();
+	void makeNewHero(const sf::Vector2f& startPosition, const int& occupiedTileIndex, const bool giveHeroBasicUnit);
+
+	//===========================================================================================
+	//Description: Sets a pointer to data handler
+	//===========================================================================================
+	void setDataHandlerPointer(DataHandler* pDataHandler);
+
+	//===========================================================================================
+	//Description: Sets a function to call when a hero arrives at their destination in map handler
+	//===========================================================================================
+	void setFunctionToCallWhenHeroArrivesAtDestination(std::function<void()> function);
+
+	//===========================================================================================
+	//Description: Sets a function to call when you want to update map ui related to heroes,
+	//			   called when a new hero is made
+	//===========================================================================================
+	void setFunctionToUpdateHeroesMapUI(std::function<void()> function);
 
 	//===========================================================================================
 	//Description: Returns if player has at least one hero

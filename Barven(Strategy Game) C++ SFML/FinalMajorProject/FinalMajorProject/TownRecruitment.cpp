@@ -1,6 +1,7 @@
 #include "TownRecruitment.h"
 
 namespace settings = TownRecruitmentSettings;
+
 TownRecruitment::TownRecruitment(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, ConfirmationWindow* pConfirmationWindow, UnitsPanel& rTownHeroesUnitsPanel, ResourcesBar& rResourcesBar) :
 	m_window(rWindow),
 	m_pTextures(pTextures),
@@ -9,10 +10,12 @@ TownRecruitment::TownRecruitment(sf::RenderWindow& rWindow, Textures* pTextures,
 	m_resourcesBar(rResourcesBar),
 	m_purchaseUnitWindow(rWindow, pTextures, pFonts, pConfirmationWindow),
 	m_purchaseErrorPopUpWindow(rWindow, pTextures, pFonts),
+	m_purchaseHeroButton(rWindow, pTextures, pFonts),
 	m_pPlayer(nullptr),
 	m_pTownData(nullptr),
 	m_selectedUnitIndex(0),
-	m_purchaseErrorPopUpTimer(0)
+	m_purchaseErrorPopUpTimer(0),
+	m_isHeroInTown(false)
 {
 	for (int i = 0; i < c_numOfUnitsPerFaction; i++)
 	{
@@ -53,6 +56,12 @@ void TownRecruitment::initialize()
 		m_recruitButtons[i]->setUpButton(i, "Unit Name", m_pTextures->m_randomUnitIcon, centre.x + settings::c_recruitButtonXCentreOffset, firstYPos + (TownRecruitmentSettings::c_recruitButtonSpaceing * i));
 	}
 	m_purchaseUnitWindow.setUpPurchaseWindow();
+
+	m_purchaseHeroButton.setPosition(centre.x + settings::c_purchaseHeroButtonXOffset, centre.y - settings::c_purchaseHeroButtonYOffset);
+	m_purchaseHeroButton.setUpUIBorder(settings::c_recruitButtonWidth, settings::c_recruitButtonHeight);
+	m_purchaseHeroButton.setCollisionBounds(settings::c_recruitButtonWidth, settings::c_recruitButtonHeight);
+	m_purchaseHeroButton.setHasMultipleLines(true);
+	m_purchaseHeroButton.setUpText(settings::c_purchaseHeroButtonText, settings::c_purchaseHeroButtonCharSize, TextAlignmentEnum::middleHorizontal, TextAlignmentEnum::middleVertical);
 }
 
 void TownRecruitment::updateRecruitmentButtonsNameAndIcons()
@@ -160,6 +169,17 @@ void TownRecruitment::purchaseUnits()
 	}
 }
 
+void TownRecruitment::purchaseNewHero()
+{
+	if (m_pPlayer->getResources().getResource(ResourcesEnum::gold) >= settings::c_purchaseHeroPrice)
+	{
+		m_pPlayer->makeNewHero(m_pTownData->getTownMapPosition(), m_pTownData->getOccupiedTileIndex(), true);
+		m_pPlayer->getResources().incrementResourceValue(ResourcesEnum::gold, -settings::c_purchaseHeroPrice);
+		m_functionToCallAfterPurchasingHero(&m_pPlayer->getHero(m_pPlayer->getVectorOfOwnedHeroes().size() - 1));
+		m_isHeroInTown = true;
+	}
+}
+
 void TownRecruitment::refreshPurchaseWindow()
 {
 	m_purchaseUnitWindow.setWindowContent(m_unitsStationedInsideTheTown[m_selectedUnitIndex], m_pTownData->getAvailableUnitsToRecruit()[m_selectedUnitIndex]);
@@ -201,11 +221,28 @@ bool TownRecruitment::update(const sf::Vector2f& mousePosition, const float& del
 		}
 	}
 
+	if (!m_isHeroInTown && m_purchaseHeroButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	{
+		toggleButtonPress = true;
+		Global::objectPressed();
+		purchaseNewHero();
+	}
+
 	updatePurchaseErrorPopUpWindow(deltaTime);
 
 	toggleButtonPress = m_purchaseUnitWindow.update(mousePosition);
 
 	return toggleButtonPress;
+}
+
+void TownRecruitment::setIsHeroInTown(const bool state)
+{
+	m_isHeroInTown = state;
+}
+
+void TownRecruitment::setFunctionToCallAfterPurchasingAHero(std::function<void(Hero*)> function)
+{
+	m_functionToCallAfterPurchasingHero = function;
 }
 
 void TownRecruitment::draw()
@@ -221,4 +258,6 @@ void TownRecruitment::draw()
 	{
 		m_purchaseErrorPopUpWindow.drawPopUpBox();
 	}
+
+	m_purchaseHeroButton.draw();
 }

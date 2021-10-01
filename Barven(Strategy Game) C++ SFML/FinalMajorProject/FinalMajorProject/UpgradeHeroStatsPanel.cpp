@@ -66,6 +66,7 @@ void UpgradeHeroStatsPanel::updatePanelText()
 const bool UpgradeHeroStatsPanel::update(const sf::Vector2f& mousePosition)
 {
 	bool wasStatUpgraded = false;
+
 	if (m_isActive)
 	{
 		if (Global::g_isLMBPressed)

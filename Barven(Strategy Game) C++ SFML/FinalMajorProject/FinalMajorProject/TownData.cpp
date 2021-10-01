@@ -1,6 +1,7 @@
 #include "TownData.h"
 
-TownData::TownData()
+TownData::TownData() :
+	m_occupiedTileIndex(0)
 {
 	//Set base data for unit recruitment
 	for (int i = 0; i < c_numOfUnitsPerFaction; i++)
@@ -69,4 +70,20 @@ void TownData::addWeeklyUnitsToRecruit()
 			m_availableUnitsToRecruit[i] += static_cast<int>(m_unitData[i]->getIntData(UnitDataEnum::growthPerWeek) * availableUnitsMultiplier);
 		}
 	}
+}
+
+void TownData::setMapData(const int& occupiedTileIndex, const sf::Vector2f& townPosition)
+{
+	m_occupiedTileIndex = occupiedTileIndex;
+	m_townMapPosition = townPosition;
+}
+
+const int& TownData::getOccupiedTileIndex() const
+{
+	return m_occupiedTileIndex;
+}
+
+const sf::Vector2f& TownData::getTownMapPosition() const
+{
+	return m_townMapPosition;
 }

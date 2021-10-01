@@ -337,12 +337,6 @@
     <ClCompile Include="SpecialBuildingInteractions.cpp">
       <Filter>Game\Map</Filter>
     </ClCompile>
-    <ClCompile Include="UnitCard.cpp">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClCompile>
-    <ClCompile Include="UnitsPanel.cpp">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClCompile>
     <ClCompile Include="TownTrading.cpp">
       <Filter>Game\Towns</Filter>
     </ClCompile>
@@ -364,9 +358,6 @@
     <ClCompile Include="CombatCursor.cpp">
       <Filter>Game\Combat</Filter>
     </ClCompile>
-    <ClCompile Include="UnitInformationCard.cpp">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClCompile>
     <ClCompile Include="CombatEndPopUp.cpp">
       <Filter>Game\Combat</Filter>
     </ClCompile>
@@ -377,15 +368,6 @@
       <Filter>Game\AI</Filter>
     </ClCompile>
     <ClCompile Include="IconButtonList.cpp">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClCompile>
-    <ClCompile Include="MapUI.cpp">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClCompile>
-    <ClCompile Include="HeroPanel.cpp">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClCompile>
-    <ClCompile Include="HeroStatsDisplay.cpp">
       <Filter>Game\Special UI Elements</Filter>
     </ClCompile>
     <ClCompile Include="MapAI.cpp">
@@ -407,6 +389,24 @@
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="UpgradeHeroStatsPanel.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="MapUI.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroPanel.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="HeroStatsDisplay.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitInformationCard.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitsPanel.cpp">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitCard.cpp">
       <Filter>Game\Special UI Elements</Filter>
     </ClCompile>
   </ItemGroup>
@@ -729,12 +729,6 @@
     <ClInclude Include="SpecialBuildingInteractionsSettings.h">
       <Filter>Settings</Filter>
     </ClInclude>
-    <ClInclude Include="UnitsPanel.h">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClInclude>
-    <ClInclude Include="UnitCard.h">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClInclude>
     <ClInclude Include="TownHeroesUnitsPanelSettings.h">
       <Filter>Settings</Filter>
     </ClInclude>
@@ -783,9 +777,6 @@
     <ClInclude Include="CombatCursorEnum.h">
       <Filter>Enums</Filter>
     </ClInclude>
-    <ClInclude Include="UnitInformationCard.h">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClInclude>
     <ClInclude Include="UnitInformationCardSettings.h">
       <Filter>Settings</Filter>
     </ClInclude>
@@ -801,9 +792,6 @@
     <ClInclude Include="CombatAI.h">
       <Filter>Game\AI</Filter>
     </ClInclude>
-    <ClInclude Include="MapUI.h">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClInclude>
     <ClInclude Include="IconButtonList.h">
       <Filter>Game\Special UI Elements</Filter>
     </ClInclude>
@@ -815,12 +803,6 @@
     </ClInclude>
     <ClInclude Include="MapUIButtonsEnum.h">
       <Filter>Enums</Filter>
-    </ClInclude>
-    <ClInclude Include="HeroPanel.h">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClInclude>
-    <ClInclude Include="HeroStatsDisplay.h">
-      <Filter>Game\Special UI Elements</Filter>
     </ClInclude>
     <ClInclude Include="HeroStatsDisplaySettings.h">
       <Filter>Settings</Filter>
@@ -869,6 +851,24 @@
     </ClInclude>
     <ClInclude Include="UpgradeHeroStatsPanelSetiings.h">
       <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="MapUI.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroStatsDisplay.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="HeroPanel.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitsPanel.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitInformationCard.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitCard.h">
+      <Filter>Game\Special UI Elements</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

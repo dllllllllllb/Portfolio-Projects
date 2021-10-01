@@ -7,6 +7,7 @@ Player::Player(sf::RenderWindow& rWindow) :
 	m_playerIndex(0),
 	m_selectedHeroIndex(0),
 	m_isPlayerAI(false),
+	m_pDataHandler(nullptr),
 	m_numOfOwnedGoldMines(0),
 	m_numOfOwnedWoodMines(0),
 	m_numOfOwnedStoneMines(0),
@@ -214,9 +215,37 @@ const bool Player::getIsPlayerAI() const
 	return m_isPlayerAI;
 }
 
-void Player::makeNewHero()
+void Player::makeNewHero(const sf::Vector2f& startPosition, const int& occupiedTileIndex, const bool giveHeroBasicUnit)
 {
 	m_heroes.push_back(std::unique_ptr<Hero>(new Hero()));
+	m_heroes[m_heroes.size() - 1]->setPlayerIndex(m_playerIndex);
+	m_heroes[m_heroes.size() - 1]->setUpHero(m_pDataHandler->getFactionData(m_factionIndex).getHeroData().getHeroTexture(), startPosition);
+	m_heroes[m_heroes.size() - 1]->setOccupiedTileIndex(occupiedTileIndex);
+	m_heroes[m_heroes.size() - 1]->setFunctionToCallWhenObjectArrivesAtDestination(m_functionToCallWhenHeroArrivesAtDestination);
+
+	if (giveHeroBasicUnit)
+	{
+		m_heroes[m_heroes.size() - 1]->addUnit(0, &m_pDataHandler->getFactionData(m_factionIndex).getUnitData(0));
+		m_heroes[m_heroes.size() - 1]->getUnit(0).incrementNumOfUnits(1);
+		m_heroes[m_heroes.size() - 1]->getUnit(0).initializeUnitSpecificData();
+		m_heroes[m_heroes.size() - 1]->updateUnitsStats();
+		m_updateHeroesMapUI();
+	}
+}
+
+void Player::setDataHandlerPointer(DataHandler* pDataHandler)
+{
+	m_pDataHandler = pDataHandler;
+}
+
+void Player::setFunctionToCallWhenHeroArrivesAtDestination(std::function<void()> function)
+{
+	m_functionToCallWhenHeroArrivesAtDestination = function;
+}
+
+void Player::setFunctionToUpdateHeroesMapUI(std::function<void()> function)
+{
+	m_updateHeroesMapUI = function;
 }
 
 const bool Player::getDoesPlayerHaveHeroes()

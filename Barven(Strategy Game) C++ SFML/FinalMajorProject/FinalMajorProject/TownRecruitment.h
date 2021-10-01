@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 30/08/2021
+//Last Accessed: 01/10/2021
 
 #ifndef TOWNRECRUITMENT_H
 #define TOWNRECRUITMENT_H
@@ -34,13 +34,18 @@ private:
 
 	PopUpTextBox m_purchaseErrorPopUpWindow;
 
+	Button m_purchaseHeroButton;
+
 	UnitData* m_unitsStationedInsideTheTown[c_numOfUnitsPerFaction];
 
 	Player* m_pPlayer;
 	TownData* m_pTownData;
 
+	std::function<void(Hero*)> m_functionToCallAfterPurchasingHero;
+
 	int m_selectedUnitIndex;
 	float m_purchaseErrorPopUpTimer;
+	bool m_isHeroInTown;
 
 public:
 
@@ -97,6 +102,11 @@ public:
 	void purchaseUnits();
 
 	//===========================================================================================
+	//Description: Creates a new hero
+	//===========================================================================================
+	void purchaseNewHero();
+
+	//===========================================================================================
 	//Description: Refreshes contents of the purchase window
 	//===========================================================================================
 	void refreshPurchaseWindow();
@@ -115,6 +125,16 @@ public:
 	//Description: Updates class logic
 	//===========================================================================================
 	bool update(const sf::Vector2f& mousePosition, const float& deltaTime);
+
+	//===========================================================================================
+	//Description: Sets a bool that determines if hero is in town
+	//===========================================================================================
+	void setIsHeroInTown(const bool state);
+
+	//===========================================================================================
+	//Description: Sets a function to call after purchasing a hero
+	//===========================================================================================
+	void setFunctionToCallAfterPurchasingAHero(std::function<void(Hero*)> function);
 
 	//===========================================================================================
 	//Description: Draws contents of this class

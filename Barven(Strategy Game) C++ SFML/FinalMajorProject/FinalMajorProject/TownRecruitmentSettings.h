@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 17/05/2021
+//Last Accessed: 01/10/2021
 
 #ifndef TOWNRECRUITMENTSETTINGS_H
 #define TOWNRECRUITMENTSETTINGS_H
@@ -25,5 +25,12 @@ namespace TownRecruitmentSettings
 	static const int c_titleCharSize = 24;
 	static const int c_recruitButtonWidth = 250;
 	static const int c_recruitButtonHeight = 76;
+
+	//Purchase hero button
+	static const int c_purchaseHeroButtonXOffset = 140;
+	static const int c_purchaseHeroButtonYOffset = 350;
+	static const int c_purchaseHeroButtonCharSize = 20;
+	static const std::string c_purchaseHeroButtonText = "Purchase new Hero\n      2500g";
+	static const int c_purchaseHeroPrice = 2500;
 }
 #endif // !TOWNRECRUITMENTSETTINGS_H

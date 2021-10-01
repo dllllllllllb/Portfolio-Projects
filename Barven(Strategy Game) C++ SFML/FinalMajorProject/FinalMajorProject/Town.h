@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 10/09/2021
+//Last Accessed: 01/10/2021
 
 #ifndef TOWN_H
 #define TOWN_H
@@ -82,6 +82,11 @@ public:
 	//Description: Sets appropriate town data and updates every data based elements
 	//===========================================================================================
 	void setTownData(const int& factionIndex, TownData& townData, FactionBuildingData& factionBuildingData, Player& player, const bool isHeroVisiting);
+
+	//===========================================================================================
+	//Description: Sets visiting hero data
+	//===========================================================================================
+	void setVisitingHeroData(Hero* hero);
 
 	//===========================================================================================
 	//Description: Repositiones town elements
