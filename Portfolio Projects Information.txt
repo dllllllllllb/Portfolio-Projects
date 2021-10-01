@@ -7,7 +7,7 @@ Project: Barven (Strategy Game)
 Date: September 2021
 Language: C++
 Engine / Liblary: SFML
-Grade: 97/100 (This project is split into 2 modules, for my first module I got 97/100, grades for the 2nd module are not released yet)
+Grade: 97/100 && 97/100 (This project was split into 2 modules)
 
 Project: Galaga
 Date: January 2021
