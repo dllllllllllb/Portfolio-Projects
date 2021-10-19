@@ -1,7 +1,7 @@
 #include "Slider.h"
 
-Slider::Slider(sf::RenderWindow& rWindow, Textures* pTextures, const bool isSliderHorizontal) :
-	UIElement(rWindow, pTextures, true),
+Slider::Slider(sf::RenderWindow& rWindow, Textures& rTextures, const bool isSliderHorizontal) :
+	UIElement(rWindow, rTextures, true),
 	m_isHorizontal(isSliderHorizontal),
 	m_isActive(false),
 	m_value(1),
@@ -26,10 +26,10 @@ void Slider::setUpSlider(const int& positionX, const int& positionY, const int& 
 	UIElement::setPosition(positionX, positionY);
 	setUpUIBorder(width, height);
 
-	m_bar.setTexture(m_pTextures->m_sliderBar, true);
+	m_bar.setTexture(m_textures.m_sliderBar, true);
 	m_bar.setOrigin(0, m_bar.getGlobalBounds().height * 0.5f);
 
-	m_handle.setTexture(m_pTextures->m_sliderHandle, true);
+	m_handle.setTexture(m_textures.m_sliderHandle, true);
 	m_handle.sf::Sprite::setOrigin(m_handle.getGlobalBounds().width * 0.5f, m_handle.getGlobalBounds().height * 0.5f);
 
 	resizeSliderElements(width, height);

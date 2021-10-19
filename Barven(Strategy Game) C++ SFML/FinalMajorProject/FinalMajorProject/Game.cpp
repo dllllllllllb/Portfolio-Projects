@@ -1,16 +1,16 @@
 #include "Game.h"
 
-Game::Game(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, DataHandler* pDataHandler, GameSetUpScreen* pGameSetUpScreen, sf::Mouse& rMouse) :
+Game::Game(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler, GameSetUpScreen& rGameSetUpScreen, sf::Mouse& rMouse) :
 	m_window(rWindow),
-	m_UIHandler(rWindow, *pTextures, *pFonts, m_confirmationWindow),
-	m_playerHandler(rWindow, pDataHandler, m_UIHandler.getResourceBarReference(), m_turnHandler),
-	m_combatHandler(rWindow, *pTextures, *pDataHandler, *pFonts),
-	m_gameEnd(rWindow, *pTextures, *pFonts),
-	m_mapHandler(rWindow, pTextures, pDataHandler, m_UIHandler, pGameSetUpScreen, m_viewManager, m_playerHandler, m_turnHandler, m_combatHandler, m_UIHandler.getMapUIReference(), m_gameEnd),
+	m_UIHandler(rWindow, rTextures, rFonts, rAudio, m_confirmationWindow),
+	m_playerHandler(rWindow, rAudio, rDataHandler, m_UIHandler.getResourceBarReference(), m_turnHandler),
+	m_combatHandler(rWindow, rTextures, rDataHandler, rFonts, rAudio),
+	m_gameEnd(rWindow, rTextures, rFonts, rAudio),
+	m_mapHandler(rWindow, rTextures, rAudio, rDataHandler, m_UIHandler, rGameSetUpScreen, m_viewManager, m_playerHandler, m_turnHandler, m_combatHandler, m_UIHandler.getMapUIReference(), m_gameEnd),
 	m_viewManager(rWindow, rMouse),
-	m_cursor(*pTextures, c_tileSize),
-	m_confirmationWindow(rWindow, pTextures, pFonts),
-	m_mapAI(*pDataHandler, m_playerHandler, m_turnHandler, m_combatHandler, m_mapHandler, m_UIHandler.getTownReference(), m_UIHandler.getSpecialBuildingsInteractionReference()),
+	m_cursor(rTextures, c_tileSize),
+	m_confirmationWindow(rWindow, rTextures, rFonts, rAudio),
+	m_mapAI(rDataHandler, m_playerHandler, m_turnHandler, m_combatHandler, m_mapHandler, m_UIHandler.getTownReference(), m_UIHandler.getSpecialBuildingsInteractionReference()),
 	m_mouse(rMouse)
 {
 	m_cursor.setTileHandlerPointer(m_mapHandler.getTileHandlerPointer());

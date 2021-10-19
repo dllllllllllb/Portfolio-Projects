@@ -2,13 +2,14 @@
 
 namespace settings = SpecialBuildingInteractionsSettings;
 
-SpecialBuildingInteractions::SpecialBuildingInteractions(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, ConfirmationWindow& rConfirmationWindow) : 
+SpecialBuildingInteractions::SpecialBuildingInteractions(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow) :
 	m_window(rWindow),
 	m_textures(rTextures),
 	m_fonts(rFonts),
+	m_audio(rAudio),
 	m_confirmationWindow(rConfirmationWindow),
 	m_pPlayer(nullptr),
-	m_textBox(rWindow, &rTextures, &rFonts),
+	m_textBox(rWindow, rTextures, rFonts),
 	m_isActive(false),
 	m_activeIconButtons(0),
 	m_interactionIndex(0)
@@ -24,7 +25,7 @@ void SpecialBuildingInteractions::initialize()
 {
 	for (int i = 0; i < settings::c_numOfIconButtons; i++)
 	{
-		m_iconButtons.push_back(std::unique_ptr<IconButton>(new IconButton(m_window, &m_textures, true)));
+		m_iconButtons.push_back(std::unique_ptr<IconButton>(new IconButton(m_window, m_textures, m_audio, true)));
 	}
 }
 
@@ -84,11 +85,11 @@ void SpecialBuildingInteractions::update(const sf::Vector2f& mousePosition)
 		{
 			for (int i = 0; i < m_activeIconButtons; i++)
 			{
-				if (Global::g_isLMBPressed && m_iconButtons[i]->collisionCheck(mousePosition))
+				if (m_iconButtons[i]->checkIfButtonWasPressed(mousePosition))
 				{
-					Global::objectPressed();
 					m_interactionIndex = i;
 					m_confirmationWindow.changeUILayerToConfirmation();
+					break;
 				}
 			}
 		}

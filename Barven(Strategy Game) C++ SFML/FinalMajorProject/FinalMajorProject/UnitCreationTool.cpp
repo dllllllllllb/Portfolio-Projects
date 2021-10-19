@@ -1,15 +1,15 @@
 #include "UnitCreationTool.h"
 
-UnitCreationTool::UnitCreationTool(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts) :
-	m_window(window),
-	m_unitImageBackground(window, pTextures),
-	m_createUnitButton(window, pTextures, pFonts),
+UnitCreationTool::UnitCreationTool(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
+	m_window(rWindow),
+	m_unitImageBackground(rWindow, rTextures),
+	m_createUnitButton(rWindow, rTextures, rFonts, rAudio),
 	m_dataHandler()
 
 {
 	for (int i = 0; i < UnitCreator::c_numOfButtons; i++)
 	{
-		m_dataInputButton.push_back(std::unique_ptr<TextInputBox>(new TextInputBox(window, pTextures, pFonts)));
+		m_dataInputButton.push_back(std::unique_ptr<TextInputBox>(new TextInputBox(rWindow, rTextures, rFonts, rAudio)));
 	}
 }
 
@@ -74,16 +74,14 @@ void UnitCreationTool::update(const sf::Vector2f& mousePosition)
 
 	for (int i = 0; i < UnitCreator::c_numOfButtons; i++)
 	{
-		if (m_dataInputButton[i]->checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+		if (m_dataInputButton[i]->checkIfButtonWasPressed(mousePosition))
 		{
-			Global::objectPressed();
 			m_dataInputButton[i]->setButtonPressed(true);
 		}
 	}
 
-	if (m_createUnitButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	if (m_createUnitButton.checkIfButtonWasPressed(mousePosition))
 	{
-		Global::objectPressed();
 		saveUnitData();
 	}
 

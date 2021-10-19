@@ -1,10 +1,10 @@
 #include "ConfirmationWindow.h"
 
-ConfirmationWindow::ConfirmationWindow(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts) :
-	UIElement(window, pTextures),
-	TextBoxTitle(window, pTextures, pFonts),
-	m_acceptButton(pTextures, true),
-	m_declineButton(pTextures, false),
+ConfirmationWindow::ConfirmationWindow(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
+	UIElement(rWindow, rTextures),
+	TextBoxTitle(rWindow, rTextures, rFonts),
+	m_acceptButton(rTextures, rAudio, true),
+	m_declineButton(rTextures, rAudio, false),
 	m_pFunction(nullptr),
 	m_isActive(false)
 {
@@ -57,18 +57,15 @@ bool ConfirmationWindow::update(const sf::Vector2f& mousePosition)
 {
 	bool toggleButtonPress = false;
 
-	if (Global::g_isLMBPressed && m_acceptButton.collisionCheck(mousePosition))
+	if (m_acceptButton.checkIfButtonWasPressed(mousePosition))
 	{
 		toggleButtonPress = true;
-		Global::objectPressed();
 		m_pFunction(); //Calls set function
 	}
 
-	if (Global::g_isLMBPressed && m_declineButton.collisionCheck(mousePosition))
+	if (m_declineButton.checkIfButtonWasPressed(mousePosition))
 	{
-		Global::objectPressed();
 		toggleButtonPress = true;
-
 		Global::g_UILayer = Global::g_previousUILayer;
 	}
 

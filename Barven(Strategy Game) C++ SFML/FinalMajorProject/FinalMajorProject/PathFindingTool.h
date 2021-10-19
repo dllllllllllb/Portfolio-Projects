@@ -29,7 +29,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	PathFindingTool(sf::RenderWindow& window, Textures* textures, Fonts* fonts);
+	PathFindingTool(sf::RenderWindow& window, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

@@ -2,10 +2,10 @@
 
 namespace settings = CombatEndPopUpSettings;
 
-CombatEndPopUp::CombatEndPopUp(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts) :
+CombatEndPopUp::CombatEndPopUp(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
 	m_window(rWindow),
-	m_combatEndInformation(rWindow, &rTextures, &rFonts, true),
-	m_acceptButton(&rTextures, true)
+	m_combatEndInformation(rWindow, rTextures, rFonts, true),
+	m_acceptButton(rTextures, rAudio, true)
 {
 }
 
@@ -32,7 +32,7 @@ void CombatEndPopUp::setTitleText(const bool didAttackerWon)
 
 const bool CombatEndPopUp::update(const sf::Vector2f& mousePosition)
 {
-	return m_acceptButton.collisionCheck(mousePosition);
+	return m_acceptButton.checkIfButtonWasPressed(mousePosition);
 }
 
 void CombatEndPopUp::draw()

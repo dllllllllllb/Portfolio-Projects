@@ -15,7 +15,7 @@
 class TextBoxTitle : public virtual UIElement
 {
 protected:
-	Fonts* m_pFonts;
+	Fonts& m_fonts;
 	sf::Text m_titleText;
 
 public:
@@ -23,7 +23,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	TextBoxTitle(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts);
+	TextBoxTitle(sf::RenderWindow& window, Textures& rTextures, Fonts& rFonts);
 
 	//===========================================================================================
 	//Description: Class destructor

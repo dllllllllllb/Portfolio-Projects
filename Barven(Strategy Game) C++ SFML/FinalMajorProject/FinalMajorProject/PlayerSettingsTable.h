@@ -21,7 +21,7 @@ class PlayerSettingsTable
 {
 private:
 	sf::RenderWindow& m_window;
-	Textures* m_pTextures;
+	Textures& m_textures;
 	UIElement m_background;
 	DataHandler& m_dataHandler;
 	std::vector<std::unique_ptr<TextBox>> m_pCollumnTitles;
@@ -38,7 +38,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	PlayerSettingsTable(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, DataHandler& rDataHandler);
+	PlayerSettingsTable(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler);
 
 	//===========================================================================================
 	//Description: Class destructor

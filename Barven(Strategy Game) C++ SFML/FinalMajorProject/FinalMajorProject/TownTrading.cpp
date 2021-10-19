@@ -2,16 +2,16 @@
 
 namespace settings = TownTradingSettings;
 
-TownTrading::TownTrading(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, ConfirmationWindow& rConfirmationWindow, ResourcesBar& rResourceBar) :
+TownTrading::TownTrading(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow, ResourcesBar& rResourceBar) :
 	m_window(rWindow),
 	m_pResources(nullptr),
 	m_resourcesBar(rResourceBar),
 	m_confirmationWindow(rConfirmationWindow),
-	m_slider(rWindow, &rTextures, true),
-	m_playerResourcesBackground(rWindow, &rTextures),
-	m_traderResourcesBackground(rWindow, &rTextures),
-	m_tradeButton(rWindow, &rTextures, &rFonts),
-	m_tradeInformation(rWindow, &rTextures, &rFonts, true),
+	m_slider(rWindow, rTextures, true),
+	m_playerResourcesBackground(rWindow, rTextures),
+	m_traderResourcesBackground(rWindow, rTextures),
+	m_tradeButton(rWindow, rTextures, rFonts, rAudio),
+	m_tradeInformation(rWindow, rTextures, rFonts, true),
 	m_selectedPlayerResourceIndex(-1),
 	m_selectedTraderResourceIndex(-1),
 	m_isPlayerResourceSelected(false),
@@ -19,8 +19,8 @@ TownTrading::TownTrading(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& 
 {
 	for (int i = 0; i < settings::c_numOfResourceTypes; i++)
 	{
-		m_playerResourceButtons.push_back(std::unique_ptr<ResourceTradingButton>(new ResourceTradingButton(rWindow, &rTextures, &rFonts)));
-		m_traderResourceButtons.push_back(std::unique_ptr<ResourceTradingButton>(new ResourceTradingButton(rWindow, &rTextures, &rFonts)));
+		m_playerResourceButtons.push_back(std::unique_ptr<ResourceTradingButton>(new ResourceTradingButton(rWindow, rTextures, rFonts, rAudio)));
+		m_traderResourceButtons.push_back(std::unique_ptr<ResourceTradingButton>(new ResourceTradingButton(rWindow, rTextures, rFonts, rAudio)));
 	}
 
 	m_tradeIcon.setTexture(rTextures.m_tradeIcon, true);
@@ -77,10 +77,8 @@ void TownTrading::update(const sf::Vector2f& mousePosition)
 	//Resource buttons
 	for (int i = 0; i < settings::c_numOfResourceTypes; i++)
 	{
-		if (m_playerResourceButtons[i]->checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+		if (m_playerResourceButtons[i]->checkIfButtonWasPressed(mousePosition))
 		{
-			Global::objectPressed();
-
 			//Player feedback, highlight selected resource in yellow
 			if (m_selectedPlayerResourceIndex != i)
 			{
@@ -101,9 +99,8 @@ void TownTrading::update(const sf::Vector2f& mousePosition)
 			break;
 		}
 
-		if (m_traderResourceButtons[i]->checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+		if (m_traderResourceButtons[i]->checkIfButtonWasPressed(mousePosition))
 		{
-			Global::objectPressed();
 
 			if (m_selectedTraderResourceIndex != i)
 			{
@@ -129,11 +126,10 @@ void TownTrading::update(const sf::Vector2f& mousePosition)
 	m_slider.update(mousePosition);
 
 	//Trade button
-	if (m_tradeButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	if (m_tradeButton.checkIfButtonWasPressed(mousePosition))
 	{
 		if (m_selectedPlayerResourceIndex != m_selectedTraderResourceIndex)
 		{
-			Global::objectPressed();
 			m_confirmationWindow.changeUILayerToConfirmation();
 		}
 	}

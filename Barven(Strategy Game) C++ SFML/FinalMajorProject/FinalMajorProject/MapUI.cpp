@@ -2,14 +2,15 @@
 
 namespace settings = MapUISettings;
 
-MapUI::MapUI(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts) : 
+MapUI::MapUI(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
 	m_window(rWindow),
 	m_textures(rTextures),
-	m_background(rWindow, &rTextures),
-	m_turnInformation(rWindow, &rTextures, &rFonts, true),
-	m_resourcesPerTurn(rWindow, &rTextures, &rFonts, true),
-	m_heroesIconButtons(rWindow, rTextures),
-	m_townsIconButtons(rWindow, rTextures),
+	m_audio(rAudio),
+	m_background(rWindow, rTextures),
+	m_turnInformation(rWindow, rTextures, rFonts, true),
+	m_resourcesPerTurn(rWindow, rTextures, rFonts, true),
+	m_heroesIconButtons(rWindow, rTextures, rAudio),
+	m_townsIconButtons(rWindow, rTextures, rAudio),
 	m_isActive(false)
 {
 
@@ -47,7 +48,7 @@ void MapUI::setUpMapUI()
 	int firstIconButtonPositionY = m_resourcesPerTurn.UIElement::getPosition().y + settings::c_informationTextBoxHeight * 0.5f + settings::c_arrowButtonHeight * 2 + settings::c_numberOfButtonsToDisplay * (settings::c_heroAndTownIconButtonsHeight + settings::c_borderSize) + settings::c_buttonIconHeight * 0.5f + settings::c_elementSpaceing * 2;
 	for (int i = 0; i < settings::c_numberOfIconButtons; i++)
 	{
-		m_iconButtons.push_back(std::unique_ptr<IconButton>(new IconButton(m_window, &m_textures, true)));
+		m_iconButtons.push_back(std::unique_ptr<IconButton>(new IconButton(m_window, m_textures, m_audio, true)));
 		m_iconButtons[i]->setUpAndResizeToSprite(positionX, firstIconButtonPositionY + i * settings::c_buttonIconHeight + settings::c_borderSize, m_textures.m_mapUIIconButtons[i]);
 	}
 }
@@ -60,14 +61,12 @@ void MapUI::update(const sf::Vector2f& mousePosition)
 	{
 		if (m_townsIconButtons.update(mousePosition))
 		{
-			Global::objectPressed();
 			m_townSelectedFunction(m_townsIconButtons.getIndexOfButtonClicked());
 			toggleIsActive();
 		}
 
 		if (m_heroesIconButtons.update(mousePosition))
 		{
-			Global::objectPressed();
 			m_heroSelectedFunction(m_heroesIconButtons.getIndexOfButtonClicked());
 			toggleIsActive();
 		}
@@ -75,10 +74,8 @@ void MapUI::update(const sf::Vector2f& mousePosition)
 
 		for (int i = 0; i < m_iconButtons.size(); i++)
 		{
-			if (m_iconButtons[i]->collisionCheck(mousePosition))
+			if (m_iconButtons[i]->checkIfButtonWasPressed(mousePosition))
 			{
-				Global::objectPressed();
-
 				switch (static_cast<MapUIButtonsEnum>(i))
 				{
 					case MapUIButtonsEnum::nextTurn:
@@ -102,6 +99,7 @@ void MapUI::update(const sf::Vector2f& mousePosition)
 					case MapUIButtonsEnum::exit:
 					{
 						Global::g_gameState = GameState::menu;
+						m_audio.playMusic(MusicEnum::menuMusic, 0);
 					}
 					break;
 
@@ -112,9 +110,8 @@ void MapUI::update(const sf::Vector2f& mousePosition)
 		}
 		for (auto& button : m_iconButtons)
 		{
-			if (button->collisionCheck(mousePosition))
+			if (button->checkIfButtonWasPressed(mousePosition))
 			{
-				Global::objectPressed();
 				//Do stuff
 			}
 		}

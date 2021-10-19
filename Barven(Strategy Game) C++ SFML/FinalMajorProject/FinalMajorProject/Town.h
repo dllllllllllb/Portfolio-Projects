@@ -29,7 +29,8 @@ private:
 	UIElement m_background;
 	UIElement m_sectionBackground;
 	TownEnum m_townEnum;
-	Textures* m_pTextures;
+	Textures& m_textures;
+	Audio& m_audio;
 
 	ConfirmationWindow& m_confirmationWindow;
 	PopUpTextBox m_popUpTextBox;
@@ -60,7 +61,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	Town(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts, ConfirmationWindow& rConfirmationWindow, ResourcesBar& rResourcesBar);
+	Town(sf::RenderWindow& window, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow, ResourcesBar& rResourcesBar);
 
 	//===========================================================================================
 	//Description: Class destructor

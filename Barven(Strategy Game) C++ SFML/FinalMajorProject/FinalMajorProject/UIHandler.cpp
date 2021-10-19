@@ -1,14 +1,19 @@
 #include "UIHandler.h"
 
-UIHandler::UIHandler(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, ConfirmationWindow& rConfirmationWindow) :
-	m_resourceBar(rWindow, &rTextures, &rFonts),
-	m_specialBuildingInteractions(rWindow, rTextures, rFonts, rConfirmationWindow),
-	m_townInteraction(rWindow, &rTextures, &rFonts, rConfirmationWindow, m_resourceBar),
-	m_mapUI(rWindow, rTextures, rFonts),
-	m_heroPanel(rWindow, rTextures, rFonts),
-	m_mapObjInfoBox(rWindow, rTextures, rFonts)
+UIHandler::UIHandler(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow) :
+	m_resourceBar(rWindow, rTextures, rFonts),
+	m_specialBuildingInteractions(rWindow, rTextures, rFonts, rAudio, rConfirmationWindow),
+	m_townInteraction(rWindow, rTextures, rFonts, rAudio, rConfirmationWindow, m_resourceBar),
+	m_mapUI(rWindow, rTextures, rFonts, rAudio),
+	m_heroPanel(rWindow, rTextures, rFonts, rAudio),
+	m_mapObjInfoBox(rWindow, rTextures, rFonts),
+	m_AITakingTurnInformation(rWindow, rTextures, rFonts)
 {
 	m_resourceBar.setUp();
+
+	m_AITakingTurnInformation.setPosition(rWindow.getView().getCenter());
+	m_AITakingTurnInformation.setUpUIBorder(300, 80);
+	m_AITakingTurnInformation.setUpText("AIs Turn...", 36, TextAlignmentEnum::middleHorizontal, TextAlignmentEnum::middleVertical);
 }
 
 UIHandler::~UIHandler()
@@ -76,4 +81,9 @@ void UIHandler::draw()
 		m_specialBuildingInteractions.draw();
 	}
 
+}
+
+void UIHandler::drawAITurnInformation()
+{
+	m_AITakingTurnInformation.draw();
 }

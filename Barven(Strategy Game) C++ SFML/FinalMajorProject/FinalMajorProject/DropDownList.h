@@ -18,8 +18,9 @@ class DropDownList
 {
 private:
 	sf::RenderWindow& m_window;
-	Textures* m_pTextures;
-	Fonts* m_pFonts;
+	Textures& m_textures;
+	Fonts& m_fonts;
+	Audio& m_audio;
 	Slider m_slider;
 
 	int m_numberOfOptions;
@@ -47,7 +48,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	DropDownList(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts);
+	DropDownList(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

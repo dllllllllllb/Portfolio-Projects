@@ -7,7 +7,9 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 
+#include "Audio.h"
 #include "CollidableObject.h"
+#include "GlobalVariables.h"
 #include "Textures.h"
 
 //===========================================================================================
@@ -16,16 +18,17 @@
 class TickBox : public CollidableObject, public sf::Sprite
 {
 private:
-	Textures* m_pTextures;
+	Textures& m_textures;
 	bool m_state;
 
-
+	Audio& m_audio;
+	SFXEnum m_SFXToPlay;
 public:
 
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	TickBox(Textures* pTextures);
+	TickBox(Textures& rTextures, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor
@@ -38,6 +41,11 @@ public:
 	//Description: Sets the bool to true/false
 	//===========================================================================================
 	void setState(const bool state);
+
+	//===========================================================================================
+	//Description: Checks if tick box was pressed and plays a sound
+	//===========================================================================================
+	const bool checkIfTickBoxWasPressed(const sf::Vector2f& mousePosition);
 
 	//===========================================================================================
 	//Description: Toggles bool between true/false

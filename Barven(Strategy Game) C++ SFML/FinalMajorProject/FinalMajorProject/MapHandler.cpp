@@ -1,19 +1,20 @@
 #include "MapHandler.h"
 namespace settings = MapHandlerSettings;
-MapHandler::MapHandler(sf::RenderWindow& rWindow, Textures* pTextures, DataHandler* pDataHandler, UIHandler& rUIHandler, GameSetUpScreen* pGameSetUpScreen, ViewManager& rViewManager, PlayerHandler& rPlayerHandler, TurnHandler& rTurnHandler, CombatHandler& rCombatHandler, MapUI& rMapUI, GameEnd& rGameEnd) :
+MapHandler::MapHandler(sf::RenderWindow& rWindow, Textures& rTextures, Audio& rAudio, DataHandler& rDataHandler, UIHandler& rUIHandler, GameSetUpScreen& rGameSetUpScreen, ViewManager& rViewManager, PlayerHandler& rPlayerHandler, TurnHandler& rTurnHandler, CombatHandler& rCombatHandler, MapUI& rMapUI, GameEnd& rGameEnd) :
 	m_window(rWindow),
-	m_pDataHandler(pDataHandler),
+	m_dataHandler(rDataHandler),
 	m_UIHandler(rUIHandler),
-	m_tileHandler(rWindow, pTextures),
-	m_pGameSetUpScreen(pGameSetUpScreen),
-	m_pTextures(pTextures),
+	m_tileHandler(rWindow, rTextures),
+	m_gameSetUpScreen(rGameSetUpScreen),
+	m_textures(rTextures),
+	m_audio(rAudio),
 	m_viewManager(rViewManager),
 	m_playerHandler(rPlayerHandler),
 	m_turnHandler(rTurnHandler),
 	m_combatHandler(rCombatHandler),
 	m_mapUI(rMapUI),
 	m_gameEnd(rGameEnd),
-	m_heroMovementFeedback(rWindow, *pTextures),
+	m_heroMovementFeedback(rWindow, rTextures),
 	m_mapWidth(0),
 	m_mapHeight(0),
 	m_numOfPlayers(0),
@@ -35,7 +36,7 @@ MapHandler::MapHandler(sf::RenderWindow& rWindow, Textures* pTextures, DataHandl
 	m_maxVerticalQuadrants(0),
 	m_lastValidStartQuadrant(0)
 {
-	m_pGameSetUpScreen->setConfirmationFunctionPointer(std::bind(&MapHandler::loadTheMap, this));
+	m_gameSetUpScreen.setConfirmationFunctionPointer(std::bind(&MapHandler::loadTheMap, this));
 	m_combatHandler.setFunctionToCallWhenCombatIsWon(std::bind(&MapHandler::functionToCallAfterBattleConcluded, this, std::placeholders::_1, std::placeholders::_2));
 	m_tileHandler.setIsTesting(false);
 	m_mapUI.setMapHandlerFunctionPointers(std::bind(&MapHandler::enterTown, this, std::placeholders::_1), std::bind(&MapHandler::selectHero, this, std::placeholders::_1), std::bind(&MapHandler::updateResourcesPerTurnMapUI, this), std::bind(&MapHandler::nextTurn, this));
@@ -50,8 +51,8 @@ void MapHandler::loadTheMap()
 	if (!m_isMapLoaded)
 	{
 		srand(time(NULL));
-		m_pDataHandler->loadMapData(m_pGameSetUpScreen->getChosenMapIndex());
-		json& tempMapData = m_pDataHandler->getLoadedMapData();
+		m_dataHandler.loadMapData(m_gameSetUpScreen.getChosenMapIndex());
+		json& tempMapData = m_dataHandler.getLoadedMapData();
 
 		m_tileHandler.setUpTiles(tempMapData["mapWidth"], tempMapData["mapHeight"], tempMapData["tileSize"], 0, 0);
 
@@ -83,24 +84,24 @@ void MapHandler::loadTheMap()
 			//Player selected factions
 			if (i >= 0 && i < tempMapData["numOfPlayers"])
 			{
-				int factionID = m_pGameSetUpScreen->getPlayerChosenFaction(i);
+				int factionID = m_gameSetUpScreen.getPlayerChosenFaction(i);
 				if (factionID >= c_numOfFactions)
 				{
 					factionID = rand() % c_numOfFactions;
 				}
 				m_townMapObjects[i]->setFactionIndex(factionID);
-				m_townMapObjects[i]->setUp(m_tileHandler.getTile(m_townMapObjects[i]->getTileIndex())->getPosition(), m_pDataHandler->getFactionData(factionID).getBuildingsData().getMapTexture());
+				m_townMapObjects[i]->setUp(m_tileHandler.getTile(m_townMapObjects[i]->getTileIndex())->getPosition(), m_dataHandler.getFactionData(factionID).getBuildingsData().getMapTexture());
 				m_townMapObjects[i]->setOwnerIndex(i);
 
 				//Make players
 				m_playerHandler.makeNewPlayer(factionID);
-				m_playerHandler.getPlayer(i).setDataHandlerPointer(m_pDataHandler);
+				m_playerHandler.getPlayer(i).setDataHandlerPointer(&m_dataHandler);
 				m_playerHandler.getPlayer(i).setFunctionToCallWhenHeroArrivesAtDestination(std::bind(&MapHandler::objectInteraction, this));
 				m_playerHandler.getPlayer(i).setFunctionToUpdateHeroesMapUI(std::bind(&MapHandler::updateHeroesMapUI, this));
 
 
-				m_playerHandler.getPlayer(i).setIsPlayerAI(m_pGameSetUpScreen->getIfPlayerIsAI(i));
-				if (m_pGameSetUpScreen->getIfPlayerIsAI(i))
+				m_playerHandler.getPlayer(i).setIsPlayerAI(m_gameSetUpScreen.getIfPlayerIsAI(i));
+				if (m_gameSetUpScreen.getIfPlayerIsAI(i))
 				{
 					m_makeNewAIPlayerDataFunction(i);
 				}
@@ -112,7 +113,7 @@ void MapHandler::loadTheMap()
 			{
 				int factionIndex = rand() % c_numOfFactions;
 				m_townMapObjects[i]->setFactionIndex(factionIndex);
-				m_townMapObjects[i]->setUp(m_tileHandler.getTile(m_townMapObjects[i]->getTileIndex())->getPosition(), m_pDataHandler->getFactionData(factionIndex).getBuildingsData().getMapTexture());
+				m_townMapObjects[i]->setUp(m_tileHandler.getTile(m_townMapObjects[i]->getTileIndex())->getPosition(), m_dataHandler.getFactionData(factionIndex).getBuildingsData().getMapTexture());
 			}
 		}
 
@@ -123,10 +124,10 @@ void MapHandler::loadTheMap()
 			m_townData[i]->setMapData(m_townMapObjects[i]->getTileIndex(), m_townMapObjects[i]->getPosition());
 			for (int k = 0; k < c_numOfUnitsPerFaction; k++) //Set Unit Data
 			{
-				m_townData[i]->setUnitData(k, m_pDataHandler->getFactionData(m_townMapObjects[i]->getFactionIndex()).getUnitData(k));
+				m_townData[i]->setUnitData(k, m_dataHandler.getFactionData(m_townMapObjects[i]->getFactionIndex()).getUnitData(k));
 				if (m_townData[i]->getTownBuildingData().getData(static_cast<TownBuildingEnum>(5 + k))) //5 == first unit data position in enum , checks if town has building coresponding to the unit
 				{
-					m_townData[i]->getAvailableUnitsToRecruit()[k] = m_pDataHandler->getFactionData(m_townMapObjects[i]->getFactionIndex()).getUnitData(k).getIntData(UnitDataEnum::growthPerWeek);
+					m_townData[i]->getAvailableUnitsToRecruit()[k] = m_dataHandler.getFactionData(m_townMapObjects[i]->getFactionIndex()).getUnitData(k).getIntData(UnitDataEnum::growthPerWeek);
 				}
 			}
 		}
@@ -141,7 +142,7 @@ void MapHandler::loadTheMap()
 			m_unitMapObjects[i]->setTileIndex(tempMapData["unitObjects"][i]["tileIndex"]);
 			m_unitMapObjects[i]->setUnitIndex(tempMapData["unitObjects"][i]["unitIndex"]);
 
-			m_unitMapObjects[i]->setUp(m_tileHandler.getTile(m_unitMapObjects[i]->getTileIndex())->getPosition(), m_pDataHandler->getFactionData(m_unitMapObjects[i]->getFactionIndex()).getUnitData(m_unitMapObjects[i]->getUnitIndex()).getUnitMapSprite());
+			m_unitMapObjects[i]->setUp(m_tileHandler.getTile(m_unitMapObjects[i]->getTileIndex())->getPosition(), m_dataHandler.getFactionData(m_unitMapObjects[i]->getFactionIndex()).getUnitData(m_unitMapObjects[i]->getUnitIndex()).getUnitMapSprite());
 
 			//Set up "unit protection zone"
 			int tempTileIndex = tempMapData["unitObjects"][i]["tileIndex"];
@@ -166,7 +167,7 @@ void MapHandler::loadTheMap()
 			m_tileHandler.getTile(tempMapData["resourceMineObjects"][i]["tileIndex"] - 1)->setMapObjectType(MapObjectsEnum::resourceMine);
 			m_tileHandler.getTile(tempMapData["resourceMineObjects"][i]["tileIndex"] + 1)->setMapObjectType(MapObjectsEnum::resourceMine);
 
-			m_resourceMinesMapObjects[i]->setUp(m_tileHandler.getTile(m_resourceMinesMapObjects[i]->getTileIndex())->getPosition(), m_pDataHandler->getResourceMineData(m_resourceMinesMapObjects[i]->getMineType()).getMineMapTexture());
+			m_resourceMinesMapObjects[i]->setUp(m_tileHandler.getTile(m_resourceMinesMapObjects[i]->getTileIndex())->getPosition(), m_dataHandler.getResourceMineData(m_resourceMinesMapObjects[i]->getMineType()).getMineMapTexture());
 		}
 
 		//Resources
@@ -179,7 +180,7 @@ void MapHandler::loadTheMap()
 			m_resourceMapObjects[i]->setResourceType((ResourcesEnum)tempMapData["resourceObjects"][i]["resourceType"]);
 			m_resourceMapObjects[i]->setTileIndex(tempMapData["resourceObjects"][i]["tileIndex"]);
 
-			m_resourceMapObjects[i]->setUp(m_tileHandler.getTile(m_resourceMapObjects[i]->getTileIndex())->getPosition(), &m_pTextures->m_resourceTextures[(int)m_resourceMapObjects[i]->getResourceType()]);
+			m_resourceMapObjects[i]->setUp(m_tileHandler.getTile(m_resourceMapObjects[i]->getTileIndex())->getPosition(), &m_textures.m_resourceTextures[(int)m_resourceMapObjects[i]->getResourceType()]);
 		}
 
 		//Special buildings
@@ -195,7 +196,7 @@ void MapHandler::loadTheMap()
 			m_tileHandler.getTile(tempMapData["specialBuildingObjects"][i]["tileIndex"] - 1)->setMapObjectType(MapObjectsEnum::specialBuilding);
 			m_tileHandler.getTile(tempMapData["specialBuildingObjects"][i]["tileIndex"] + 1)->setMapObjectType(MapObjectsEnum::specialBuilding);
 
-			m_specialBuildingsMapObjects[i]->setUp(m_tileHandler.getTile(m_specialBuildingsMapObjects[i]->getTileIndex())->getPosition(), &m_pTextures->m_specialBuildings[(int)m_specialBuildingsMapObjects[i]->getBuildingType()]);
+			m_specialBuildingsMapObjects[i]->setUp(m_tileHandler.getTile(m_specialBuildingsMapObjects[i]->getTileIndex())->getPosition(), &m_textures.m_specialBuildings[(int)m_specialBuildingsMapObjects[i]->getBuildingType()]);
 		}
 
 		//Landscape
@@ -211,15 +212,15 @@ void MapHandler::loadTheMap()
 			switch (m_landscapeMapObjects[i]->getLandscapeType())
 			{
 			case LandscapeTypeEnum::tree:
-				m_landscapeMapObjects[i]->setUp(m_tileHandler.getTile(m_landscapeMapObjects[i]->getTileIndex())->getPosition(), &m_pTextures->m_treeLandscapes[m_landscapeMapObjects[i]->getObjectIndex()]);
+				m_landscapeMapObjects[i]->setUp(m_tileHandler.getTile(m_landscapeMapObjects[i]->getTileIndex())->getPosition(), &m_textures.m_treeLandscapes[m_landscapeMapObjects[i]->getObjectIndex()]);
 				break;
 
 			case LandscapeTypeEnum::rocky:
-				m_landscapeMapObjects[i]->setUp(m_tileHandler.getTile(m_landscapeMapObjects[i]->getTileIndex())->getPosition(), &m_pTextures->m_rockyLandscapes[m_landscapeMapObjects[i]->getObjectIndex()]);
+				m_landscapeMapObjects[i]->setUp(m_tileHandler.getTile(m_landscapeMapObjects[i]->getTileIndex())->getPosition(), &m_textures.m_rockyLandscapes[m_landscapeMapObjects[i]->getObjectIndex()]);
 				break;
 
 			case LandscapeTypeEnum::other:
-				m_landscapeMapObjects[i]->setUp(m_tileHandler.getTile(m_landscapeMapObjects[i]->getTileIndex())->getPosition(), &m_pTextures->m_otherLandscapes[m_landscapeMapObjects[i]->getObjectIndex()]);
+				m_landscapeMapObjects[i]->setUp(m_tileHandler.getTile(m_landscapeMapObjects[i]->getTileIndex())->getPosition(), &m_textures.m_otherLandscapes[m_landscapeMapObjects[i]->getObjectIndex()]);
 				break;
 
 			default:
@@ -231,7 +232,7 @@ void MapHandler::loadTheMap()
 
 		m_viewManager.setMapBoundaries(m_mapWidth * m_tileSize, m_mapHeight * m_tileSize, 300);
 		m_viewManager.setMapSectionVariables(m_tileSize, m_maxHorizontalQuadrants);
-		m_pDataHandler->deleteLoadedMapData();
+		m_dataHandler.deleteLoadedMapData();
 
 		Global::g_UILayer = UILayerEnum::map;
 		Global::g_updateGame = true;
@@ -250,7 +251,7 @@ void MapHandler::loadTheMap()
 			for (int k = 0; k < settings::c_numOfStartingUnits; k++)
 			{
 				//Add new unit
-				m_playerHandler.getPlayer(i).getHero(0).addUnit(k, &m_pDataHandler->getFactionData(factionIndex).getUnitData(k));
+				m_playerHandler.getPlayer(i).getHero(0).addUnit(k, &m_dataHandler.getFactionData(factionIndex).getUnitData(k));
 
 				//Increment number of units
 				rangeOfUnits = settings::c_rangeOfStartUnits[factionIndex][k][1] - settings::c_rangeOfStartUnits[factionIndex][k][0];
@@ -271,6 +272,8 @@ void MapHandler::loadTheMap()
 	}
 
 	updateEntireMapUI();
+
+	m_audio.playMusic(MusicEnum::mapMusic, 0);
 }
 
 void MapHandler::setUpMapQuadrants(const int& screenWidth, const int& screenHeight)
@@ -405,6 +408,10 @@ void MapHandler::checkMapInteractions(sf::Vector2f& mousePosition)
 {
 	if (m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getIsPlayerAI())
 	{
+		m_window.clear();
+		m_viewManager.setUIView();
+		m_UIHandler.drawAITurnInformation();
+		m_window.display();
 		m_AITakeTurnFunction();
 	}
 	else if (Global::g_isLMBPressed && m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getDoesPlayerHaveHeroes())
@@ -481,7 +488,7 @@ void MapHandler::updateMapObjInfoFeedback(const sf::Vector2f& mousePosition, con
 				setPopUp = true;
 				if (m_townMapObjects[objectVectorIndex]->getOwnerIndex() >= 0)
 				{
-					textToSet = "This town is owned by: " + m_pGameSetUpScreen->getPlayerName(m_townMapObjects[objectVectorIndex]->getOwnerIndex());
+					textToSet = "This town is owned by: " + m_gameSetUpScreen.getPlayerName(m_townMapObjects[objectVectorIndex]->getOwnerIndex());
 				}
 				else
 				{
@@ -519,7 +526,7 @@ void MapHandler::updateMapObjInfoFeedback(const sf::Vector2f& mousePosition, con
 				setPopUp = true;
 				if (m_resourceMinesMapObjects[objectVectorIndex]->getOwnerIndex() >= 0)
 				{
-					textToSet = "This mine is owned by: " + m_pGameSetUpScreen->getPlayerName(m_resourceMinesMapObjects[objectVectorIndex]->getOwnerIndex());
+					textToSet = "This mine is owned by: " + m_gameSetUpScreen.getPlayerName(m_resourceMinesMapObjects[objectVectorIndex]->getOwnerIndex());
 				}
 				else
 				{
@@ -662,7 +669,7 @@ void MapHandler::objectInteraction()
 					m_UIHandler.getHeroPanelReference().setIsActive(false);
 					if (m_townMapObjects[objectVectorIndex]->getOwnerIndex() == m_turnHandler.getCurrentPlayerIndex())
 					{
-						m_UIHandler.getTownReference().setTownData(m_townMapObjects[objectVectorIndex]->getFactionIndex(), *m_townData[objectVectorIndex], m_pDataHandler->getFactionData(m_townMapObjects[objectVectorIndex]->getFactionIndex()).getBuildingsData(), rPlayer, true);
+						m_UIHandler.getTownReference().setTownData(m_townMapObjects[objectVectorIndex]->getFactionIndex(), *m_townData[objectVectorIndex], m_dataHandler.getFactionData(m_townMapObjects[objectVectorIndex]->getFactionIndex()).getBuildingsData(), rPlayer, true);
 					}
 					else
 					{
@@ -747,6 +754,8 @@ void MapHandler::objectInteraction()
 
 					//Reset tile
 					pTile->resetTileProperties();
+
+					m_audio.playSFX(SFXEnum::pickup);
 				}
 				break;
 
@@ -787,8 +796,16 @@ void MapHandler::nextTurn()
 			{
 				townData->addWeeklyUnitsToRecruit();
 			}
+
+			m_audio.playSFX(SFXEnum::newWeek);
+		}
+		else
+		{
+			m_audio.playSFX(SFXEnum::newDay);
 		}
 	}
+
+	m_audio.playMusic(MusicEnum::mapMusic, 0); //Resets music to synch with player turn, indicates a new turn
 
 	updateEntireMapUI();
 
@@ -796,10 +813,19 @@ void MapHandler::nextTurn()
 	m_isPathValid = false;
 	m_heroMovementFeedback.setIsActive(false);
 
+	//Set up hero for next turn
+	Player& currentPlayer = m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex());
+
 	//Set view to main hero
-	if (m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getDoesPlayerHaveHeroes())
+	if (currentPlayer.getDoesPlayerHaveHeroes())
 	{
-		m_viewManager.setGameViewPosition(m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getSelectedHero().getPosition());
+		currentPlayer.setSelectedHeroIndex(0);
+		m_viewManager.setGameViewPosition(currentPlayer.getSelectedHero().getPosition());
+	}
+	else
+	{
+		int playersFirstTownIndex = currentPlayer.getVectorOfOwnedTownsIndexes()[0];
+		m_viewManager.setGameViewPosition(m_townMapObjects[playersFirstTownIndex]->getPosition());
 	}
 
 	//Make sure the proper variables are active
@@ -830,14 +856,14 @@ void MapHandler::updateTownsMapUI()
 	{
 		for (int i = 0; i < ownedTownsIndexes.size() - townButtonList.getNumberOfButtonsInUse(); i++)
 		{
-			townButtonList.addNewButtonIcon(m_pTextures->m_baseMapUIButtonIcon); //Make new buttons if there isn't enough space
+			townButtonList.addNewButtonIcon(m_textures.m_baseMapUIButtonIcon); //Make new buttons if there isn't enough space
 		}
 	}
 	
 	int iteratorIndex = 0;
 	for (int& townIndex : ownedTownsIndexes) //Loop through all owned towns
 	{
-		townButtonList.updateButtonIcon(iteratorIndex, m_pDataHandler->getFactionData(m_townMapObjects[townIndex]->getFactionIndex()).getBuildingsData().getTownIconTexture());  //Updates button icons based on town type
+		townButtonList.updateButtonIcon(iteratorIndex, m_dataHandler.getFactionData(m_townMapObjects[townIndex]->getFactionIndex()).getBuildingsData().getTownIconTexture());  //Updates button icons based on town type
 		iteratorIndex++;
 	}
 }
@@ -854,14 +880,14 @@ void MapHandler::updateHeroesMapUI()
 	{
 		for (int i = 0; i < vectorOfHeroes.size() - heroButtonList.getNumberOfButtonsInUse(); i++)
 		{
-			heroButtonList.addNewButtonIcon(m_pTextures->m_baseMapUIButtonIcon); //Make new buttons if there isn't enough space
+			heroButtonList.addNewButtonIcon(m_textures.m_baseMapUIButtonIcon); //Make new buttons if there isn't enough space
 		}
 	}
 
 	int iteratorIndex = 0;
 	for (auto& hero : vectorOfHeroes)
 	{
-		heroButtonList.updateButtonIcon(iteratorIndex, m_pTextures->m_defaultHeroButtonIcon); //Update button icon
+		heroButtonList.updateButtonIcon(iteratorIndex, m_textures.m_defaultHeroButtonIcon); //Update button icon
 		iteratorIndex++;
 	}
 }
@@ -909,7 +935,7 @@ void MapHandler::updateResourcesPerTurnMapUI()
 void MapHandler::enterTown(const int& townIndex)
 {
 	int townObjectVectorIndex = m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getVectorOfOwnedTownsIndexes()[townIndex];
-	m_UIHandler.getTownReference().setTownData(m_townMapObjects[townObjectVectorIndex]->getFactionIndex(), *m_townData[townObjectVectorIndex], m_pDataHandler->getFactionData(m_townMapObjects[townObjectVectorIndex]->getFactionIndex()).getBuildingsData(), m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()), false);
+	m_UIHandler.getTownReference().setTownData(m_townMapObjects[townObjectVectorIndex]->getFactionIndex(), *m_townData[townObjectVectorIndex], m_dataHandler.getFactionData(m_townMapObjects[townObjectVectorIndex]->getFactionIndex()).getBuildingsData(), m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()), false);
 }
 
 void MapHandler::selectHero(const int& heroIndex)
@@ -932,6 +958,7 @@ const bool MapHandler::checkIfAHeroWasPressed(const int& tilePressed)
 		{
 			didPlayerClickOnAHero = true;
 			selectHero(heroIterator);
+			m_UIHandler.getHeroPanelReference().setIsActive(true);
 			break;
 		}
 		heroIterator++;
@@ -950,6 +977,7 @@ const bool MapHandler::checkIfAHeroWasPressed(const int& tilePressed)
 					{
 						didPlayerClickOnAHero = true;
 						m_UIHandler.getHeroPanelReference().setHeroData(&*hero, false);
+						m_UIHandler.getHeroPanelReference().setIsActive(true);
 						break;
 					}
 				}
@@ -993,7 +1021,7 @@ void MapHandler::addNewTownToCurrentPlayer(const int& townIndex)
 	updateTownsMapUI();
 	if (Global::g_UILayer != UILayerEnum::gameEnd)
 	{
-		m_UIHandler.getTownReference().setTownData(m_townMapObjects[townIndex]->getFactionIndex(), *m_townData[townIndex], m_pDataHandler->getFactionData(m_townMapObjects[townIndex]->getFactionIndex()).getBuildingsData(), m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()), true);
+		m_UIHandler.getTownReference().setTownData(m_townMapObjects[townIndex]->getFactionIndex(), *m_townData[townIndex], m_dataHandler.getFactionData(m_townMapObjects[townIndex]->getFactionIndex()).getBuildingsData(), m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()), true);
 	}
 }
 
@@ -1028,6 +1056,10 @@ void MapHandler::deleteHero(const int playerIndex, const int heroIndex)
 {
 	auto& vectorOfHeroes = m_playerHandler.getPlayer(playerIndex).getVectorOfOwnedHeroes();
 	vectorOfHeroes.erase(vectorOfHeroes.begin() + heroIndex);
+	if (vectorOfHeroes.size() > 0)
+	{
+		m_playerHandler.getPlayer(playerIndex).setSelectedHeroIndex(vectorOfHeroes.size() - 1);
+	}
 }
 
 void MapHandler::deletePlayer(const int playerIndex)
@@ -1169,6 +1201,8 @@ void MapHandler::functionToCallAfterBattleConcluded(const CombatTypeEnum combatT
 			deletePlayer(m_combatHandler.getAttackerHero()->getPlayerIndex());
 		}
 	}
+
+	m_audio.playMusic(MusicEnum::mapMusic, 0);
 }
 
 const bool MapHandler::checkIfPathIsWithinMovementRange()

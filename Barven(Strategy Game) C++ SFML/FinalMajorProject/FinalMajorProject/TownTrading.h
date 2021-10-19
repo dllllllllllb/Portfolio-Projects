@@ -45,7 +45,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	TownTrading(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, ConfirmationWindow& rConfirmationWindow, ResourcesBar& rResourceBar);
+	TownTrading(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow, ResourcesBar& rResourceBar);
 
 	//===========================================================================================
 	//Description: Class destructor

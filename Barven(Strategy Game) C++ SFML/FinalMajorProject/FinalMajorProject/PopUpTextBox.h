@@ -22,7 +22,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	PopUpTextBox(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts);
+	PopUpTextBox(sf::RenderWindow& window, Textures& rTextures, Fonts& rFonts);
 
 	//===========================================================================================
 	//Description: Class destructor

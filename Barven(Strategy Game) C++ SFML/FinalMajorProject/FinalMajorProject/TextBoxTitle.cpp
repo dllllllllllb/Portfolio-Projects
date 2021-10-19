@@ -1,8 +1,8 @@
 #include "TextBoxTitle.h"
 
-TextBoxTitle::TextBoxTitle(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts) :
-	UIElement(window, pTextures),
-	m_pFonts(pFonts)
+TextBoxTitle::TextBoxTitle(sf::RenderWindow& window, Textures& rTextures, Fonts& rFonts) :
+	UIElement(window, rTextures),
+	m_fonts(rFonts)
 {
 }
 
@@ -33,7 +33,7 @@ void TextBoxTitle::setTitlePosition(const float& x, const float& y)
 
 void TextBoxTitle::setUpTitleText(const sf::String& titleText, const int& charSize)
 {
-	m_titleText.setFont(m_pFonts->m_fontBasic);
+	m_titleText.setFont(m_fonts.m_fontBasic);
 	m_titleText.setCharacterSize(charSize);
 	m_titleText.setStyle(1);
 

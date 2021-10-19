@@ -18,7 +18,7 @@
 class PurchaseUnitWindow : public virtual UIElement, public TextBoxTitle
 {
 private:
-	ConfirmationWindow* m_pConfirmationWindow;
+	ConfirmationWindow& m_confirmationWindow;
 	UIElement m_unitImageBackground;
 	sf::Sprite m_unitSprite;
 	TextBox m_unitStats;
@@ -38,7 +38,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	PurchaseUnitWindow(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, ConfirmationWindow* pConfirmationWindow);
+	PurchaseUnitWindow(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow);
 
 	//===========================================================================================
 	//Description: Class destructor
@@ -58,7 +58,7 @@ public:
 	//===========================================================================================
 	//Description: Updates purchase window
 	//===========================================================================================
-	bool update(const sf::Vector2f& mousePosition);
+	void update(const sf::Vector2f& mousePosition);
 
 	//===========================================================================================
 	//Description: Updates text box that displays selected number of units to recruit

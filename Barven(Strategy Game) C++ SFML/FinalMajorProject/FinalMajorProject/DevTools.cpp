@@ -2,26 +2,26 @@
 
 namespace settings = DevToolsSettings;
 
-DevTools::DevTools(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, DataHandler* pDataHandler, sf::Mouse& mouse) :
+DevTools::DevTools(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler, sf::Mouse& mouse) :
 	m_window(rWindow),
 	m_DevToolsEnum(DevToolsEnum::devTools),
-	m_dataHandler(*pDataHandler),
-	m_confirmationWindow(rWindow, pTextures, pFonts),
-	m_UITool(rWindow, pTextures, pFonts),
-	m_pathFindingTool(rWindow, pTextures, pFonts),
-	m_unitCreationTool(rWindow, pTextures, pFonts),
-	m_mapCreator(rWindow, pTextures, pFonts, pDataHandler, mouse),
-	m_commbatHandler(rWindow, *pTextures, *pDataHandler, *pFonts),
-	m_testTextBox(rWindow, pTextures, pFonts),
-	m_player(rWindow),
-	m_resourcesBar(rWindow, pTextures, pFonts),
-	m_townTool(rWindow, pTextures, pFonts, m_confirmationWindow, m_resourcesBar)
+	m_dataHandler(rDataHandler),
+	m_confirmationWindow(rWindow, rTextures, rFonts, rAudio),
+	m_UITool(rWindow, rTextures, rFonts, rAudio),
+	m_pathFindingTool(rWindow, rTextures, rFonts, rAudio),
+	m_unitCreationTool(rWindow, rTextures, rFonts, rAudio),
+	m_mapCreator(rWindow, rTextures, rFonts, rAudio, rDataHandler, mouse),
+	m_commbatHandler(rWindow, rTextures, rDataHandler, rFonts, rAudio),
+	m_testTextBox(rWindow, rTextures, rFonts),
+	m_player(rWindow, rAudio),
+	m_resourcesBar(rWindow, rTextures, rFonts),
+	m_townTool(rWindow, rTextures, rFonts, rAudio, m_confirmationWindow, m_resourcesBar)
 {
 	for (int i = 0; i < settings::c_numOfButtons; i++)
 	{
-		m_buttons.push_back(std::unique_ptr<Button>(new Button(rWindow, pTextures, pFonts)));
+		m_buttons.push_back(std::unique_ptr<Button>(new Button(rWindow, rTextures, rFonts, rAudio)));
 	}
-	m_player.setDataHandlerPointer(pDataHandler);
+	m_player.setDataHandlerPointer(&rDataHandler);
 	m_player.setFunctionToCallWhenHeroArrivesAtDestination(std::bind(&DevTools::drawDevTools, this));
 }
 
@@ -126,11 +126,10 @@ void DevTools::update(const sf::Vector2f& mousePosition, const float& deltaTime)
 	if (m_DevToolsEnum != DevToolsEnum::devTools)
 	{
 		//Each tool uses the same back button that lives inside this class
-		if (m_buttons[0]->checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+		if (m_buttons[0]->checkIfButtonWasPressed(mousePosition))
 		{
 			m_DevToolsEnum = DevToolsEnum::devTools;
 			m_townTool.setIsTownActive(false);
-			Global::objectPressed();
 		}
 	}
 
@@ -192,13 +191,12 @@ void DevTools::updateDevTools(const sf::Vector2f& mousePosition)
 {
 	for (int i = 0; i < settings::c_numOfButtons; i++)
 	{
-		if (m_buttons[i]->checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+		if (m_buttons[i]->checkIfButtonWasPressed(mousePosition))
 		{
 			if (i == 0) //Back button
 			{
 				Global::g_gameState = GameState::menu; //Returns player to the main menu
 				m_townTool.setIsTownActive(false);
-				Global::objectPressed();
 			}
 			else
 			{
@@ -208,7 +206,6 @@ void DevTools::updateDevTools(const sf::Vector2f& mousePosition)
 					m_townTool.setIsTownActive(true);
 					Global::g_UILayer = UILayerEnum::town;
 				}
-				Global::objectPressed();
 			}
 			break;
 		}

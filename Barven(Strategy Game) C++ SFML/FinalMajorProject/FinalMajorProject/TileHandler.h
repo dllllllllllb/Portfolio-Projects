@@ -18,7 +18,7 @@ class TileHandler
 {
 private:
 	sf::RenderWindow& m_window;
-	Textures* m_pTextures;
+	Textures& m_textures;
 
 	bool m_isTestingTiles;
 	bool m_isCombatTiles;
@@ -39,7 +39,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	TileHandler(sf::RenderWindow& window, Textures* pTextures);
+	TileHandler(sf::RenderWindow& window, Textures& rTextures);
 
 	//===========================================================================================
 	//Description: Class destructor

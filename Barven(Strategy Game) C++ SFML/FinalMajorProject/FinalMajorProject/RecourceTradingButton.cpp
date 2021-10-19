@@ -2,11 +2,11 @@
 
 namespace settings = ResourceTradingButtonSettings;
 
-ResourceTradingButton::ResourceTradingButton(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts) :
-	UIElement(rWindow, pTextures, true),
-	Button(rWindow, pTextures ,pFonts, true),
-	TextBoxTitle(rWindow, pTextures, pFonts),
-	m_textures(*pTextures),
+ResourceTradingButton::ResourceTradingButton(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
+	UIElement(rWindow, rTextures, true),
+	Button(rWindow, rTextures, rFonts, rAudio, true),
+	TextBoxTitle(rWindow, rTextures, rFonts),
+	m_textures(rTextures),
 	m_resourceAmount(0)
 {
 }

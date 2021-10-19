@@ -8,7 +8,7 @@ HeroStatsDisplay::HeroStatsDisplay(sf::RenderWindow& rWindow, Textures& rTexture
 {
 	for (int i = 0; i < settings::c_numOfSkills; i++)
 	{
-		m_heroStatValues.push_back(std::unique_ptr<Text>(new Text(rWindow, &rTextures, &rFonts)));
+		m_heroStatValues.push_back(std::unique_ptr<Text>(new Text(rWindow, rTextures, rFonts)));
 		m_heroStatValues[i]->setFont(rFonts.m_fontBasic);
 		m_heroStatValues[i]->setOutlineThickness(1);
 		m_heroStatValues[i]->setOutlineColor(sf::Color::Black);

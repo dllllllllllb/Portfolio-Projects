@@ -24,6 +24,7 @@ private:
 	sf::RenderWindow& m_window;
 	Textures& m_textures;
 	Fonts& m_fonts;
+	Audio& m_audio;
 	ConfirmationWindow& m_confirmationWindow;
 	Player* m_pPlayer;
 
@@ -38,7 +39,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	SpecialBuildingInteractions(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, ConfirmationWindow& rConfirmationWindow);
+	SpecialBuildingInteractions(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow);
 
 	//===========================================================================================
 	//Description: Class destructor

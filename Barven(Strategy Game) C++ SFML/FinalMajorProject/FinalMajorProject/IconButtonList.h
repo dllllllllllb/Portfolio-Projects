@@ -16,6 +16,7 @@ class IconButtonList
 private:
 	sf::RenderWindow& m_window;
 	Textures& m_textures;
+	Audio& m_audio;
 
 	IconButton m_upNavigationButton;
 	IconButton m_downNavigationButton;
@@ -34,7 +35,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	IconButtonList(sf::RenderWindow& rWindow, Textures& rTextures);
+	IconButtonList(sf::RenderWindow& rWindow, Textures& rTextures, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

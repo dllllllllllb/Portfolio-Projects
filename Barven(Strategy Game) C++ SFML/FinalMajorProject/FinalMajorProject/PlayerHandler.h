@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 30/08/2021
+//Last Accessed: 19/10/2021
 
 #ifndef PLAYERHANDLER_H
 #define PLAYERHANDLER_H
@@ -17,7 +17,8 @@ class PlayerHandler
 {
 private:
 	sf::RenderWindow& m_window;
-	DataHandler* m_pDataHandler;
+	Audio& m_audio;
+	DataHandler& m_dataHandler;
 	ResourcesBar& m_resourcesBar;
 	TurnHandler& m_turnHandler;
 
@@ -26,7 +27,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	PlayerHandler(sf::RenderWindow& rWindow, DataHandler* pDataHandler, ResourcesBar& rResourceBar, TurnHandler& rTurnHandler);
+	PlayerHandler(sf::RenderWindow& rWindow, Audio& rAudio, DataHandler& rDataHandler, ResourcesBar& rResourceBar, TurnHandler& rTurnHandler);
 
 	//===========================================================================================
 	//Description: Class destructor

@@ -41,7 +41,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	HeroPanel(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts);
+	HeroPanel(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

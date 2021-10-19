@@ -2,21 +2,21 @@
 
 namespace settings = TownHeroesUnitsPanelSettings;
 
-UnitsPanel::UnitsPanel(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts) :
+UnitsPanel::UnitsPanel(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
 	m_window(rWindow),
-	m_textures(*pTextures),
-	m_background(rWindow, pTextures),
-	m_cardOutline(rWindow, pTextures, true),
+	m_textures(rTextures),
+	m_background(rWindow, rTextures),
+	m_cardOutline(rWindow, rTextures, true),
 	m_unitsUsedInThisPanel(nullptr),
-	m_unitInformationCard(rWindow, *pTextures, *pFonts),
+	m_unitInformationCard(rWindow, rTextures, rFonts),
 	m_isUnitCardSelected(false),
 	m_selectedCardIndex(-1),
 	m_unitCardInformationIndex(-1)
 {
 	for (int i = 0; i < c_numOfUnitsPerFaction; i++)
 	{
-		m_unitCards.push_back(std::unique_ptr<UnitCard>(new UnitCard(rWindow, pTextures, pFonts)));
-		m_unitCards[i]->setUpAndResizeToSprite(0, 0, pTextures->m_emptyUnitIcon);
+		m_unitCards.push_back(std::unique_ptr<UnitCard>(new UnitCard(rWindow, rTextures, rFonts, rAudio)));
+		m_unitCards[i]->setUpAndResizeToSprite(0, 0, rTextures.m_emptyUnitIcon);
 	}
 }
 
@@ -110,10 +110,8 @@ const bool UnitsPanel::update(const sf::Vector2f& mousePosition)
 		for (int i = 0; i < c_numOfUnitsPerFaction; i++)
 		{
 			//Check if player selected a unit
-			if (Global::g_isLMBPressed && m_unitCards[i]->collisionCheck(mousePosition))
+			if (m_unitCards[i]->checkIfButtonWasPressed(mousePosition))
 			{
-				Global::objectPressed();
-
 				if (m_isUnitCardSelected && m_selectedCardIndex != i)
 				{
 					changeUnitsPositions(i);
@@ -137,7 +135,7 @@ const bool UnitsPanel::update(const sf::Vector2f& mousePosition)
 			}
 
 			//Check if player activated unit information card
-			if (Global::g_isRMBPressed && m_unitCards[i]->collisionCheck(mousePosition))
+			if (Global::g_isRMBPressed && m_unitCards[i]->CollidableObject::collisionCheck(mousePosition))
 			{
 				Global::RMBPressed();
 

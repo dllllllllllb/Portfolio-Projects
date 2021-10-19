@@ -1,7 +1,8 @@
 #include "Player.h"
 
-Player::Player(sf::RenderWindow& rWindow) :
+Player::Player(sf::RenderWindow& rWindow, Audio& rAudio) :
 	m_window(rWindow),
+	m_audio(rAudio),
 	m_pTownDataVector(nullptr),
 	m_factionIndex(0),
 	m_playerIndex(0),
@@ -217,7 +218,7 @@ const bool Player::getIsPlayerAI() const
 
 void Player::makeNewHero(const sf::Vector2f& startPosition, const int& occupiedTileIndex, const bool giveHeroBasicUnit)
 {
-	m_heroes.push_back(std::unique_ptr<Hero>(new Hero()));
+	m_heroes.push_back(std::unique_ptr<Hero>(new Hero(m_audio)));
 	m_heroes[m_heroes.size() - 1]->setPlayerIndex(m_playerIndex);
 	m_heroes[m_heroes.size() - 1]->setUpHero(m_pDataHandler->getFactionData(m_factionIndex).getHeroData().getHeroTexture(), startPosition);
 	m_heroes[m_heroes.size() - 1]->setOccupiedTileIndex(occupiedTileIndex);

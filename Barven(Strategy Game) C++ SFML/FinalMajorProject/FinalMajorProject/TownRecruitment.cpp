@@ -2,15 +2,15 @@
 
 namespace settings = TownRecruitmentSettings;
 
-TownRecruitment::TownRecruitment(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, ConfirmationWindow* pConfirmationWindow, UnitsPanel& rTownHeroesUnitsPanel, ResourcesBar& rResourcesBar) :
+TownRecruitment::TownRecruitment(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow, UnitsPanel& rTownHeroesUnitsPanel, ResourcesBar& rResourcesBar) :
 	m_window(rWindow),
-	m_pTextures(pTextures),
-	m_pConfirmationWindow(pConfirmationWindow),
+	m_textures(rTextures),
+	m_confirmationWindow(rConfirmationWindow),
 	m_unitsPanel(rTownHeroesUnitsPanel),
 	m_resourcesBar(rResourcesBar),
-	m_purchaseUnitWindow(rWindow, pTextures, pFonts, pConfirmationWindow),
-	m_purchaseErrorPopUpWindow(rWindow, pTextures, pFonts),
-	m_purchaseHeroButton(rWindow, pTextures, pFonts),
+	m_purchaseUnitWindow(rWindow, rTextures, rFonts, rAudio, rConfirmationWindow),
+	m_purchaseErrorPopUpWindow(rWindow, rTextures, rFonts),
+	m_purchaseHeroButton(rWindow, rTextures, rFonts, rAudio),
 	m_pPlayer(nullptr),
 	m_pTownData(nullptr),
 	m_selectedUnitIndex(0),
@@ -19,7 +19,7 @@ TownRecruitment::TownRecruitment(sf::RenderWindow& rWindow, Textures* pTextures,
 {
 	for (int i = 0; i < c_numOfUnitsPerFaction; i++)
 	{
-		m_recruitButtons.push_back(std::unique_ptr<UnitRecruitmentButton>(new UnitRecruitmentButton(rWindow, pTextures, pFonts)));
+		m_recruitButtons.push_back(std::unique_ptr<UnitRecruitmentButton>(new UnitRecruitmentButton(rWindow, rTextures, rFonts, rAudio)));
 		m_unitsStationedInsideTheTown[i] = nullptr;
 	}
 
@@ -53,7 +53,7 @@ void TownRecruitment::initialize()
 
 	for (int i = 0; i < c_numOfUnitsPerFaction; i++)
 	{
-		m_recruitButtons[i]->setUpButton(i, "Unit Name", m_pTextures->m_randomUnitIcon, centre.x + settings::c_recruitButtonXCentreOffset, firstYPos + (TownRecruitmentSettings::c_recruitButtonSpaceing * i));
+		m_recruitButtons[i]->setUpButton(i, "Unit Name", m_textures.m_randomUnitIcon, centre.x + settings::c_recruitButtonXCentreOffset, firstYPos + (TownRecruitmentSettings::c_recruitButtonSpaceing * i));
 	}
 	m_purchaseUnitWindow.setUpPurchaseWindow();
 
@@ -206,33 +206,27 @@ void TownRecruitment::activateUnitPurchaseErrorPopUp(const int& messageIndex)
 	m_purchaseErrorPopUpWindow.setUpPopUp(settings::c_purchaseErrorMessages[messageIndex]);
 }
 
-bool TownRecruitment::update(const sf::Vector2f& mousePosition, const float& deltaTime)
+void TownRecruitment::update(const sf::Vector2f& mousePosition, const float& deltaTime)
 {
-	bool toggleButtonPress = false;
-
 	for (int i = 0; i < c_numOfUnitsPerFaction; i++)
 	{
-		if (m_recruitButtons[i]->checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+		if (m_recruitButtons[i]->checkIfButtonWasPressed(mousePosition))
 		{
-			toggleButtonPress = true;
 			m_purchaseUnitWindow.setWindowContent(m_unitsStationedInsideTheTown[i], m_pTownData->getAvailableUnitsToRecruit()[i]); //Change 10, 10 to its appropriate values later
 			m_selectedUnitIndex = i;
 			break;
 		}
 	}
 
-	if (!m_isHeroInTown && m_purchaseHeroButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	if (!m_isHeroInTown && m_purchaseHeroButton.checkIfButtonWasPressed(mousePosition))
 	{
-		toggleButtonPress = true;
-		Global::objectPressed();
 		purchaseNewHero();
 	}
 
 	updatePurchaseErrorPopUpWindow(deltaTime);
 
-	toggleButtonPress = m_purchaseUnitWindow.update(mousePosition);
+	m_purchaseUnitWindow.update(mousePosition);
 
-	return toggleButtonPress;
 }
 
 void TownRecruitment::setIsHeroInTown(const bool state)

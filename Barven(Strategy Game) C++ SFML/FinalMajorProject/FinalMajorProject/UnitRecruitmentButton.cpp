@@ -2,10 +2,10 @@
 
 namespace settings = TownRecruitmentSettings;
 
-UnitRecruitmentButton::UnitRecruitmentButton(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts) :
-	Button(window, pTextures, pFonts),
-	UIElement(window, pTextures),
-	TextBoxTitle(window,pTextures,pFonts),
+UnitRecruitmentButton::UnitRecruitmentButton(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
+	Button(rWindow, rTextures, rFonts, rAudio),
+	UIElement(rWindow, rTextures),
+	TextBoxTitle(rWindow, rTextures, rFonts),
 	m_index(0)
 {
 }

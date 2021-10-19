@@ -1,11 +1,11 @@
 #include "Bar.h"
 
-Bar::Bar(sf::RenderWindow& rWindow, Textures* pTextures) :
+Bar::Bar(sf::RenderWindow& rWindow, Textures& rTextures) :
 	m_window(rWindow)
 {
-	m_bar.setTexture(pTextures->m_UIBar, true);
-	m_barEndLeft.setTexture(pTextures->m_UIBarEnding, true);
-	m_barEndRight.setTexture(pTextures->m_UIBarEnding, true);
+	m_bar.setTexture(rTextures.m_UIBar, true);
+	m_barEndLeft.setTexture(rTextures.m_UIBarEnding, true);
+	m_barEndRight.setTexture(rTextures.m_UIBarEnding, true);
 }
 
 Bar::~Bar()

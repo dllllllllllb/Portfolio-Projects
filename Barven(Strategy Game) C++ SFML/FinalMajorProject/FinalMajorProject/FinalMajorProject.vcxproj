@@ -151,6 +151,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedObject.cpp" />
+    <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Bar.cpp" />
     <ClCompile Include="BasicButton.cpp" />
     <ClCompile Include="Button.cpp" />
@@ -246,6 +247,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedObject.h" />
+    <ClInclude Include="Audio.h" />
+    <ClInclude Include="AudioSettings.h" />
+    <ClInclude Include="MovementSFXEnum.h" />
+    <ClInclude Include="MusicEnum.h" />
     <ClInclude Include="Bar.h" />
     <ClInclude Include="BasicButton.h" />
     <ClInclude Include="Button.h" />
@@ -334,6 +339,7 @@
     <ClInclude Include="ResourcesEnum.h" />
     <ClInclude Include="ResourcesPerTurnSettings.h" />
     <ClInclude Include="ResourceTradingButtonSettings.h" />
+    <ClInclude Include="SFXEnum.h" />
     <ClInclude Include="Slider.h" />
     <ClInclude Include="SliderHandle.h" />
     <ClInclude Include="SpecialBuildingEnum.h" />

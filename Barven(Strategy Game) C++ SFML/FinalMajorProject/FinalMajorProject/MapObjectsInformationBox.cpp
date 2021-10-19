@@ -1,7 +1,7 @@
 #include "MapObjectsInformationBox.h"
 
 MapObjectsInformationBox::MapObjectsInformationBox(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts) : 
-	m_mapObjectsInformationBox(rWindow, &rTextures, &rFonts),
+	m_mapObjectsInformationBox(rWindow, rTextures, rFonts),
 	m_isActive(false)
 {
 	//Set up information box

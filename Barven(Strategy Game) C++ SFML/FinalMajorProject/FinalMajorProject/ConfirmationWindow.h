@@ -33,7 +33,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	ConfirmationWindow(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts);
+	ConfirmationWindow(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

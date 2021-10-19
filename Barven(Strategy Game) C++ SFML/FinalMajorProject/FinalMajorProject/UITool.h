@@ -27,7 +27,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	UITool(sf::RenderWindow& window, Textures* textures, Fonts* fonts);
+	UITool(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

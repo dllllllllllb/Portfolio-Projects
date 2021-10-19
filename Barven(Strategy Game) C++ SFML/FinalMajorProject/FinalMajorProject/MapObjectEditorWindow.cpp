@@ -1,11 +1,12 @@
 #include "MapObjectEditorWindow.h"
 
-MapObjectEditorWindow::MapObjectEditorWindow(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts) :
-	TextBoxTitle(rWindow,pTextures,pFonts),
-	UIElement(rWindow, pTextures, true),
+MapObjectEditorWindow::MapObjectEditorWindow(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
+	TextBoxTitle(rWindow, rTextures, rFonts),
+	UIElement(rWindow, rTextures, true),
+	m_audio(rAudio),
 	m_numOfInputButtons(0),
-	m_acceptButton(pTextures, true),
-	m_declineButton(pTextures, false)
+	m_acceptButton(rTextures, rAudio, true),
+	m_declineButton(rTextures, rAudio, false)
 {
 	setUpTitleText(MapCreatorSettings::c_editorWindowTitle, MapCreatorSettings::c_editorWindowTitleCharSize);
 	setPosition(m_window.getSize().x - (MapCreatorSettings::c_editorWindowWidth * 0.5f) - 6, m_window.getView().getCenter().y);
@@ -22,7 +23,7 @@ void MapObjectEditorWindow::setUpWindow(const int& numOfButtons)
 	{
 		for (int i = 0; i < numOfButtons - m_numOfInputButtons; i++) //Create new buttons if current number of buttons is not enough,
 		{
-			m_inputButtons.push_back(std::unique_ptr<TextInputBox>(new TextInputBox(m_window, m_pTextures, m_pFonts, true)));
+			m_inputButtons.push_back(std::unique_ptr<TextInputBox>(new TextInputBox(m_window, m_textures, m_fonts, m_audio, true)));
 		}
 
 		m_numOfInputButtons = numOfButtons;
@@ -72,36 +73,30 @@ void MapObjectEditorWindow::setCloseWindowFunction(std::function<void()> functio
 	m_pCloseWindow = function;
 }
 
-const bool MapObjectEditorWindow::update(const bool isLMBPressed, const sf::Vector2f& mousePosition)
+void MapObjectEditorWindow::update(const sf::Vector2f& mousePosition)
 {
-	bool toggleButtonPress = false;
 
 	//Update input buttons
 	for (int i = 0; i < m_numOfInputButtons; i++)
 	{
-		if (m_inputButtons[i]->checkMouseCollision(mousePosition) && isLMBPressed)
+		if (m_inputButtons[i]->checkIfButtonWasPressed(mousePosition))
 		{
-			toggleButtonPress = true;
 			m_inputButtons[i]->setButtonPressed(true);
 		}
 		m_inputButtons[i]->update();
 	}
 
 	//Update basic buttons
-	if (isLMBPressed && m_acceptButton.collisionCheck(mousePosition))
+	if (Global::g_isLMBPressed && m_acceptButton.checkIfButtonWasPressed(mousePosition))
 	{
-		toggleButtonPress = true;
 		resetButtonFocus();
 		m_pApplyValuesToObjectFunction();
 	}
 
-	if (isLMBPressed && m_declineButton.collisionCheck(mousePosition))
+	if (Global::g_isLMBPressed && m_declineButton.checkIfButtonWasPressed(mousePosition))
 	{
-		toggleButtonPress = true;
 		m_pCloseWindow();
 	}
-
-	return toggleButtonPress;
 }
 
 void MapObjectEditorWindow::draw()

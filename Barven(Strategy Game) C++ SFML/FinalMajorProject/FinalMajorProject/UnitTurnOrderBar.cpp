@@ -1,12 +1,12 @@
 #include "UnitTurnOrderBar.h"
 namespace settings = UnitTurnOrderBarSettings;
-UnitTurnOrderBar::UnitTurnOrderBar(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts) :
+UnitTurnOrderBar::UnitTurnOrderBar(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
 	m_window(rWindow),
-	m_background(rWindow, &rTextures)
+	m_background(rWindow, rTextures)
 {
 	for (int i = 0; i < settings::c_numOfUnitIconsToDisplay; i++)
 	{
-		m_unitCards.push_back(std::unique_ptr<UnitCard>(new UnitCard(rWindow, &rTextures, &rFonts)));
+		m_unitCards.push_back(std::unique_ptr<UnitCard>(new UnitCard(rWindow, rTextures, rFonts, rAudio)));
 	}
 }
 

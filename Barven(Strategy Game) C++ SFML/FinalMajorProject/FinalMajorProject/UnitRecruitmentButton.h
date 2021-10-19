@@ -20,7 +20,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	UnitRecruitmentButton(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts);
+	UnitRecruitmentButton(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

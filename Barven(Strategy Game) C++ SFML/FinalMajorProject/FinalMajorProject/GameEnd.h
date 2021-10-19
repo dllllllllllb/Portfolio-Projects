@@ -24,7 +24,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	GameEnd(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts);
+	GameEnd(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

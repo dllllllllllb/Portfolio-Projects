@@ -1,9 +1,9 @@
 #include "Menu.h"
-Menu::Menu(sf::RenderWindow& window, Textures* textures, Fonts* fonts) :
-	m_window(window),
-	m_playButton(window, textures, fonts),
-	m_optionsButton(window, textures, fonts),
-	m_devToolsButton(window, textures, fonts)
+Menu::Menu(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
+	m_window(rWindow),
+	m_playButton(rWindow, rTextures, rFonts, rAudio),
+	m_optionsButton(rWindow, rTextures, rFonts, rAudio),
+	m_devToolsButton(rWindow, rTextures, rFonts, rAudio)
 {
 	setUpButtons();
 }
@@ -35,22 +35,19 @@ void Menu::setUpButtons()
 
 void Menu::update(const sf::Vector2f& mousePosition)
 {
-	if (m_playButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	if (m_playButton.checkIfButtonWasPressed(mousePosition))
 	{
-		Global::objectPressed();
 		Global::g_gameState = GameState::gameSetUpScreen;
 	}
 
-	if (m_optionsButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	if (m_optionsButton.checkIfButtonWasPressed(mousePosition))
 	{
-		Global::objectPressed();
 		//Do stuff
 	}
 
-	if (m_devToolsButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	if (m_devToolsButton.checkIfButtonWasPressed(mousePosition))
 	{
 		Global::g_gameState = GameState::devTools;
-		Global::objectPressed();
 	}
 }
 

@@ -1,10 +1,10 @@
 #include "PlayerSettingsTable.h"
 namespace settings = PlayerSettingsTableSettings;
 
-PlayerSettingsTable::PlayerSettingsTable(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, DataHandler& rDataHandler) :
+PlayerSettingsTable::PlayerSettingsTable(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler) :
 	m_window(rWindow),
-	m_pTextures(pTextures),
-	m_background(rWindow, pTextures),
+	m_textures(rTextures),
+	m_background(rWindow, rTextures),
 	m_dataHandler(rDataHandler),
 	m_numOfAvailablePlayers(0)
 {
@@ -13,17 +13,17 @@ PlayerSettingsTable::PlayerSettingsTable(sf::RenderWindow& rWindow, Textures* pT
 	//Collumn Titles
 	for (int i = 0; i < settings::c_numOfCollumns; i++)
 	{
-		m_pCollumnTitles.push_back(std::unique_ptr<TextBox>(new TextBox(rWindow, pTextures, pFonts, true)));
+		m_pCollumnTitles.push_back(std::unique_ptr<TextBox>(new TextBox(rWindow, rTextures, rFonts, true)));
 	}
 
 
 	//Faction Selection Buttons && Player Name Input boxes && Bonus Selection Button
 	for (int i = 0; i < settings::c_numOfMaxPlayers; i++)
 	{
-		m_pFactionSelectionButton.push_back(std::unique_ptr<IconButton>(new IconButton(rWindow, pTextures, true)));
-		m_pPlayerNameInput.push_back(std::unique_ptr<TextInputBox>(new TextInputBox(rWindow, pTextures, pFonts, true)));
-		m_pBonusSelectionButton.push_back(std::unique_ptr<IconButton>(new IconButton(rWindow, pTextures, true)));
-		m_pIsAITickBox.push_back(std::unique_ptr<TickBox>(new TickBox(pTextures)));
+		m_pFactionSelectionButton.push_back(std::unique_ptr<IconButton>(new IconButton(rWindow, rTextures, rAudio, true)));
+		m_pPlayerNameInput.push_back(std::unique_ptr<TextInputBox>(new TextInputBox(rWindow, rTextures, rFonts, rAudio, true)));
+		m_pBonusSelectionButton.push_back(std::unique_ptr<IconButton>(new IconButton(rWindow, rTextures, rAudio, true)));
+		m_pIsAITickBox.push_back(std::unique_ptr<TickBox>(new TickBox(rTextures, rAudio)));
 	}
 
 }
@@ -74,10 +74,10 @@ void PlayerSettingsTable::initialize()
 		m_pPlayerNameInput[i]->setPlayerInput("Player");
 
 		//Faction selection buttons
-		m_pFactionSelectionButton[i]->setUpAndResizeToSprite(windowCentreX + settings::c_buttonXOffset[1], settings::c_tableStartHeight + (settings::c_buttonOffsetY * (i + 1)), m_pTextures->m_randomStartBonusIcon);
+		m_pFactionSelectionButton[i]->setUpAndResizeToSprite(windowCentreX + settings::c_buttonXOffset[1], settings::c_tableStartHeight + (settings::c_buttonOffsetY * (i + 1)), m_textures.m_randomStartBonusIcon);
 
 		//Start bonus buttons
-		m_pBonusSelectionButton[i]->setUpAndResizeToSprite(windowCentreX + settings::c_buttonXOffset[2], settings::c_tableStartHeight + (settings::c_buttonOffsetY * (i + 1)), m_pTextures->m_randomStartBonusIcon);
+		m_pBonusSelectionButton[i]->setUpAndResizeToSprite(windowCentreX + settings::c_buttonXOffset[2], settings::c_tableStartHeight + (settings::c_buttonOffsetY * (i + 1)), m_textures.m_randomStartBonusIcon);
 
 		//AI tick boxes
 		m_pIsAITickBox[i]->setPosition(windowCentreX + settings::c_buttonXOffset[3], settings::c_tableStartHeight + (settings::c_buttonOffsetY * (i + 1)));
@@ -104,19 +104,15 @@ void PlayerSettingsTable::updateButtonClick(const sf::Vector2f& mousePosition)
 	for (int i = 0; i < m_numOfAvailablePlayers; i++) //Checks only active setting rows
 	{
 		//Name
-		if (m_pPlayerNameInput[i]->checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+		if (m_pPlayerNameInput[i]->checkIfButtonWasPressed(mousePosition))
 		{
-			Global::objectPressed();
-
 			m_pPlayerNameInput[i]->setButtonPressed(true);
 			break;
 		}
 
 		//Faction
-		if (m_pFactionSelectionButton[i]->collisionCheck(mousePosition) && Global::g_isLMBPressed)
+		if (m_pFactionSelectionButton[i]->checkIfButtonWasPressed(mousePosition))
 		{
-			Global::objectPressed();
-
 			m_selectedFactionID[i]++;
 
 			if (m_selectedFactionID[i] > c_numOfFactions)
@@ -130,17 +126,14 @@ void PlayerSettingsTable::updateButtonClick(const sf::Vector2f& mousePosition)
 			}
 			else
 			{
-				m_pFactionSelectionButton[i]->setButtonIcon(m_pTextures->m_randomStartBonusIcon);
+				m_pFactionSelectionButton[i]->setButtonIcon(m_textures.m_randomStartBonusIcon);
 			}
 			break;
 		}
 
 		//Start Bonus
-		if (m_pBonusSelectionButton[i]->collisionCheck(mousePosition) && Global::g_isLMBPressed)
+		if (m_pBonusSelectionButton[i]->checkIfButtonWasPressed(mousePosition))
 		{
-			Global::objectPressed();
-
-
 			m_selectedBonusID[i]++;
 			if (m_selectedBonusID[i] > settings::c_numOfBonusOptions)
 			{
@@ -149,24 +142,17 @@ void PlayerSettingsTable::updateButtonClick(const sf::Vector2f& mousePosition)
 
 			if (m_selectedBonusID[i] < settings::c_numOfBonusOptions)
 			{
-				m_pBonusSelectionButton[i]->setButtonIcon(m_pTextures->m_startBonusIcons[m_selectedBonusID[i]]);
+				m_pBonusSelectionButton[i]->setButtonIcon(m_textures.m_startBonusIcons[m_selectedBonusID[i]]);
 			}
 			else
 			{
-				m_pBonusSelectionButton[i]->setButtonIcon(m_pTextures->m_randomStartBonusIcon);
+				m_pBonusSelectionButton[i]->setButtonIcon(m_textures.m_randomStartBonusIcon);
 			}
 			break;
 		}
 
 		//Is AI Tick Box
-
-		if (Global::g_isLMBPressed && m_pIsAITickBox[i]->collisionCheck(mousePosition))
-		{
-			Global::objectPressed();
-			m_pIsAITickBox[i]->toggleState();
-			break;
-		}
-
+		if (m_pIsAITickBox[i]->checkIfTickBoxWasPressed(mousePosition)) { break; }
 	}
 }
 
@@ -200,8 +186,8 @@ void PlayerSettingsTable::setNumberOfAvailablePlayers(const int& numOfAvailableP
 		m_selectedFactionID.push_back(c_numOfFactions + 1);
 		m_selectedBonusID.push_back(settings::c_numOfBonusOptions);
 
-		m_pFactionSelectionButton[i]->setButtonIcon(m_pTextures->m_randomStartBonusIcon);
-		m_pBonusSelectionButton[i]->setButtonIcon(m_pTextures->m_randomStartBonusIcon);
+		m_pFactionSelectionButton[i]->setButtonIcon(m_textures.m_randomStartBonusIcon);
+		m_pBonusSelectionButton[i]->setButtonIcon(m_textures.m_randomStartBonusIcon);
 
 		m_pIsAITickBox[i]->setState(false);
 	}

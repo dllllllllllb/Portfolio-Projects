@@ -20,13 +20,13 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	TextBox(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts);
+	TextBox(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts);
 
 	//===========================================================================================
 	//Description: Class constructor, set last paramater to true to use thin border textures for
 	//			   UI Element
 	//===========================================================================================
-	TextBox(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts, const bool setThinUIBorder);
+	TextBox(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, const bool setThinUIBorder);
 
 	//===========================================================================================
 	//Description: Class destructor

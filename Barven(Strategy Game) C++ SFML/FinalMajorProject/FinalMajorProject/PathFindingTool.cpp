@@ -1,10 +1,10 @@
 #include "PathFindingTool.h"
 
-PathFindingTool::PathFindingTool(sf::RenderWindow& window, Textures* textures, Fonts* fonts) :
+PathFindingTool::PathFindingTool(sf::RenderWindow& window, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
 	m_window(window),
-	m_tileHandler(window, textures),
-	m_solveButton(window, textures, fonts),
-	m_border(window, textures)
+	m_tileHandler(window, rTextures),
+	m_solveButton(window, rTextures, rFonts, rAudio),
+	m_border(window, rTextures)
 {
 	m_tileHandler.setIsTesting(true);
 }
@@ -21,7 +21,6 @@ void PathFindingTool::update(const sf::Vector2f& mousePosition)
 
 	if (Global::g_isLMBPressed)
 	{
-
 		//Tiles are stored in an array. Instead of checking each tile for collision, I use mouse coordinates 
 		//and fixed tile dimentions to calculate the index of the tile pressed.
 		int x = (mousePosition.x - m_tileHandler.getStartPosX()) / tileSize;
@@ -48,10 +47,9 @@ void PathFindingTool::update(const sf::Vector2f& mousePosition)
 	}
 
 	//Solve button collision
-	if (m_solveButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	if (m_solveButton.checkIfButtonWasPressed(mousePosition))
 	{
 		m_tileHandler.findPath();
-		Global::objectPressed();
 	}
 }
 

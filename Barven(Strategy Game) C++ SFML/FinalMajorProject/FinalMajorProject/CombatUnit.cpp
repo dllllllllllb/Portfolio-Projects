@@ -2,14 +2,15 @@
 
 namespace settings = CombatUnitSettings;
 
-CombatUnit::CombatUnit(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts) :
+CombatUnit::CombatUnit(sf::RenderWindow& rWindow, Textures& rTextures, Audio& rAudio, Fonts& rFonts) :
+	MoveableObject(rAudio),
 	m_isLargeUnit(false),
 	m_isAttacker(false),
 	m_didUnitSkipTurn(false),
 	m_isUnitAI(false),
 	m_occupiedTileIndex(0),
 	m_vectorPositionIndex(0),
-	m_numberOfUnitsTextBox(rWindow, &rTextures, &rFonts, true)
+	m_numberOfUnitsTextBox(rWindow, rTextures, rFonts, true)
 {
 	m_numberOfUnitsTextBox.setPosition(0, 0);
 	m_numberOfUnitsTextBox.setUpUIBorder(settings::c_textBoxWidth, settings::c_textBoxHeight);

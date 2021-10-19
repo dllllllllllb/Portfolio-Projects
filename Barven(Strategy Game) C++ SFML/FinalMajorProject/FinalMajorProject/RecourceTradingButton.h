@@ -25,7 +25,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	ResourceTradingButton(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts);
+	ResourceTradingButton(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 
 	//===========================================================================================

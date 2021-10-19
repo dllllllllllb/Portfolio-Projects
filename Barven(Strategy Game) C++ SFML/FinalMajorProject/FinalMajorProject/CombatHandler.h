@@ -33,6 +33,7 @@ private:
 	sf::RenderWindow& m_window;
 	Textures& m_textures;
 	Fonts& m_fonts;
+	Audio& m_audio;
 	DataHandler& m_dataHandler;
 	TileHandler m_tileHandler;
 	sf::Sprite m_combatBackground;
@@ -94,7 +95,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	CombatHandler(sf::RenderWindow& rWindow, Textures& rTextures, DataHandler& rDataHandler, Fonts& rFonts);
+	CombatHandler(sf::RenderWindow& rWindow, Textures& rTextures, DataHandler& rDataHandler, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

@@ -1,10 +1,12 @@
 //Author: Maciej Dowbor
-//Last Accessed: 29/04/2021
+//Last Accessed: 19/10/2021
 
 #ifndef BUTTON_H
 #define BUTTON_H
 
+#include "Audio.h"
 #include "Fonts.h"
+#include "GlobalVariables.h"
 #include "UIElement.h"
 #include "Text.h"
 #include "CollidableObject.h"
@@ -19,17 +21,19 @@ class Button : public CollidableObject, public Text, virtual public TextBoxTitle
 private:
 
 protected:
+	Audio& m_audio;
+	SFXEnum m_SFXToPlay;
 
 public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	Button(sf::RenderWindow& window, Textures* textures, Fonts* fonts );
+	Button(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio );
 
 	//===========================================================================================
 	//Description: Class constructor that determines border type
 	//===========================================================================================
-	Button(sf::RenderWindow& window, Textures* textures, Fonts* fonts, const bool setThinBorder);
+	Button(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, const bool setThinBorder);
 
 	//===========================================================================================
 	//Description: Class destructor
@@ -39,7 +43,7 @@ public:
 	//===========================================================================================
 	//Description: Checks if mouse collides with the button and changes it's colour if hovered
 	//===========================================================================================
-	bool checkMouseCollision(const sf::Vector2f& mousePosition);
+	bool checkIfButtonWasPressed(const sf::Vector2f& mousePosition);
 
 	//===========================================================================================
 	//Description: Sets position of all button elements

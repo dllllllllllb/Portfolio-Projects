@@ -1,7 +1,7 @@
 #include "TileHandler.h"
-TileHandler::TileHandler(sf::RenderWindow& window, Textures* pTextures) :
+TileHandler::TileHandler(sf::RenderWindow& window, Textures& rTextures) :
 	m_window(window),
-	m_pTextures(pTextures),
+	m_textures(rTextures),
 	m_isTestingTiles(false),
 	m_isCombatTiles(false),
 	m_numOfTiles(0),
@@ -347,15 +347,15 @@ void TileHandler::setTestingTileTexture()
 
 			if (m_pTiles[index].getIsObstacle())
 			{
-				m_pTiles[index].setTexture(m_pTextures->m_tileObstacle, true);
+				m_pTiles[index].setTexture(m_textures.m_tileObstacle, true);
 			}
 			else if (m_pTiles[index].getIsVisited())
 			{
-				m_pTiles[index].setTexture(m_pTextures->m_tileVisited, true);
+				m_pTiles[index].setTexture(m_textures.m_tileVisited, true);
 			}
 			else
 			{
-				m_pTiles[index].setTexture(m_pTextures->m_tileNotVisited, true);
+				m_pTiles[index].setTexture(m_textures.m_tileNotVisited, true);
 			}
 		}
 	}
@@ -368,14 +368,14 @@ void TileHandler::setTestingTileTexture()
 		//Gets the parent of the current tile and sets its texture to a path
 		while (tilePath->getParentTile() != nullptr)
 		{
-			tilePath->setTexture(m_pTextures->m_tilePath, true);
+			tilePath->setTexture(m_textures.m_tilePath, true);
 			tilePath = tilePath->getParentTile();
 		}
 	}
 
 	//Sets appropriate textures to start and end tiles
-	m_pStartTile->setTexture(m_pTextures->m_tileStart, true);
-	m_pEndTile->setTexture(m_pTextures->m_tileEnd, true);
+	m_pStartTile->setTexture(m_textures.m_tileStart, true);
+	m_pEndTile->setTexture(m_textures.m_tileEnd, true);
 }
 
 void TileHandler::setMapTileTextures()
@@ -384,7 +384,7 @@ void TileHandler::setMapTileTextures()
 	{
 		int RNG = rand() % 6;
 
-		m_pTiles[i].setTexture(m_pTextures->m_grassTiles);
+		m_pTiles[i].setTexture(m_textures.m_grassTiles);
 		switch (RNG)
 		{
 		case 0:
@@ -422,7 +422,7 @@ void TileHandler::setCombatTileTextures()
 {
 	for (int i = 0; i < m_numOfTiles; i++)
 	{
-		m_pTiles[i].setTexture(m_pTextures->m_combatTile, true);
+		m_pTiles[i].setTexture(m_textures.m_combatTile, true);
 	}
 }
 
@@ -480,14 +480,14 @@ void TileHandler::setTileProperty(const int& index, const TilePropertiesEnum& pr
 		m_pStartTile->setIsVisited(false);
 		if (m_isTestingTiles)
 		{
-			m_pStartTile->setTexture(m_pTextures->m_tileNotVisited, true);
+			m_pStartTile->setTexture(m_textures.m_tileNotVisited, true);
 		}
 
 		//Sets new start tile
 		m_pStartTile = &m_pTiles[index];
 		if (m_isTestingTiles)
 		{
-			m_pStartTile->setTexture(m_pTextures->m_tileStart, true);
+			m_pStartTile->setTexture(m_textures.m_tileStart, true);
 		}
 	}
 	break;
@@ -498,14 +498,14 @@ void TileHandler::setTileProperty(const int& index, const TilePropertiesEnum& pr
 		m_pEndTile->setIsVisited(false);
 		if (m_isTestingTiles)
 		{
-			m_pEndTile->setTexture(m_pTextures->m_tileNotVisited, true);
+			m_pEndTile->setTexture(m_textures.m_tileNotVisited, true);
 		}
 
 		//Sets new end tile
 		m_pEndTile = &m_pTiles[index];
 		if (m_isTestingTiles)
 		{
-			m_pEndTile->setTexture(m_pTextures->m_tileEnd, true);
+			m_pEndTile->setTexture(m_textures.m_tileEnd, true);
 		}
 	}
 	break;
@@ -515,11 +515,11 @@ void TileHandler::setTileProperty(const int& index, const TilePropertiesEnum& pr
 		//Change texture based on if the tile is an obstacle
 		if (m_pTiles[index].getIsObstacle())
 		{
-			m_pTiles[index].setTexture(m_pTextures->m_tileNotVisited, true);
+			m_pTiles[index].setTexture(m_textures.m_tileNotVisited, true);
 		}
 		else
 		{
-			m_pTiles[index].setTexture(m_pTextures->m_tileObstacle, true);
+			m_pTiles[index].setTexture(m_textures.m_tileObstacle, true);
 		}
 
 		//Toggle obstacle

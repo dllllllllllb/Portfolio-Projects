@@ -1,10 +1,11 @@
 #include "DropDownList.h"
 
-DropDownList::DropDownList(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts) :
+DropDownList::DropDownList(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
 	m_window(rWindow),
-	m_pTextures(pTextures),
-	m_pFonts(pFonts),
-	m_slider(rWindow, pTextures, false),
+	m_textures(rTextures),
+	m_fonts(rFonts),
+	m_audio(rAudio),
+	m_slider(rWindow, rTextures, false),
 	m_numberOfOptions(0),
 	m_firstVisibleOption(0),
 	m_selectedOptionID(0),
@@ -19,7 +20,7 @@ DropDownList::DropDownList(sf::RenderWindow& rWindow, Textures* pTextures, Fonts
 	m_titleCharSize(0),
 	m_primaryButtonContentText(""),
 	m_buttonContentCharSize(0),
-	m_primaryButton(rWindow, pTextures, pFonts)
+	m_primaryButton(rWindow, rTextures, rFonts, rAudio)
 {
 	m_slider.setFunctionToCallAfterResize(std::bind(&DropDownList::updateVisibleOptions, this));
 }
@@ -55,7 +56,7 @@ void DropDownList::setConfirmationFunctionPointer(std::function<void()> function
 
 void DropDownList::addNewDropDownOptions(const std::string& optionName)
 {
-	m_pDropDownButtons.push_back(std::unique_ptr<Button>(new Button(m_window, m_pTextures, m_pFonts, true))); //Adds a new empty option to the vector
+	m_pDropDownButtons.push_back(std::unique_ptr<Button>(new Button(m_window, m_textures, m_fonts, m_audio, true))); //Adds a new empty option to the vector
 	m_pDropDownButtons[m_numberOfOptions]->setUpUIBorder(m_optionWidth, m_optionHeight); //Sets up option settings
 	m_pDropDownButtons[m_numberOfOptions]->setCollisionBounds(m_optionWidth, m_optionHeight);
 	m_pDropDownButtons[m_numberOfOptions]->setUpText(optionName, m_buttonContentCharSize, TextAlignmentEnum::middleHorizontal, TextAlignmentEnum::middleVertical);
@@ -108,12 +109,10 @@ void DropDownList::update(const sf::Vector2f& mousePosition)
 		{
 			if (index < m_numberOfOptions) //Makes sure that the index is valid
 			{
-				if (m_pDropDownButtons[index]->checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+				if (m_pDropDownButtons[index]->checkIfButtonWasPressed(mousePosition))
 				{
 					m_selectedOptionID = index;
 					m_isDropDownActive = false;
-
-					Global::objectPressed();
 
 					m_primaryButton.setString(m_pDropDownButtons[index]->getSelf()->getString());
 					m_primaryButton.updateHorizontalAlignment();
@@ -125,10 +124,9 @@ void DropDownList::update(const sf::Vector2f& mousePosition)
 		}
 	}
 
-	if (m_primaryButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed) //Main drop down button
+	if (m_primaryButton.checkIfButtonWasPressed(mousePosition)) //Main drop down button
 	{
 		m_isDropDownActive = !m_isDropDownActive;
-		Global::objectPressed();
 	}
 }
 

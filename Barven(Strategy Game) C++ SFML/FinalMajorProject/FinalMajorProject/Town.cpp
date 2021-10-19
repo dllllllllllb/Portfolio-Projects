@@ -2,19 +2,20 @@
 
 namespace settings = TownSettings;
 
-Town::Town(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts, ConfirmationWindow& rConfirmationWindow, ResourcesBar& rResourcesBar) :
+Town::Town(sf::RenderWindow& window, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow, ResourcesBar& rResourcesBar) :
 	m_window(window),
-	m_background(window, pTextures),
-	m_sectionBackground(window, pTextures),
+	m_background(window, rTextures),
+	m_sectionBackground(window, rTextures),
 	m_townEnum(TownEnum::townCentre),
-	m_pTextures(pTextures),
+	m_textures(rTextures),
+	m_audio(rAudio),
 	m_confirmationWindow(rConfirmationWindow),
-	m_popUpTextBox(window, pTextures, pFonts),
-	m_townBuilding(window, pTextures, pFonts, &m_confirmationWindow, &m_popUpTextBox, rResourcesBar),
-	m_recruitment(window, pTextures, pFonts, &m_confirmationWindow, m_townsUnitsPannel, rResourcesBar),
-	m_townsUnitsPannel(window, pTextures, pFonts),
-	m_visitingHeroUnitsPannel(window, pTextures, pFonts),
-	m_townTrading(window, *pTextures, *pFonts, rConfirmationWindow, rResourcesBar),
+	m_popUpTextBox(window, rTextures, rFonts),
+	m_townBuilding(window, rTextures, rFonts, rAudio, m_confirmationWindow, m_popUpTextBox, rResourcesBar),
+	m_recruitment(window, rTextures, rFonts, rAudio, m_confirmationWindow, m_townsUnitsPannel, rResourcesBar),
+	m_townsUnitsPannel(window, rTextures, rFonts, rAudio),
+	m_visitingHeroUnitsPannel(window, rTextures, rFonts, rAudio),
+	m_townTrading(window, rTextures, rFonts, rAudio, rConfirmationWindow, rResourcesBar),
 	m_isTownActive(false),
 	m_isHeroVisiting(false),
 	m_isLastSelectedUnitInHerosPanel(false),
@@ -22,7 +23,7 @@ Town::Town(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts, Confirm
 {
 	for (int i = 0; i < settings::c_numOfButtons; i++)
 	{
-		m_buttons.push_back(std::unique_ptr<Button>(new Button(window, pTextures, pFonts)));
+		m_buttons.push_back(std::unique_ptr<Button>(new Button(window, rTextures, rFonts, rAudio)));
 	}
 }
 
@@ -112,6 +113,8 @@ void Town::setTownData(const int& factionIndex, TownData& townData, FactionBuild
 	}
 
 	m_townTrading.setResourcesPointer(&player.getResources());
+
+	m_audio.playMusic(MusicEnum::townMusic, factionIndex);
 }
 
 void Town::setVisitingHeroData(Hero* hero)
@@ -148,9 +151,8 @@ void Town::update(const sf::Vector2f& mousePosition, const float& deltaTime)
 		{
 			for (int i = 0; i < settings::c_numOfButtons; i++)
 			{
-				if (m_buttons[i]->checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+				if (m_buttons[i]->checkIfButtonWasPressed(mousePosition))
 				{
-					Global::objectPressed();
 					m_townEnum = static_cast<TownEnum>(++i);
 
 					switch (m_townEnum)
@@ -242,6 +244,7 @@ void Town::update(const sf::Vector2f& mousePosition, const float& deltaTime)
 		case TownEnum::exit:
 		{
 			Global::g_UILayer = UILayerEnum::map;
+			m_audio.playMusic(MusicEnum::mapMusic, 0);
 			Global::toggleUpdateGame();
 			toggleIsTownActive();
 		}
@@ -260,7 +263,6 @@ void Town::update(const sf::Vector2f& mousePosition, const float& deltaTime)
 		{
 			if (m_confirmationWindow.update(mousePosition))
 			{
-				Global::objectPressed();
 				Global::g_UILayer = UILayerEnum::town;
 			}
 			m_confirmationWindow.draw();

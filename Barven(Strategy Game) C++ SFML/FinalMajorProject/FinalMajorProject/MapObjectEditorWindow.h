@@ -19,6 +19,7 @@
 class MapObjectEditorWindow : public TextBoxTitle, virtual public UIElement
 {
 private:
+	Audio& m_audio;
 	int			m_numOfInputButtons;
 	BasicButton m_acceptButton;
 	BasicButton m_declineButton;
@@ -32,7 +33,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	MapObjectEditorWindow(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts);
+	MapObjectEditorWindow(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor
@@ -67,7 +68,7 @@ public:
 	//===========================================================================================
 	//Description: Checks for button presses and updates input boxes
 	//===========================================================================================
-	const bool update(const bool isLMBPressed, const sf::Vector2f& mousePosition);
+	void update(const sf::Vector2f& mousePosition);
 
 	//===========================================================================================
 	//Description: Draws contents of this class

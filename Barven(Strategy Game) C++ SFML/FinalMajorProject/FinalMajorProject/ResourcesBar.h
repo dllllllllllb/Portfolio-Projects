@@ -31,7 +31,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	ResourcesBar(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts);
+	ResourcesBar(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts);
 
 	//===========================================================================================
 	//Description: Class destructor

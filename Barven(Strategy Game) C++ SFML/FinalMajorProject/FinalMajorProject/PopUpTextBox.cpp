@@ -1,8 +1,8 @@
 #include "PopUpTextBox.h"
 
-PopUpTextBox::PopUpTextBox(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts) :
+PopUpTextBox::PopUpTextBox(sf::RenderWindow& window, Textures& rTextures, Fonts& rFonts) :
 	m_window(window),
-	m_textBox(window, pTextures, pFonts, true),
+	m_textBox(window, rTextures, rFonts, true),
 	m_isActive(false)
 {
 	m_textBox.setThinUIBorder();

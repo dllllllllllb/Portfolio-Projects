@@ -36,6 +36,7 @@ private:
 	DataHandler* m_pDataHandler;
 	Textures* m_pTextures;
 	Fonts* m_pFonts;
+	Audio* m_pAudio;
 
 	void checkWindowEvents();
 

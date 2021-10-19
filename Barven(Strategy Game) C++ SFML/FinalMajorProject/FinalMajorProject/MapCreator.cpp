@@ -1,15 +1,15 @@
 #include "MapCreator.h"
 
-MapCreator::MapCreator(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, DataHandler* pDataHandler, sf::Mouse& rMouse) :
+MapCreator::MapCreator(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler, sf::Mouse& rMouse) :
 	m_window(rWindow),
-	m_pTextures(pTextures),
-	m_pDataHandler(pDataHandler),
-	m_tileHandler(rWindow, pTextures),
+	m_textures(rTextures),
+	m_dataHandler(rDataHandler),
+	m_tileHandler(rWindow, rTextures),
 	m_viewManager(rWindow, rMouse),
-	m_editorWindow(rWindow, pTextures, pFonts),
-	m_saveWindow(rWindow, pTextures, pFonts),
-	m_applyMapSizeButton(rWindow, pTextures, pFonts, true),
-	m_unitIconButtonsBackground(rWindow, pTextures, true),
+	m_editorWindow(rWindow, rTextures, rFonts, rAudio),
+	m_saveWindow(rWindow, rTextures, rFonts, rAudio),
+	m_applyMapSizeButton(rWindow, rTextures, rFonts, rAudio, true),
+	m_unitIconButtonsBackground(rWindow, rTextures, true),
 	m_selectedMapObjectToPlace(MapObjectsEnum::none),
 	m_selectedMapObjectToEdit(MapObjectsEnum::none),
 	m_mouse(rMouse),
@@ -20,7 +20,6 @@ MapCreator::MapCreator(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pF
 	m_randomFactionIndex(MapCreatorSettings::c_numOfSecondaryButtonsPerSection[4] - 1),
 	m_deltaTime(0),
 	m_isSetMapSizeActive(false),
-	m_wasButtonPressed(false),
 	m_isEditorActive(false),
 	m_isMapObjectSelected(false),
 	m_drawTileOverlap(false),
@@ -44,7 +43,7 @@ MapCreator::MapCreator(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pF
 	//Primary Buttons
 	for (int i = 0; i < MapCreatorSettings::c_numOfprimaryButtons; i++)
 	{
-		m_primaryButtons.push_back(std::unique_ptr<Button>(new Button(rWindow, pTextures, pFonts, true)));
+		m_primaryButtons.push_back(std::unique_ptr<Button>(new Button(rWindow, rTextures, rFonts, rAudio, true)));
 	}
 
 	//Secondary Button
@@ -53,20 +52,20 @@ MapCreator::MapCreator(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pF
 	{
 		for (int j = 0; j < MapCreatorSettings::c_numOfSecondaryButtonsPerSection[i]; j++)
 		{
-			m_secondaryButtons[i].push_back(std::unique_ptr<Button>(new Button(rWindow, pTextures, pFonts, true)));
+			m_secondaryButtons[i].push_back(std::unique_ptr<Button>(new Button(rWindow, rTextures, rFonts, rAudio, true)));
 		}
 	}
 
 	//Input Boxes
 	for (int i = 0; i < MapCreatorSettings::c_numOfInputBoxes; i++)
 	{
-		m_inputBoxes.push_back(std::unique_ptr<TextInputBox>(new TextInputBox(rWindow, pTextures, pFonts, true)));
+		m_inputBoxes.push_back(std::unique_ptr<TextInputBox>(new TextInputBox(rWindow, rTextures, rFonts, rAudio, true)));
 	}
 
 	//UnitIcon Buttons
 	for (int i = 0; i < c_numOfUnitsPerFaction; i++)
 	{
-		m_unitIconButtons.push_back(std::unique_ptr<IconButton>(new IconButton(rWindow, pTextures, true)));
+		m_unitIconButtons.push_back(std::unique_ptr<IconButton>(new IconButton(rWindow, rTextures, rAudio, true)));
 	}
 
 	//Set editor window function pointers
@@ -77,7 +76,7 @@ MapCreator::MapCreator(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pF
 	m_saveWindow.setSaveMapFunction(std::bind(&MapCreator::saveMap, this));
 	m_saveWindow.setExitSaveWindowFunction(std::bind(&MapCreator::closeSaveMapWindow, this));
 
-	m_tileOverlap.setTexture(pTextures->m_tileOverlap, true);
+	m_tileOverlap.setTexture(rTextures.m_tileOverlap, true);
 }
 
 MapCreator::~MapCreator()
@@ -129,17 +128,17 @@ void MapCreator::setUpButtons()
 			{
 			case 5:
 				tempSprite = &m_treeLandscapes[j];
-				tempSprite->setTexture(m_pTextures->m_treeLandscapes[j]);
+				tempSprite->setTexture(m_textures.m_treeLandscapes[j]);
 				break;
 
 			case 6:
 				tempSprite = &m_rockyLandscapes[j];
-				tempSprite->setTexture(m_pTextures->m_rockyLandscapes[j]);
+				tempSprite->setTexture(m_textures.m_rockyLandscapes[j]);
 				break;
 
 			case 7:
 				tempSprite = &m_otherLandscapes[j];
-				tempSprite->setTexture(m_pTextures->m_otherLandscapes[j]);
+				tempSprite->setTexture(m_textures.m_otherLandscapes[j]);
 				break;
 
 			default:
@@ -177,7 +176,7 @@ void MapCreator::setUpButtons()
 	////Unit Icons
 	for (int i = 0; i < c_numOfUnitsPerFaction; i++)
 	{
-		m_unitIconButtons[i]->setUpAndResizeToSprite(MapCreatorSettings::c_unitIconButtonFirstXPosition + (MapCreatorSettings::c_unitIconButtonWidth * i), MapCreatorSettings::c_primaryButtonsPositionY, m_pDataHandler->getFactionData(0).getUnitData(i).getUnitIcon());
+		m_unitIconButtons[i]->setUpAndResizeToSprite(MapCreatorSettings::c_unitIconButtonFirstXPosition + (MapCreatorSettings::c_unitIconButtonWidth * i), MapCreatorSettings::c_primaryButtonsPositionY, m_dataHandler.getFactionData(0).getUnitData(i).getUnitIcon());
 	}
 
 	m_unitIconButtonsBackground.setPosition(MapCreatorSettings::c_unitIconButtonFirstXPosition + (0.5f * (MapCreatorSettings::c_unitIconButtonWidth * (c_numOfUnitsPerFaction - 1))), MapCreatorSettings::c_primaryButtonsPositionY);
@@ -190,8 +189,6 @@ void MapCreator::setUpButtons()
 
 void MapCreator::update(const sf::Vector2f& mousePositionUI)
 {
-	m_wasButtonPressed = false;
-
 	checkForKeyPresses();
 
 	if (Global::g_isLMBPressed)
@@ -199,53 +196,48 @@ void MapCreator::update(const sf::Vector2f& mousePositionUI)
 		resetInputBoxesFocus();
 	}
 
-	updateUI(Global::g_isLMBPressed, mousePositionUI);
+	updateUI(mousePositionUI);
 
-	if (!m_wasButtonPressed)
-	{
-		updateGame(Global::g_isLMBPressed);
-	}
+	updateGame();
 
 	draw();
-
-	Global::g_wasObjectPressed = m_wasButtonPressed;
 }
 
 //===========================================================================================
 // Update UI
 //===========================================================================================
 
-void MapCreator::updateUI(const bool isLMBPressed, const sf::Vector2f& mousePosition)
+void MapCreator::updateUI(const sf::Vector2f& mousePosition)
 {
 	//Primary Buttons
-	checkIfMouseWasPressed(updatePrimaryButtons(isLMBPressed, mousePosition));
+	updatePrimaryButtons(mousePosition);
 
 	//Secondary Buttons
-	checkIfMouseWasPressed(updateSecondaryButtons(isLMBPressed, mousePosition));
+	updateSecondaryButtons(mousePosition);
 
 	//Input boxes
-	checkIfMouseWasPressed(updateInputBoxes(isLMBPressed, mousePosition));
+	updateInputBoxes(mousePosition);
 
 	//Unit Icon Buttons
-	checkIfMouseWasPressed(updateUnitIconButtons(isLMBPressed, mousePosition));
+	updateUnitIconButtons(mousePosition);
 
 	//Object editor window
 	if (m_isEditorActive)
 	{
-		checkIfMouseWasPressed(m_editorWindow.update(isLMBPressed, mousePosition));
+		m_editorWindow.update(mousePosition);
 	}
 
 	//Map save window
 	if (m_isSaveWindowActive)
 	{
-		checkIfMouseWasPressed(m_saveWindow.update(isLMBPressed, mousePosition));
+		m_saveWindow.update(mousePosition);
 	}
 }
 
 //===========================================================================================
 // Update Game
 //===========================================================================================
-void MapCreator::updateGame(const bool isLMBPressed)
+void MapCreator::updateGame()
 {
 	m_viewManager.setGameView();
 
@@ -260,16 +252,14 @@ void MapCreator::updateGame(const bool isLMBPressed)
 		updateCursor(mousePositionGame);
 	}
 
-	if (isLMBPressed)
+	if (Global::g_isLMBPressed)
 	{
 		int tileIndex = m_tileHandler.checkTileCollision(mousePositionGame);
 		if (tileIndex >= 0)
 		{
-			checkIfMouseWasPressed(updateMapObjectPlacement(tileIndex)); //Update Map Object Placement
-
-			if (!m_wasButtonPressed)
+			if (!updateMapObjectPlacement(tileIndex)) //Update Map Object Placement
 			{
-				checkIfMouseWasPressed(selectMapObject(tileIndex)); //Select Map Object
+				selectMapObject(tileIndex); //Select Map Object
 			}
 		}
 	}
@@ -278,14 +268,12 @@ void MapCreator::updateGame(const bool isLMBPressed)
 //===========================================================================================
 // Buttons and Input boxes update
 //===========================================================================================
-bool MapCreator::updatePrimaryButtons(const bool isLMBPressed, const sf::Vector2f& mousePosition)
+void MapCreator::updatePrimaryButtons(const sf::Vector2f& mousePosition)
 {
-	bool toggleButtonPress = false;
-
 	//Determines if and which drop down list to activate so its content can be interactable
 	for (int i = 0; i < MapCreatorSettings::c_numOfprimaryButtons; i++)
 	{
-		if (m_primaryButtons[i]->checkMouseCollision(mousePosition) && isLMBPressed)
+		if (m_primaryButtons[i]->checkIfButtonWasPressed(mousePosition))
 		{
 			if (m_dropDownIndex == i) //This allows for the drop down list to be hidden if player clicks twice on the same primary button that activates the drop down list
 			{
@@ -303,22 +291,18 @@ bool MapCreator::updatePrimaryButtons(const bool isLMBPressed, const sf::Vector2
 			{
 				m_isSaveWindowActive = true;
 			}
-			toggleButtonPress = true;
 		}
 	}
-	return toggleButtonPress;
 }
 
-bool MapCreator::updateSecondaryButtons(const bool isLMBPressed, const sf::Vector2f& mousePosition)
+void MapCreator::updateSecondaryButtons(const sf::Vector2f& mousePosition)
 {
-	bool toggleButtonPress = false;
-
 	//Secondary Buttons
 	if (m_dropDownIndex > -1) //Makes sure that there is an active drop down list
 	{
 		for (int i = 0; i < MapCreatorSettings::c_numOfSecondaryButtonsPerSection[m_dropDownIndex]; i++) //Based on the drop down list, it will then check only for the buttons that live in the active drop down list
 		{
-			if (m_secondaryButtons[m_dropDownIndex][i]->checkMouseCollision(mousePosition) && isLMBPressed) //Checks for mouse collision
+			if (m_secondaryButtons[m_dropDownIndex][i]->checkIfButtonWasPressed(mousePosition)) //Checks for mouse collision
 			{
 				m_isMapObjectSelected = true;
 
@@ -328,7 +312,7 @@ bool MapCreator::updateSecondaryButtons(const bool isLMBPressed, const sf::Vecto
 				case MapCreatorEnum::towns:
 				{
 					m_selectedMapObjectToPlace = MapObjectsEnum::town;
-					setCursor(m_pTextures->m_unasignedTown);
+					setCursor(m_textures.m_unasignedTown);
 
 					switch ((MapCreatorTownsEnum)i)
 					{
@@ -352,7 +336,7 @@ bool MapCreator::updateSecondaryButtons(const bool isLMBPressed, const sf::Vecto
 				{
 					m_selectedMapObjectToPlace = MapObjectsEnum::resourceMine;
 					m_selectedMineType = (ResourcesEnum)i;
-					setCursor(*m_pDataHandler->getResourceMineData(m_selectedMineType).getMineMapTexture());
+					setCursor(*m_dataHandler.getResourceMineData(m_selectedMineType).getMineMapTexture());
 				}
 				break;
 
@@ -362,7 +346,7 @@ bool MapCreator::updateSecondaryButtons(const bool isLMBPressed, const sf::Vecto
 					m_selectedMapObjectToPlace = MapObjectsEnum::resource;
 					m_selectedResourceType = (ResourcesEnum)i;
 
-					setCursor(m_pTextures->m_resourceTextures[i]);
+					setCursor(m_textures.m_resourceTextures[i]);
 				}
 				break;
 
@@ -372,7 +356,7 @@ bool MapCreator::updateSecondaryButtons(const bool isLMBPressed, const sf::Vecto
 					m_selectedMapObjectToPlace = MapObjectsEnum::specialBuilding;
 					m_selectedSpecialBuildingIndex = i;
 
-					setCursor(m_pTextures->m_specialBuildings[i]);
+					setCursor(m_textures.m_specialBuildings[i]);
 				}
 				break;
 
@@ -389,7 +373,7 @@ bool MapCreator::updateSecondaryButtons(const bool isLMBPressed, const sf::Vecto
 					m_selectedMapObjectToPlace = MapObjectsEnum::landscape;
 					m_selectedLandscapeType = LandscapeTypeEnum::tree;
 					m_selectedLandscapeIndex = i;
-					setCursor(m_pTextures->m_treeLandscapes[m_selectedLandscapeIndex]);
+					setCursor(m_textures.m_treeLandscapes[m_selectedLandscapeIndex]);
 				}
 				break;
 
@@ -399,7 +383,7 @@ bool MapCreator::updateSecondaryButtons(const bool isLMBPressed, const sf::Vecto
 					m_selectedMapObjectToPlace = MapObjectsEnum::landscape;
 					m_selectedLandscapeType = LandscapeTypeEnum::rocky;
 					m_selectedLandscapeIndex = i;
-					setCursor(m_pTextures->m_rockyLandscapes[m_selectedLandscapeIndex]);
+					setCursor(m_textures.m_rockyLandscapes[m_selectedLandscapeIndex]);
 				}
 				break;
 
@@ -409,7 +393,7 @@ bool MapCreator::updateSecondaryButtons(const bool isLMBPressed, const sf::Vecto
 					m_selectedMapObjectToPlace = MapObjectsEnum::landscape;
 					m_selectedLandscapeType = LandscapeTypeEnum::other;
 					m_selectedLandscapeIndex = i;
-					setCursor(m_pTextures->m_otherLandscapes[m_selectedLandscapeIndex]);
+					setCursor(m_textures.m_otherLandscapes[m_selectedLandscapeIndex]);
 				}
 				break;
 
@@ -417,35 +401,28 @@ bool MapCreator::updateSecondaryButtons(const bool isLMBPressed, const sf::Vecto
 					break;
 				}
 				m_dropDownIndex = -1; //Sets drop down to off state
-				toggleButtonPress = true;
 				break;
 			}
 		}
 	}
-	return toggleButtonPress;
 }
 
-bool MapCreator::updateInputBoxes(const bool isLMBPressed, const sf::Vector2f& mousePosition)
+void MapCreator::updateInputBoxes(const sf::Vector2f& mousePosition)
 {
-	bool toggleButtonPress = false;
 
 	if (m_isSetMapSizeActive) //Checks if the map size drop down is active
 	{
 		for (int i = 0; i < MapCreatorSettings::c_numOfInputBoxes; i++) //Updates inpub boxes
 		{
-			if (m_inputBoxes[i]->checkMouseCollision(mousePosition) && isLMBPressed) //Checks if input box has been pressed
+			if (m_inputBoxes[i]->checkIfButtonWasPressed(mousePosition)) //Checks if input box has been pressed
 			{
-				toggleButtonPress = true;
-
 				m_inputBoxes[i]->setButtonPressed(true);
 			}
 			m_inputBoxes[i]->update();
 		}
 
-		if (m_applyMapSizeButton.checkMouseCollision(mousePosition) && isLMBPressed) //Apply size button is here as its relevant to map size section
+		if (m_applyMapSizeButton.checkIfButtonWasPressed(mousePosition)) //Apply size button is here as its relevant to map size section
 		{
-			toggleButtonPress = true;
-
 			//Resizes the map
 			m_tileHandler.setUpTiles(std::stoi(m_inputBoxes[0]->getPlayerInput()), std::stoi(m_inputBoxes[1]->getPlayerInput()), MapCreatorSettings::c_tileSize, MapCreatorSettings::c_tileStartPositionX, MapCreatorSettings::c_tileStartPositionY);
 			m_viewManager.setMapBoundaries(32 * std::stoi(m_inputBoxes[0]->getPlayerInput()), 32 * std::stoi(m_inputBoxes[1]->getPlayerInput()), 300);
@@ -453,40 +430,35 @@ bool MapCreator::updateInputBoxes(const bool isLMBPressed, const sf::Vector2f& m
 			resetInputBoxesFocus();
 		}
 	}
-
-	return toggleButtonPress;
 }
 
-bool MapCreator::updateUnitIconButtons(const bool isLMBPressed, const sf::Vector2f& mousePosition)
+void MapCreator::updateUnitIconButtons(const sf::Vector2f& mousePosition)
 {
-	bool toggleButtonPress = false;
 
 	for (int i = 0; i < c_numOfUnitsPerFaction; i++)
 	{
-		if (isLMBPressed && m_unitIconButtons[i]->collisionCheck(mousePosition)) //Checks if a unit has been selected
+		if (m_unitIconButtons[i]->checkIfButtonWasPressed(mousePosition)) //Checks if a unit has been selected
 		{
-			toggleButtonPress = true;
 			m_selectedMapObjectToPlace = MapObjectsEnum::unit;
 			m_selectedUnitIndex = i;
 			m_isMapObjectSelected = true;
 
 			if (m_selectedFaction == m_randomFactionIndex)
 			{
-				setCursor(m_pTextures->m_randomUnitMapSprite);
+				setCursor(m_textures.m_randomUnitMapSprite);
 			}
 			else
 			{
-				setCursor(m_pDataHandler->getFactionData(m_selectedFaction).getUnitData(m_selectedUnitIndex).getUnitMapSprite());
+				setCursor(m_dataHandler.getFactionData(m_selectedFaction).getUnitData(m_selectedUnitIndex).getUnitMapSprite());
 			}
 		}
 	}
-	return toggleButtonPress;
 }
 
 //===========================================================================================
 // Map object placement update
 //===========================================================================================
-bool MapCreator::updateMapObjectPlacement(const int& tileIndex)
+const bool MapCreator::updateMapObjectPlacement(const int& tileIndex)
 {
 	bool toggleButtonPress = false;
 
@@ -511,7 +483,7 @@ bool MapCreator::updateMapObjectPlacement(const int& tileIndex)
 			{
 			case MapObjectsEnum::town:
 				m_townMapObjects.push_back(std::unique_ptr<TownMapObject>(new TownMapObject())); //Allocate memory for new object
-				m_townMapObjects[m_numOfTownMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), m_pTextures->m_unasignedTown); //Set up the object
+				m_townMapObjects[m_numOfTownMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), m_textures.m_unasignedTown); //Set up the object
 
 				//Make a vector of tile indexes that the object will overlap
 				vectorOfOverlappedTiles = getVectorOfOverlappedTiles(tileIndex, m_townMapObjects[m_numOfTownMapObjects]->getGlobalBounds().width, m_townMapObjects[m_numOfTownMapObjects]->getGlobalBounds().height, m_townMapObjects[m_numOfTownMapObjects]->getOrigin());
@@ -539,11 +511,11 @@ bool MapCreator::updateMapObjectPlacement(const int& tileIndex)
 				m_unitMapObjects.push_back(std::unique_ptr<UnitMapObject>(new UnitMapObject())); //Allocate memory for new object and set appropriate data
 				if (m_selectedFaction == m_randomFactionIndex)
 				{
-					m_unitMapObjects[m_numOfUnitMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), m_pTextures->m_randomUnitMapSprite);
+					m_unitMapObjects[m_numOfUnitMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), m_textures.m_randomUnitMapSprite);
 				}
 				else
 				{
-					m_unitMapObjects[m_numOfUnitMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), m_pDataHandler->getFactionData(m_selectedFaction).getUnitData(m_selectedUnitIndex).getUnitMapSprite());
+					m_unitMapObjects[m_numOfUnitMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), m_dataHandler.getFactionData(m_selectedFaction).getUnitData(m_selectedUnitIndex).getUnitMapSprite());
 				}
 				m_unitMapObjects[m_numOfUnitMapObjects]->setFactionIndex(m_selectedFaction);
 				m_unitMapObjects[m_numOfUnitMapObjects]->setUnitIndex(m_selectedUnitIndex);
@@ -561,7 +533,7 @@ bool MapCreator::updateMapObjectPlacement(const int& tileIndex)
 
 			case MapObjectsEnum::specialBuilding:
 				m_specialBuildingsMapObjects.push_back(std::unique_ptr<SpecialBuildingMapObject>(new SpecialBuildingMapObject()));
-				m_specialBuildingsMapObjects[m_numOfSpecialBuildingMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), &m_pTextures->m_specialBuildings[m_selectedSpecialBuildingIndex]);
+				m_specialBuildingsMapObjects[m_numOfSpecialBuildingMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), &m_textures.m_specialBuildings[m_selectedSpecialBuildingIndex]);
 
 				vectorOfOverlappedTiles = getVectorOfOverlappedTiles(tileIndex, m_specialBuildingsMapObjects[m_numOfSpecialBuildingMapObjects]->getGlobalBounds().width, m_specialBuildingsMapObjects[m_numOfSpecialBuildingMapObjects]->getGlobalBounds().height, m_specialBuildingsMapObjects[m_numOfSpecialBuildingMapObjects]->getOrigin());
 				if (!checkIfSpaceIsObstacle(vectorOfOverlappedTiles))
@@ -587,7 +559,7 @@ bool MapCreator::updateMapObjectPlacement(const int& tileIndex)
 
 			case MapObjectsEnum::resourceMine:
 				m_resourceMinesMapObjects.push_back(std::unique_ptr<ResourceMineMapObject>(new ResourceMineMapObject())); //Allocate memory for new object and set appropriate data
-				m_resourceMinesMapObjects[m_numOfResourceMinesMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), m_pDataHandler->getResourceMineData(m_selectedMineType).getMineMapTexture());
+				m_resourceMinesMapObjects[m_numOfResourceMinesMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), m_dataHandler.getResourceMineData(m_selectedMineType).getMineMapTexture());
 
 				//Make a vector of tile indexes that the object will overlap
 				vectorOfOverlappedTiles = getVectorOfOverlappedTiles(tileIndex, m_resourceMinesMapObjects[m_numOfResourceMinesMapObjects]->getGlobalBounds().width, m_resourceMinesMapObjects[m_numOfResourceMinesMapObjects]->getGlobalBounds().height, m_resourceMinesMapObjects[m_numOfResourceMinesMapObjects]->getOrigin());
@@ -619,7 +591,7 @@ bool MapCreator::updateMapObjectPlacement(const int& tileIndex)
 				toggleButtonPress = true;
 				m_resourceMapObjects.push_back(std::unique_ptr<ResourceMapObject>(new ResourceMapObject())); //Allocate memory for new object and set appropriate data
 
-				m_resourceMapObjects[m_numOfResourceMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), &m_pTextures->m_resourceTextures[(int)m_selectedResourceType]);
+				m_resourceMapObjects[m_numOfResourceMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), &m_textures.m_resourceTextures[(int)m_selectedResourceType]);
 				m_resourceMapObjects[m_numOfResourceMapObjects]->setResourceType(m_selectedResourceType);
 
 				//Sets appropriate tile properties
@@ -642,15 +614,15 @@ bool MapCreator::updateMapObjectPlacement(const int& tileIndex)
 				{
 					//Sets appropriate data based on selected landscape type
 				case LandscapeTypeEnum::tree:
-					m_landscapeMapObjects[m_numOfLandscapeMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), &m_pTextures->m_treeLandscapes[m_selectedLandscapeIndex]);
+					m_landscapeMapObjects[m_numOfLandscapeMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), &m_textures.m_treeLandscapes[m_selectedLandscapeIndex]);
 					break;
 
 				case LandscapeTypeEnum::rocky:
-					m_landscapeMapObjects[m_numOfLandscapeMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), &m_pTextures->m_rockyLandscapes[m_selectedLandscapeIndex]);
+					m_landscapeMapObjects[m_numOfLandscapeMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), &m_textures.m_rockyLandscapes[m_selectedLandscapeIndex]);
 					break;
 
 				case LandscapeTypeEnum::other:
-					m_landscapeMapObjects[m_numOfLandscapeMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), &m_pTextures->m_otherLandscapes[m_selectedLandscapeIndex]);
+					m_landscapeMapObjects[m_numOfLandscapeMapObjects]->setUp(m_tileHandler.getTile(tileIndex)->getPosition(), &m_textures.m_otherLandscapes[m_selectedLandscapeIndex]);
 					break;
 
 				default:
@@ -701,6 +673,9 @@ bool MapCreator::updateMapObjectPlacement(const int& tileIndex)
 			}
 		}
 	}
+
+	if (toggleButtonPress) { Global::objectPressed(); }
+
 	return toggleButtonPress;
 }
 
@@ -712,15 +687,6 @@ void MapCreator::resetInputBoxesFocus()
 	for (int i = 0; i < MapCreatorSettings::c_numOfInputBoxes; i++)
 	{
 		m_inputBoxes[i]->setButtonPressed(false);
-	}
-}
-
-void MapCreator::checkIfMouseWasPressed(const bool wasButtonPressed)
-{
-	//Makes sure that the button can only be pressed once and one it's pressed it can't be changed to false
-	if (wasButtonPressed)
-	{
-		m_wasButtonPressed = wasButtonPressed;
 	}
 }
 
@@ -900,7 +866,7 @@ void MapCreator::checkForKeyPresses()
 //===========================================================================================
 // Map object selection and editing
 //===========================================================================================
-bool MapCreator::selectMapObject(const int& index)
+void MapCreator::selectMapObject(const int& index)
 {
 	bool toggleButtonPress = false;
 	m_isEditorActive = true;
@@ -956,8 +922,7 @@ bool MapCreator::selectMapObject(const int& index)
 	{
 		closeObjectEditor(); //Deactivates editor if there are no variables to change
 	}
-
-	return toggleButtonPress;
+	if (toggleButtonPress) { Global::objectPressed(); }
 }
 
 void MapCreator::applyValuesToObject()
@@ -1258,11 +1223,11 @@ void MapCreator::updateUnitIcons()
 	{
 		if (m_selectedFaction == m_randomFactionIndex)
 		{
-			m_unitIconButtons[i]->setButtonIcon(m_pTextures->m_randomUnitIcon);
+			m_unitIconButtons[i]->setButtonIcon(m_textures.m_randomUnitIcon);
 		}
 		else
 		{
-			m_unitIconButtons[i]->setButtonIcon(m_pDataHandler->getFactionData(m_selectedFaction).getUnitData(i).getUnitIcon());
+			m_unitIconButtons[i]->setButtonIcon(m_dataHandler.getFactionData(m_selectedFaction).getUnitData(i).getUnitIcon());
 		}
 	}
 }
@@ -1431,7 +1396,7 @@ void MapCreator::saveMap()
 		mapData["landscapeObjects"].push_back(landscapeData);
 	}
 
-	m_pDataHandler->saveMapData(m_saveWindow.getMapName(), mapData);
+	m_dataHandler.saveMapData(m_saveWindow.getMapName(), mapData);
 
 	std::cout << "Map '" << m_saveWindow.getMapName() << "' has been saved\n";
 

@@ -22,7 +22,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	CombatEndPopUp(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts);
+	CombatEndPopUp(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

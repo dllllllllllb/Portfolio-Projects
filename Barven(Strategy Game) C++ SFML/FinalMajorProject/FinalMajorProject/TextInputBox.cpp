@@ -1,9 +1,9 @@
 #include "TextInputBox.h"
 
-TextInputBox::TextInputBox(sf::RenderWindow& window, Textures* textures, Fonts* fonts) :
-	Button(window, textures, fonts),
-	TextBoxTitle(window, textures, fonts),
-	UIElement(window, textures),
+TextInputBox::TextInputBox(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
+	Button(rWindow, rTextures, rFonts, rAudio),
+	TextBoxTitle(rWindow, rTextures, rFonts),
+	UIElement(rWindow, rTextures),
 	m_playerInput(""),
 	m_isButtonPressed(false),
 	m_canGetInput(true)
@@ -11,10 +11,10 @@ TextInputBox::TextInputBox(sf::RenderWindow& window, Textures* textures, Fonts* 
 	
 }
 
-TextInputBox::TextInputBox(sf::RenderWindow& window, Textures* textures, Fonts* fonts, const bool setThinBorder) :
-	Button(window, textures, fonts),
-	TextBoxTitle(window, textures, fonts),
-	UIElement(window, textures, setThinBorder),
+TextInputBox::TextInputBox(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, const bool setThinBorder) :
+	Button(rWindow, rTextures, rFonts, rAudio),
+	TextBoxTitle(rWindow, rTextures, rFonts),
+	UIElement(rWindow, rTextures, setThinBorder),
 	m_playerInput(""),
 	m_isButtonPressed(false),
 	m_canGetInput(true)

@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 14/07/2021
+//Last Accessed: 19/10/2021
 
 #ifndef MOVEABLEOBJECT_H
 #define MOVEABLEOBJECT_H
@@ -7,6 +7,7 @@
 #include <functional>
 
 #include "SFML/Graphics/Sprite.hpp"
+#include "Audio.h"
 
 //===========================================================================================
 //Description: Object that is able to move
@@ -26,13 +27,15 @@ private:
 	float movementSpeed = 15.0f;
 
 protected:
+	Audio& m_audio;
+	MovementSFXEnum m_SFXToPlayWhileMoving;
 	bool m_isMoving;
 
 public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	MoveableObject();
+	MoveableObject(Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

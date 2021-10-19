@@ -23,7 +23,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	Bar(sf::RenderWindow& rWindow, Textures* pTextures);
+	Bar(sf::RenderWindow& rWindow, Textures& rTextures);
 
 	//===========================================================================================
 	//Description: Class destructor

@@ -23,7 +23,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	UnitTurnOrderBar(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts);
+	UnitTurnOrderBar(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

@@ -1,7 +1,9 @@
 #include "MoveableObject.h"
-MoveableObject::MoveableObject() :
+MoveableObject::MoveableObject(Audio& rAudio) :
 	m_tilesToMove(0),
 	m_percentageMoved(0),
+	m_audio(rAudio),
+	m_SFXToPlayWhileMoving(MovementSFXEnum::none),
 	m_isMoving(false)
 {
 }
@@ -28,6 +30,10 @@ void MoveableObject::updateMovement(const float& deltaTime)
 			else //Object arrived at final destination
 			{
 				m_isMoving = false;
+				if (m_SFXToPlayWhileMoving != MovementSFXEnum::none)
+				{
+					m_audio.stopMovementSFX();
+				}
 				m_functionToCallWhenObjectArrivesAtDestination();
 			}
 		}
@@ -44,6 +50,11 @@ void MoveableObject::setMovementPath(const std::vector<sf::Vector2f>& movementPa
 		m_tilesToMove = m_movementPath.size() - 1;
 		m_percentageMoved = 0;
 		m_startPosition = getPosition();
+
+		if (m_SFXToPlayWhileMoving != MovementSFXEnum::none)
+		{
+			m_audio.playMovementSFX(m_SFXToPlayWhileMoving);
+		}
 	}
 }
 

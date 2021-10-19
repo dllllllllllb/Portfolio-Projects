@@ -21,10 +21,11 @@ Framework::Framework(sf::RenderWindow& window) :
 	m_pDataHandler = new DataHandler();
 	m_pTextures = new Textures();
 	m_pFonts = new Fonts();
-	m_pMenu = new Menu(window, m_pTextures, m_pFonts);
-	m_pDevTools = new DevTools(window, m_pTextures, m_pFonts, m_pDataHandler, m_mouse);
-	m_pGameSetUpScreen = new GameSetUpScreen(window, m_pTextures, m_pFonts, m_pDataHandler);
-	m_pGame = new Game(window, m_pTextures, m_pFonts, m_pDataHandler, m_pGameSetUpScreen, m_mouse);
+	m_pAudio = new Audio();
+	m_pMenu = new Menu(window, *m_pTextures, *m_pFonts, *m_pAudio);
+	m_pDevTools = new DevTools(window, *m_pTextures, *m_pFonts, *m_pAudio, *m_pDataHandler, m_mouse);
+	m_pGameSetUpScreen = new GameSetUpScreen(window, *m_pTextures, *m_pFonts, *m_pAudio, *m_pDataHandler);
+	m_pGame = new Game(window, *m_pTextures, *m_pFonts, *m_pAudio, *m_pDataHandler, *m_pGameSetUpScreen, m_mouse);
 
 	m_window.setFramerateLimit(144);
 	m_window.setKeyRepeatEnabled(false);
@@ -32,6 +33,8 @@ Framework::Framework(sf::RenderWindow& window) :
 	m_pGameSetUpScreen->initialize();
 	m_pDevTools->initialize();
 	m_pGame->initialize();
+
+	m_pAudio->playMusic(MusicEnum::menuMusic, 0);
 }
 
 Framework::~Framework()
@@ -39,6 +42,7 @@ Framework::~Framework()
 	safeDelete(m_pDataHandler);
 	safeDelete(m_pTextures);
 	safeDelete(m_pFonts);
+	safeDelete(m_pAudio);
 	safeDelete(m_pMenu);
 	safeDelete(m_pDevTools);
 	safeDelete(m_pGameSetUpScreen);

@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 18/08/2021
+//Last Accessed: 19/10/2021
 
 #ifndef COMBATUNIT_H
 #define COMBATUNIT_H
@@ -28,7 +28,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	CombatUnit(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts);
+	CombatUnit(sf::RenderWindow& rWindow, Textures& rTextures, Audio& rAudio, Fonts& rFonts);
 
 	//===========================================================================================
 	//Description: Class destructor

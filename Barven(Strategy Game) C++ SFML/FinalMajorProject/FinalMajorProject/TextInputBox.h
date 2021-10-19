@@ -22,12 +22,12 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	TextInputBox( sf::RenderWindow& window, Textures *textures, Fonts* fonts);
+	TextInputBox( sf::RenderWindow& rWindow, Textures &rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class constructor that sets border type
 	//===========================================================================================
-	TextInputBox(sf::RenderWindow& window, Textures* textures, Fonts* fonts, const bool setThinBorder);
+	TextInputBox(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, const bool setThinBorder);
 
 	//===========================================================================================
 	//Description: Class destructor

@@ -1,24 +1,24 @@
 #include "UIElement.h"
 
-UIElement::UIElement(sf::RenderWindow& window, Textures* textures) :
+UIElement::UIElement(sf::RenderWindow& window, Textures& rTextures) :
 	m_window(window),
-	m_pTextures(textures),
+	m_textures(rTextures),
 	m_isShaderActive(false),
 	m_setUpFillShader(false)
 
 {
-	setTexture(m_pTextures->m_UIFill, true);
-	m_fillShader.setTexture(m_pTextures->m_UIfillShader, true);
+	setTexture(m_textures.m_UIFill, true);
+	m_fillShader.setTexture(m_textures.m_UIfillShader, true);
 	m_fillShader.setColor(sf::Color::Color(255, 255, 255, 96)); 
 	setDefaultTextures();
 }
 
-UIElement::UIElement(sf::RenderWindow& window, Textures* textures, const bool useThinBorder) :
+UIElement::UIElement(sf::RenderWindow& window, Textures& rTextures, const bool useThinBorder) :
 	m_window(window),
-	m_pTextures(textures)
+	m_textures(rTextures)
 {
-	setTexture(m_pTextures->m_UIFill, true);
-	m_fillShader.setTexture(m_pTextures->m_UIfillShader, true);
+	setTexture(m_textures.m_UIFill, true);
+	m_fillShader.setTexture(m_textures.m_UIfillShader, true);
 	m_fillShader.setColor(sf::Color::Color(255, 255, 255, 96));
 	if (useThinBorder)
 	{
@@ -36,28 +36,28 @@ UIElement::~UIElement()
 
 void UIElement::setDefaultTextures()
 {
-	m_borderTop.setTexture(m_pTextures->m_UIHorizontalBorder);
-	m_borderBottom.setTexture(m_pTextures->m_UIHorizontalBorder);
-	m_borderLeft.setTexture(m_pTextures->m_UIVerticalBorder);
-	m_borderRight.setTexture(m_pTextures->m_UIVerticalBorder);
+	m_borderTop.setTexture(m_textures.m_UIHorizontalBorder);
+	m_borderBottom.setTexture(m_textures.m_UIHorizontalBorder);
+	m_borderLeft.setTexture(m_textures.m_UIVerticalBorder);
+	m_borderRight.setTexture(m_textures.m_UIVerticalBorder);
 
-	m_cornerTopLeft.setTexture(m_pTextures->m_UICorner);
-	m_cornerTopRight.setTexture(m_pTextures->m_UICorner);
-	m_cornerBottomLeft.setTexture(m_pTextures->m_UICorner);
-	m_cornerBottomRight.setTexture(m_pTextures->m_UICorner);
+	m_cornerTopLeft.setTexture(m_textures.m_UICorner);
+	m_cornerTopRight.setTexture(m_textures.m_UICorner);
+	m_cornerBottomLeft.setTexture(m_textures.m_UICorner);
+	m_cornerBottomRight.setTexture(m_textures.m_UICorner);
 }
 
 void UIElement::setThinUIBorder()
 {
-	m_borderTop.setTexture(m_pTextures->m_UIThinHorizontalBorder);
-	m_borderBottom.setTexture(m_pTextures->m_UIThinHorizontalBorder);
-	m_borderLeft.setTexture(m_pTextures->m_UIThinVerticalBorder);
-	m_borderRight.setTexture(m_pTextures->m_UIThinVerticalBorder);
+	m_borderTop.setTexture(m_textures.m_UIThinHorizontalBorder);
+	m_borderBottom.setTexture(m_textures.m_UIThinHorizontalBorder);
+	m_borderLeft.setTexture(m_textures.m_UIThinVerticalBorder);
+	m_borderRight.setTexture(m_textures.m_UIThinVerticalBorder);
 
-	m_cornerTopLeft.setTexture(m_pTextures->m_UIThinCorner);
-	m_cornerTopRight.setTexture(m_pTextures->m_UIThinCorner);
-	m_cornerBottomLeft.setTexture(m_pTextures->m_UIThinCorner);
-	m_cornerBottomRight.setTexture(m_pTextures->m_UIThinCorner);
+	m_cornerTopLeft.setTexture(m_textures.m_UIThinCorner);
+	m_cornerTopRight.setTexture(m_textures.m_UIThinCorner);
+	m_cornerBottomLeft.setTexture(m_textures.m_UIThinCorner);
+	m_cornerBottomRight.setTexture(m_textures.m_UIThinCorner);
 }
 
 void UIElement::setUpUIBorder(const float& width, const float& height)

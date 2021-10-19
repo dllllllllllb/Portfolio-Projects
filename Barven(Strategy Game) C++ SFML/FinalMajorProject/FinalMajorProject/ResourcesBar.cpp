@@ -2,16 +2,16 @@
 
 namespace settings = ResourceBarSettings;
 
-ResourcesBar::ResourcesBar(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts) :
+ResourcesBar::ResourcesBar(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts) :
 	m_window(rWindow),
-	m_bar(rWindow, pTextures),
-	m_goldText(rWindow, pTextures, pFonts),
-	m_woodText(rWindow, pTextures, pFonts),
-	m_stoneText(rWindow, pTextures, pFonts)
+	m_bar(rWindow, rTextures),
+	m_goldText(rWindow, rTextures, rFonts),
+	m_woodText(rWindow, rTextures, rFonts),
+	m_stoneText(rWindow, rTextures, rFonts)
 {
-	m_goldIcon.setTexture(pTextures->m_resourceUIIcons[0], true);
-	m_woodIcon.setTexture(pTextures->m_resourceUIIcons[1], true);
-	m_stoneIcon.setTexture(pTextures->m_resourceUIIcons[2], true);
+	m_goldIcon.setTexture(rTextures.m_resourceUIIcons[0], true);
+	m_woodIcon.setTexture(rTextures.m_resourceUIIcons[1], true);
+	m_stoneIcon.setTexture(rTextures.m_resourceUIIcons[2], true);
 
 	m_goldIcon.setOrigin(m_goldIcon.getTexture()->getSize().x * 0.5f, m_goldIcon.getTexture()->getSize().y * 0.5f);
 	m_woodIcon.setOrigin(m_woodIcon.getTexture()->getSize().x * 0.5f, m_woodIcon.getTexture()->getSize().y * 0.5f);

@@ -20,7 +20,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	TownBuildingUpgrade(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts);
+	TownBuildingUpgrade(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

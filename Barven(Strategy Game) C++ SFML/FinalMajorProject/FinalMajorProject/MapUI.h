@@ -21,6 +21,7 @@ class MapUI
 private:
 	sf::RenderWindow& m_window;
 	Textures& m_textures;
+	Audio& m_audio;
 	UIElement m_background;
 	TextBox m_turnInformation;
 	TextBox m_resourcesPerTurn;
@@ -43,7 +44,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	MapUI(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts);
+	MapUI(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

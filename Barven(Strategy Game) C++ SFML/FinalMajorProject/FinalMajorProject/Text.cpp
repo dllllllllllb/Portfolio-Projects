@@ -1,14 +1,14 @@
 #include "Text.h"
 
-Text::Text(sf::RenderWindow& window, Textures* textures, Fonts* pFonts) :
-	UIElement(window, textures),
+Text::Text(sf::RenderWindow& window, Textures& rTextures, Fonts& rFonts) :
+	UIElement(window, rTextures),
 	m_horizontalAlignment(TextAlignmentEnum::middleHorizontal),
 	m_verticalAlignment(TextAlignmentEnum::middleVertical),
 	m_numOfCharactersPerLine(0),
 	m_hasMultipleLines(false),
 	m_hasBackground(true),
 	m_titleOffset(0),
-	m_pFonts(pFonts)
+	m_fonts(rFonts)
 {
 }
 
@@ -262,7 +262,7 @@ void Text::setTextAndUpdate(const std::string& string)
 
 void Text::setUpText(const std::string& string, const int& charSize, const TextAlignmentEnum& horizontal, const TextAlignmentEnum& vertical)
 {
-	setFont(m_pFonts->m_fontBasic);
+	setFont(m_fonts.m_fontBasic);
 	setAlignment(horizontal, vertical);
 	setTextAndUpdate(string, charSize);
 }
@@ -280,7 +280,7 @@ void Text::setHasMultipleLines(const bool state)
 
 void Text::basicSetUp(const std::string& string, const int& charSize, const int& positionX, const int& positionY)
 {
-	setFont(m_pFonts->m_fontBasic);
+	setFont(m_fonts.m_fontBasic);
 	setCharacterSize(charSize);
 	setString(string);
 	updateAlignment();

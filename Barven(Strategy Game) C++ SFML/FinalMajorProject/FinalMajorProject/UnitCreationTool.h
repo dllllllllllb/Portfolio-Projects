@@ -30,7 +30,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	UnitCreationTool(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts);
+	UnitCreationTool(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

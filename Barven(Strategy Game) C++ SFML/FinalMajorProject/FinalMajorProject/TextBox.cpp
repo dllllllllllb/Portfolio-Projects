@@ -1,15 +1,15 @@
 #include "TextBox.h"
-TextBox::TextBox(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts) :
-	TextBoxTitle(window, pTextures, pFonts),
-	Text(window, pTextures, pFonts),
-	UIElement(window, pTextures)
+TextBox::TextBox(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts) :
+	TextBoxTitle(rWindow, rTextures, rFonts),
+	Text(rWindow, rTextures, rFonts),
+	UIElement(rWindow, rTextures)
 {
 }
 
-TextBox::TextBox(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts, const bool setThinUIBorder) :
-	TextBoxTitle(window, pTextures, pFonts),
-	Text(window, pTextures, pFonts),
-	UIElement(window, pTextures, setThinUIBorder)
+TextBox::TextBox(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, const bool setThinUIBorder) :
+	TextBoxTitle(rWindow, rTextures, rFonts),
+	Text(rWindow, rTextures, rFonts),
+	UIElement(rWindow, rTextures, setThinUIBorder)
 {
 }
 

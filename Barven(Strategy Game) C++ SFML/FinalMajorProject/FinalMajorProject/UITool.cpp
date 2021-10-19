@@ -1,13 +1,13 @@
 #include "UITool.h"
 
-UITool::UITool(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts):
+UITool::UITool(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio):
 	m_window(rWindow),
-	m_UIToolApplyButton(rWindow, pTextures, pFonts)
+	m_UIToolApplyButton(rWindow, rTextures, rFonts, rAudio)
 {
 	//Create input boxes
 	for (int i = 0; i < UIToolSettings::c_numOfButtons; i++)
 	{
-		m_dataInputButton.push_back(std::unique_ptr<TextInputBox>(new TextInputBox(rWindow, pTextures, pFonts)));
+		m_dataInputButton.push_back(std::unique_ptr<TextInputBox>(new TextInputBox(rWindow, rTextures, rFonts, rAudio)));
 	}
 }
 
@@ -50,10 +50,8 @@ void UITool::update(const sf::Vector2f& mousePosition)
 		resetInputFieldsFocus();
 	}
 
-	if (m_UIToolApplyButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	if (m_UIToolApplyButton.checkIfButtonWasPressed(mousePosition))
 	{
-		Global::objectPressed();
-
 		//Gets values the player typed inside input fields and casts them to floats
 		float tempSizeX = std::stoi(m_dataInputButton[0]->getPlayerInput());
 		float tempSizeY = std::stoi(m_dataInputButton[1]->getPlayerInput());
@@ -71,9 +69,8 @@ void UITool::update(const sf::Vector2f& mousePosition)
 
 	for (int i = 0; i < UIToolSettings::c_numOfButtons; i++)
 	{
-		if (m_dataInputButton[i]->checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+		if (m_dataInputButton[i]->checkIfButtonWasPressed(mousePosition))
 		{
-			Global::objectPressed();
 			m_dataInputButton[i]->setButtonPressed(true);
 		}
 	}

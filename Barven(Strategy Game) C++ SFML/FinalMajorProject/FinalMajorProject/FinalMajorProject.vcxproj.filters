@@ -65,9 +65,6 @@
     <Filter Include="Game\Resources">
       <UniqueIdentifier>{fa658d55-7401-4cda-8dce-d4848bcd36f6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\Hero">
-      <UniqueIdentifier>{2f501f96-611b-43a7-a50c-f1043d67f271}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\UI\Slider">
       <UniqueIdentifier>{426a659b-b2dd-4c83-966e-294b0038f480}</UniqueIdentifier>
     </Filter>
@@ -127,6 +124,9 @@
     </Filter>
     <Filter Include="Game\AI">
       <UniqueIdentifier>{05c4d9ad-a87a-41ad-8ded-a039717af201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Player\Hero">
+      <UniqueIdentifier>{2f501f96-611b-43a7-a50c-f1043d67f271}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -221,7 +221,7 @@
       <Filter>Game\Resources</Filter>
     </ClCompile>
     <ClCompile Include="Hero.cpp">
-      <Filter>Game\Hero</Filter>
+      <Filter>Game\Player\Hero</Filter>
     </ClCompile>
     <ClCompile Include="ResourcesBar.cpp">
       <Filter>Game\Resources</Filter>
@@ -296,7 +296,7 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="HeroData.cpp">
-      <Filter>Game\Hero</Filter>
+      <Filter>Game\Player\Hero</Filter>
     </ClCompile>
     <ClCompile Include="CollidableObject.cpp">
       <Filter>Engine\GenericClasses</Filter>
@@ -408,6 +408,9 @@
     </ClCompile>
     <ClCompile Include="UnitCard.cpp">
       <Filter>Game\Special UI Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio.cpp">
+      <Filter>Engine\Assets</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -553,7 +556,7 @@
       <Filter>Game\Resources</Filter>
     </ClInclude>
     <ClInclude Include="Hero.h">
-      <Filter>Game\Hero</Filter>
+      <Filter>Game\Player\Hero</Filter>
     </ClInclude>
     <ClInclude Include="ResourcesBar.h">
       <Filter>Game\Resources</Filter>
@@ -682,7 +685,7 @@
       <Filter>Engine</Filter>
     </ClInclude>
     <ClInclude Include="HeroData.h">
-      <Filter>Game\Hero</Filter>
+      <Filter>Game\Player\Hero</Filter>
     </ClInclude>
     <ClInclude Include="CollidableObject.h">
       <Filter>Engine\GenericClasses</Filter>
@@ -869,6 +872,21 @@
     </ClInclude>
     <ClInclude Include="UnitCard.h">
       <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio.h">
+      <Filter>Engine\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="MusicEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="SFXEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementSFXEnum.h">
+      <Filter>Enums</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,13 +1,13 @@
 #include "UnitCard.h"
 
-UnitCard::UnitCard(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts) :
-	IconButton(rWindow, pTextures, true),
-	Text(rWindow, pTextures, pFonts),
-	IconButton::UIElement(rWindow, pTextures, true),
+UnitCard::UnitCard(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
+	IconButton(rWindow, rTextures, rAudio, true),
+	IconButton::UIElement(rWindow, rTextures, true),
+	Text(rWindow, rTextures, rFonts),
 	m_window(rWindow),
 	m_hasUnit(false)
 {
-	setUpAndResizeToSprite(0, 0, pTextures->m_emptyUnitIcon);
+	setUpAndResizeToSprite(0, 0, rTextures.m_emptyUnitIcon);
 }
 
 UnitCard::~UnitCard()

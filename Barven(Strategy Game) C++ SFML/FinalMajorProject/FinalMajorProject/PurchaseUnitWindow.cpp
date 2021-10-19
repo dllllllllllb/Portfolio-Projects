@@ -1,19 +1,19 @@
 #include "PurchaseUnitWindow.h"
 namespace settings = PurchaseUnitSettings;
 
-PurchaseUnitWindow::PurchaseUnitWindow(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, ConfirmationWindow* pConfirmationWindow) :
-	UIElement(rWindow, pTextures),
-	TextBoxTitle(rWindow, pTextures, pFonts),
-	m_pConfirmationWindow(pConfirmationWindow),
-	m_unitImageBackground(rWindow, pTextures, true),
-	m_unitStats(rWindow, pTextures, pFonts, true),
-	m_slider(rWindow, pTextures, true),
-	m_unitsToRecruit(rWindow, pTextures, pFonts, true),
-	m_costOfRecruiting(rWindow, pTextures, pFonts, true),
+PurchaseUnitWindow::PurchaseUnitWindow(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow) :
+	UIElement(rWindow, rTextures),
+	TextBoxTitle(rWindow, rTextures, rFonts),
+	m_confirmationWindow(rConfirmationWindow),
+	m_unitImageBackground(rWindow, rTextures, true),
+	m_unitStats(rWindow, rTextures, rFonts, true),
+	m_slider(rWindow, rTextures, true),
+	m_unitsToRecruit(rWindow, rTextures, rFonts, true),
+	m_costOfRecruiting(rWindow, rTextures, rFonts, true),
 	m_numOfUnitsToRecruit(0),
 	m_maxNumOfUnitsToRecruit(0),
 	m_costPerUnit(0),
-	m_purchaseButton(rWindow, pTextures, pFonts)
+	m_purchaseButton(rWindow, rTextures, rFonts, rAudio)
 {
 }
 
@@ -32,7 +32,7 @@ void PurchaseUnitWindow::setUpPurchaseWindow()
 
 	//Background for displaing unit sprites
 	m_unitImageBackground.setPosition(UIElement::getPosition().x - UIElement::getGlobalBounds().width * 0.5f + settings::c_recruitObjectsSpaceing + settings::c_recruitElementBackgroundWidth * 0.5f, centre.y - settings::c_recruitElementBackgroundHeight * 0.4f);
-	m_unitImageBackground.setTexture(m_pTextures->m_unitBackground[0], true);
+	m_unitImageBackground.setTexture(m_textures.m_unitBackground[0], true);
 	m_unitImageBackground.setUpUIBorder(settings::c_recruitElementBackgroundWidth, settings::c_recruitElementBackgroundHeight);
 
 	//Text box that displays units stats
@@ -78,18 +78,14 @@ void PurchaseUnitWindow::reposition()
 	m_purchaseButton.setPosition(centre.x + settings::c_purchaseWindowPositionXOffset, centre.y + settings::c_purchaseButtonPositionYOffset);
 }
 
-bool PurchaseUnitWindow::update(const sf::Vector2f& mousePosition)
+void PurchaseUnitWindow::update(const sf::Vector2f& mousePosition)
 {
-	bool temp = false;
+    m_slider.update(mousePosition);
 
-	temp = m_slider.update(mousePosition);
-
-	if (m_purchaseButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	if (m_purchaseButton.checkIfButtonWasPressed(mousePosition))
 	{
-		m_pConfirmationWindow->changeUILayerToConfirmation();
+		m_confirmationWindow.changeUILayerToConfirmation();
 	}
-
-	return temp;
 }
 
 void PurchaseUnitWindow::updatePlayerFeedbackTextBoxes()
@@ -130,13 +126,13 @@ void PurchaseUnitWindow::setWindowContent(const UnitData* unitData, const int& u
 
 void PurchaseUnitWindow::setUnitBackground(const int& factionIndex)
 {
-	m_unitImageBackground.setTexture(m_pTextures->m_unitBackground[factionIndex]);
+	m_unitImageBackground.setTexture(m_textures.m_unitBackground[factionIndex]);
 }
 
 void PurchaseUnitWindow::purchaseUnits()
 {
 	m_purchaseUnitsFunction();
-	m_pConfirmationWindow->changeUILayerToTown();
+	m_confirmationWindow.changeUILayerToTown();
 }
 
 void PurchaseUnitWindow::setPurchaseUnitFunction(std::function<void()> function)
@@ -157,7 +153,7 @@ const int PurchaseUnitWindow::getNumberOfUnitsToRecruit() const
 
 void PurchaseUnitWindow::updateConfirmationFunctionPointer()
 {
-	m_pConfirmationWindow->setConfirmationFunctionPointer((std::bind(&PurchaseUnitWindow::purchaseUnits, this)));
+	m_confirmationWindow.setConfirmationFunctionPointer((std::bind(&PurchaseUnitWindow::purchaseUnits, this)));
 }
 
 void PurchaseUnitWindow::draw()

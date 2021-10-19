@@ -32,7 +32,7 @@ public:
 	//===========================================================================================
 	//Description: Returns a bool whether a collision happened
 	//===========================================================================================
-	bool collisionCheck(const sf::Vector2f& otherObjectPosition);
+	const bool collisionCheck(const sf::Vector2f& otherObjectPosition);
 
 	//===========================================================================================
 	//Description: Sets collision bounds

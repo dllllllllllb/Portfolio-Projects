@@ -2,21 +2,22 @@
 
 namespace settings = TownBuildingSettings;
 
-TownBuilding::TownBuilding(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts, ConfirmationWindow* pConfirmationWindow, PopUpTextBox* pPopUpTextBox, ResourcesBar& rResourcesBar) :
+TownBuilding::TownBuilding(sf::RenderWindow& window, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow, PopUpTextBox& rPopUpTextBox, ResourcesBar& rResourcesBar) :
 	m_window(window),
-	m_pTextures(pTextures),
+	m_textures(rTextures),
+	m_audio(rAudio),
 	m_resourcesBar(rResourcesBar),
 	m_pFactionBuildingData(nullptr),
 	m_pTownBuildingData(nullptr),
 	m_pResources(nullptr),
 	m_pTownData(nullptr),
-	m_pConfirmationWindow(pConfirmationWindow),
-	m_pPopUpTextBox(pPopUpTextBox),
+	m_confirmationWindow(rConfirmationWindow),
+	m_popUpTextBox(rPopUpTextBox),
 	m_selectedBuildingIndex(0)
 {
 	for (int i = 0; i < settings::c_numOfBuildings; i++)
 	{
-		m_upgradeButtons.push_back(std::unique_ptr<TownBuildingUpgrade>(new TownBuildingUpgrade(window, pTextures, pFonts)));
+		m_upgradeButtons.push_back(std::unique_ptr<TownBuildingUpgrade>(new TownBuildingUpgrade(window, rTextures, rFonts, rAudio)));
 	}
 
 	updateConfirmationFunctionPointer();
@@ -47,7 +48,7 @@ void TownBuilding::setBuildingDataPointers(TownBuildingData* townBuildingData, F
 	m_pFactionBuildingData = factionBuildingData;
 	m_pResources = resources;
 	m_pTownData = townData;
-	m_pConfirmationWindow->setConfirmationFunctionPointer(std::bind(&TownBuilding::incrementTownBuildingLevel, this));
+	m_confirmationWindow.setConfirmationFunctionPointer(std::bind(&TownBuilding::incrementTownBuildingLevel, this));
 }
 
 void TownBuilding::setPopUpInformation(const int& buttonIndex)
@@ -67,7 +68,7 @@ void TownBuilding::setPopUpInformation(const int& buttonIndex)
 		isBuildingMaxLevel = buildingLevel;
 	}
 
-	m_pPopUpTextBox->setPopUpWidth(settings::c_popUpWidth[isBuildingMaxLevel]);
+	m_popUpTextBox.setPopUpWidth(settings::c_popUpWidth[isBuildingMaxLevel]);
 
 	if (isBuildingMaxLevel)
 	{
@@ -104,7 +105,7 @@ void TownBuilding::setPopUpInformation(const int& buttonIndex)
 			popUpText += "Stone: " + std::to_string(static_cast<int>(m_pFactionBuildingData->getData()["unitBuildingCostStone"][upgradeCostIndex]));
 		}
 	}
-	m_pPopUpTextBox->setUpPopUp(popUpText);
+	m_popUpTextBox.setUpPopUp(popUpText);
 }
 
 void TownBuilding::updateBuildingAvailability()
@@ -191,7 +192,7 @@ void TownBuilding::checkIfUnitBuildingCanBePurchased(const int& unitIndex)
 
 void TownBuilding::updateConfirmationFunctionPointer()
 {
-	m_pConfirmationWindow->setConfirmationFunctionPointer(std::bind(&TownBuilding::incrementTownBuildingLevel, this));
+	m_confirmationWindow.setConfirmationFunctionPointer(std::bind(&TownBuilding::incrementTownBuildingLevel, this));
 }
 
 void TownBuilding::chargePlayerForPurchase()
@@ -252,43 +253,38 @@ void TownBuilding::repositionUpgradeButtons()
 	}
 }
 
-bool TownBuilding::update(const sf::Vector2f& mousePosition)
+void TownBuilding::update(const sf::Vector2f& mousePosition)
 {
-	bool toggleButtonPress = false;
 	bool isButtonHovered = false;
 
 	//Check Button press
 
 	for (int i = 0; i < settings::c_numOfBuildings; i++)
 	{
-		if (m_upgradeButtons[i]->checkMouseCollision(mousePosition))
+		if (m_upgradeButtons[i]->collisionCheck(mousePosition))
 		{
 			isButtonHovered = true;
-			if (!m_pPopUpTextBox->getActiveState())
+			if (!m_popUpTextBox.getActiveState())
 			{
-				m_pPopUpTextBox->toggleIsActive();
-				m_pPopUpTextBox->setPosition(mousePosition);
+				m_popUpTextBox.toggleIsActive();
+				m_popUpTextBox.setPosition(mousePosition);
 				setPopUpInformation(i);
 			}
 
 			if (Global::g_isLMBPressed && m_upgradeButtons[i]->getCanBePurchased())
 			{
-				toggleButtonPress = true;
-				Global::objectPressed();
 				m_selectedBuildingIndex = i;
-				m_pConfirmationWindow->changeUILayerToConfirmation();
-				break;
+				m_confirmationWindow.changeUILayerToConfirmation();
 			}
+			break;
 		}
 	}
 
 
-	if (!isButtonHovered && m_pPopUpTextBox->getActiveState())
+	if (!isButtonHovered && m_popUpTextBox.getActiveState())
 	{
-		m_pPopUpTextBox->toggleIsActive();
+		m_popUpTextBox.toggleIsActive();
 	}
-
-	return toggleButtonPress;
 }
 
 void TownBuilding::incrementTownBuildingLevel()
@@ -296,9 +292,10 @@ void TownBuilding::incrementTownBuildingLevel()
 	m_pTownBuildingData->setCanBuildingBePurchased(false);
 	chargePlayerForPurchase();
 	m_pTownBuildingData->incrementData(static_cast<TownBuildingEnum>(m_selectedBuildingIndex));
-	m_pConfirmationWindow->changeUILayerToTown();
+	m_confirmationWindow.changeUILayerToTown();
 	updateBuildingAvailability();
 	m_resourcesBar.updateResourcesBarValues(*m_pResources);
+	m_audio.playSFX(SFXEnum::buildTown);
 }
 
 void TownBuilding::draw()

@@ -2,17 +2,17 @@
 
 namespace settings = HeroPanelSettings;
 
-HeroPanel::HeroPanel(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts) :
+HeroPanel::HeroPanel(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
 	m_window(rWindow),
 	m_textures(rTextures),
 	m_fonts(rFonts),
-	m_background(rWindow, &rTextures),
-	m_heroLevel(rWindow, &rTextures, &rFonts, true),
+	m_background(rWindow, rTextures),
+	m_heroLevel(rWindow, rTextures, rFonts, true),
 	m_heroStatsDisplay(rWindow, rTextures, rFonts),
-	m_unitsPanel(rWindow, &rTextures, &rFonts),
-	m_closeButton(&rTextures, false),
-	m_addStatsButton(rWindow, &rTextures, true),
-	m_upgradeHeroStatsPanel(rWindow, rTextures, rFonts),
+	m_unitsPanel(rWindow, rTextures, rFonts, rAudio),
+	m_closeButton(rTextures, rAudio, false),
+	m_addStatsButton(rWindow, rTextures, rAudio, true),
+	m_upgradeHeroStatsPanel(rWindow, rTextures, rFonts,rAudio),
 	m_isActive(false),
 	m_canHeroInteractWithUnits(false),
 	m_canHeroUpgradeStats(false),
@@ -71,8 +71,6 @@ void HeroPanel::setHeroData(Hero* hero, const bool canHeroInteractWithUnits)
 
 	//Check if hero can upgrade their stats
 	m_canHeroUpgradeStats = hero->getStatUpgradePoints() > 0;
-
-	toggleIsActive();
 }
 
 void HeroPanel::setHeroStats()
@@ -97,17 +95,15 @@ void HeroPanel::update(const sf::Vector2f& mousePosition)
 		{
 			if (m_canHeroUpgradeStats)
 			{
-				if (m_addStatsButton.collisionCheck(mousePosition))
+				if (m_addStatsButton.checkIfButtonWasPressed(mousePosition))
 				{
-					Global::objectPressed();
 					m_upgradeHeroStatsPanel.setHeroAndUpdatePanel(*m_pSelectedHero);
 					m_upgradeHeroStatsPanel.toggleIsActive();
 				}
 			}
 
-			if (m_closeButton.collisionCheck(mousePosition))
+			if (m_closeButton.checkIfButtonWasPressed(mousePosition))
 			{
-				Global::objectPressed();
 				toggleIsActive();
 			}
 		}

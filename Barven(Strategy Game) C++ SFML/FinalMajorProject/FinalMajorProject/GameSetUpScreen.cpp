@@ -2,15 +2,15 @@
 
 namespace settings = GameSetUpScreenSettings;
 
-GameSetUpScreen::GameSetUpScreen(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, DataHandler* pDataHandler) :
+GameSetUpScreen::GameSetUpScreen(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler) :
 	m_window(rWindow),
-	m_pDataHandler(pDataHandler),
-	m_pTextures(pTextures),
-	m_playerSettingsTable(rWindow, pTextures, pFonts, *pDataHandler),
-	m_mapSelectionDropDown(rWindow, pTextures, pFonts),
-	m_startGameButton(rWindow, pTextures, pFonts),
-	m_backButton(rWindow, pTextures, pFonts),
-	m_refreshDropDownListButton(rWindow, pTextures, true)
+	m_dataHandler(rDataHandler),
+	m_textures(rTextures),
+	m_playerSettingsTable(rWindow, rTextures, rFonts, rAudio, rDataHandler),
+	m_mapSelectionDropDown(rWindow, rTextures, rFonts, rAudio),
+	m_startGameButton(rWindow, rTextures, rFonts, rAudio),
+	m_backButton(rWindow, rTextures, rFonts, rAudio),
+	m_refreshDropDownListButton(rWindow, rTextures, rAudio, true)
 {
 	m_mapSelectionDropDown.setConfirmationFunctionPointer(std::bind(&GameSetUpScreen::updateAvailablePlayers, this));
 }
@@ -23,7 +23,7 @@ void GameSetUpScreen::initialize()
 {
 	m_playerSettingsTable.initialize();
 	m_mapSelectionDropDown.setDropDownListSettings(settings::c_numOfOptionsToDisplay, settings::c_optionWidth, settings::c_optionHeight, m_window.getSize().x - settings::c_optionPositionXOffset, settings::c_optionPositionYOffset, settings::c_dropDownOptionsSpaceing, settings::c_primaryOptionTitle, settings::c_primaryOptionTitleCharSize, settings::c_primaryOptionContentText, settings::c_optionTextCharSize);
-	for (std::string& mapName : m_pDataHandler->getMapNames())
+	for (std::string& mapName : m_dataHandler.getMapNames())
 	{
 		m_mapSelectionDropDown.addNewDropDownOptions(mapName);
 	}
@@ -45,7 +45,7 @@ void GameSetUpScreen::setUpButtons()
 	m_backButton.setCollisionBounds(settings::c_buttonWidth, settings::c_buttonHeight);
 	m_backButton.setUpText(settings::c_buttonName[1], settings::c_buttonCharSize, TextAlignmentEnum::middleHorizontal, TextAlignmentEnum::middleVertical);
 
-	m_refreshDropDownListButton.setUpAndResizeToSprite(m_window.getSize().x - settings::c_optionPositionXOffset + settings::c_refreshButtonPositionXOffset, settings::c_optionPositionYOffset + settings::c_refreshButtonPositionYOffset, m_pTextures->m_refreshIcon);
+	m_refreshDropDownListButton.setUpAndResizeToSprite(m_window.getSize().x - settings::c_optionPositionXOffset + settings::c_refreshButtonPositionXOffset, settings::c_optionPositionYOffset + settings::c_refreshButtonPositionYOffset, m_textures.m_refreshIcon);
 
 }
 
@@ -58,28 +58,23 @@ void GameSetUpScreen::update(const sf::Vector2f& mousePosition)
 
 void GameSetUpScreen::updateButtons(const sf::Vector2f& mousePosition)
 {
-	if (m_startGameButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	if (m_startGameButton.checkIfButtonWasPressed(mousePosition))
 	{
-		Global::objectPressed();
 		m_pLoadMapFunction();
 		Global::g_gameState = GameState::game;
 	}
 
-	if (m_backButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	if (m_backButton.checkIfButtonWasPressed(mousePosition))
 	{
-		Global::objectPressed();
-
 		Global::g_gameState = GameState::menu;
 	}
 
-	if (Global::g_isLMBPressed && m_refreshDropDownListButton.collisionCheck(mousePosition))
+	if (m_refreshDropDownListButton.checkIfButtonWasPressed(mousePosition))
 	{
-		Global::objectPressed();
-
 		m_mapSelectionDropDown.deleteOptions();
 
-		m_pDataHandler->loadCoreMapsData();
-		for (std::string mapName : m_pDataHandler->getMapNames())
+		m_dataHandler.loadCoreMapsData();
+		for (std::string mapName : m_dataHandler.getMapNames())
 		{
 			m_mapSelectionDropDown.addNewDropDownOptions(mapName);
 		}
@@ -115,7 +110,7 @@ void GameSetUpScreen::setConfirmationFunctionPointer(std::function<void()> funct
 
 void GameSetUpScreen::updateAvailablePlayers()
 {
-	m_playerSettingsTable.setNumberOfAvailablePlayers(m_pDataHandler->getMapMaxNumberOfPlayers(m_mapSelectionDropDown.getSelectedOptionID()));
+	m_playerSettingsTable.setNumberOfAvailablePlayers(m_dataHandler.getMapMaxNumberOfPlayers(m_mapSelectionDropDown.getSelectedOptionID()));
 }
 
 void GameSetUpScreen::draw()

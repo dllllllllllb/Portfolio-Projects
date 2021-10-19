@@ -2,9 +2,9 @@
 
 namespace settings = GameEndSettings;
 
-GameEnd::GameEnd(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts) :
-	m_gameInformation(rWindow, &rTextures, &rFonts),
-	m_backToMenuButton(rWindow, &rTextures, &rFonts)
+GameEnd::GameEnd(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
+	m_gameInformation(rWindow, rTextures, rFonts),
+	m_backToMenuButton(rWindow, rTextures, rFonts, rAudio)
 {
 	//Set up textbox
 	m_gameInformation.setPosition(rWindow.getView().getCenter());
@@ -82,10 +82,9 @@ void GameEnd::setEndGameInformation(Player& rPlayer, const bool didPlayerWin, Tu
 
 void GameEnd::update(const sf::Vector2f& mousePosition)
 {
-	if (m_backToMenuButton.checkMouseCollision(mousePosition) && Global::g_isLMBPressed)
+	if (m_backToMenuButton.checkIfButtonWasPressed(mousePosition))
 	{
 		Global::g_gameState = GameState::menu;
-		Global::objectPressed();
 	}
 }
 

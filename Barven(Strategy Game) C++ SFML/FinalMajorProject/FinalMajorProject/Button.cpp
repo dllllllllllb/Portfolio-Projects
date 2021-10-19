@@ -1,17 +1,21 @@
 #include "Button.h"
 
-Button::Button(sf::RenderWindow& window, Textures* textures, Fonts* fonts) :
-	UIElement(window, textures),
-	Text(window, textures, fonts),
-	TextBoxTitle(window, textures, fonts)
+Button::Button(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
+	UIElement(rWindow, rTextures),
+	Text(rWindow, rTextures, rFonts),
+	TextBoxTitle(rWindow, rTextures, rFonts),
+	m_audio(rAudio),
+	m_SFXToPlay(SFXEnum::button)
 {
 	m_setUpFillShader = true;
 }
 
-Button::Button(sf::RenderWindow& window, Textures* textures, Fonts* fonts, const bool setThinBorder) : 
-	UIElement(window, textures, setThinBorder),
-	Text(window, textures, fonts),
-	TextBoxTitle(window, textures, fonts)
+Button::Button(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, const bool setThinBorder) :
+	UIElement(rWindow, rTextures, setThinBorder),
+	Text(rWindow, rTextures, rFonts),
+	TextBoxTitle(rWindow, rTextures, rFonts),
+	m_audio(rAudio),
+	m_SFXToPlay(SFXEnum::button)
 {
 	m_setUpFillShader = true;
 }
@@ -21,19 +25,26 @@ Button::~Button()
 	
 }
 
-bool Button::checkMouseCollision(const sf::Vector2f& mousePosition)
+bool Button::checkIfButtonWasPressed(const sf::Vector2f& mousePosition)
 {
 	//Change fill colour of the button if hovered
 	if (collisionCheck(mousePosition))
 	{
 		m_isShaderActive = true;
+
+		if (Global::g_isLMBPressed)
+		{
+			m_audio.playSFX(m_SFXToPlay);
+			Global::objectPressed();
+			return true;
+		}
 	}
 	else
 	{
 		m_isShaderActive = false;
 	}
 
-	return m_isShaderActive;
+	return false;
 }
 
 void Button::setPosition(const float& x, const float& y)

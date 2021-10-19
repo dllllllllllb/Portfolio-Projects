@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 01/10/2021
+//Last Accessed: 19/10/2021
 
 #ifndef PLAYER_H
 #define PLAYER_H
@@ -22,6 +22,7 @@ class Player
 {
 private:
 	sf::RenderWindow& m_window;
+	Audio& m_audio;
 
 	//Basic data
 	int m_factionIndex;
@@ -53,7 +54,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	Player(sf::RenderWindow& rWindow);
+	Player(sf::RenderWindow& rWindow, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

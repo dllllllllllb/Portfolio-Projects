@@ -33,11 +33,12 @@ class MapHandler
 {
 private:
 	sf::RenderWindow& m_window;
-	DataHandler* m_pDataHandler;
+	DataHandler& m_dataHandler;
 	UIHandler& m_UIHandler;
 	TileHandler m_tileHandler;
-	GameSetUpScreen* m_pGameSetUpScreen;
-	Textures* m_pTextures;
+	GameSetUpScreen& m_gameSetUpScreen;
+	Textures& m_textures;
+	Audio& m_audio;
 	ViewManager& m_viewManager;
 	PlayerHandler& m_playerHandler;
 	TurnHandler& m_turnHandler;
@@ -112,7 +113,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	MapHandler(sf::RenderWindow& rWindow, Textures* pTextures, DataHandler* pDataHandler, UIHandler& rUIHandler, GameSetUpScreen* pGameSetUpScreen, ViewManager& rViewManager, PlayerHandler& rPlayerHandler, TurnHandler& rTurnHandler, CombatHandler& rCombatHandler, MapUI& rMapUI, GameEnd& rGameEnd);
+	MapHandler(sf::RenderWindow& rWindow, Textures& rTextures, Audio& rAudio, DataHandler& rDataHandler, UIHandler& rUIHandler, GameSetUpScreen& rGameSetUpScreen, ViewManager& rViewManager, PlayerHandler& rPlayerHandler, TurnHandler& rTurnHandler, CombatHandler& rCombatHandler, MapUI& rMapUI, GameEnd& rGameEnd);
 	
 	//===========================================================================================
 	//Description: Class destructor

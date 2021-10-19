@@ -25,13 +25,13 @@ private:
 
 protected:
 	int m_titleOffset;
-	Fonts* m_pFonts;
+	Fonts& m_fonts;
 
 public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	Text(sf::RenderWindow& window, Textures* textures, Fonts* pFonts);
+	Text(sf::RenderWindow& window, Textures& rTextures, Fonts& rFonts);
 
 	//===========================================================================================
 	//Description: Class destructor

@@ -2,7 +2,8 @@
 
 namespace settings = HeroSettings;
 
-Hero::Hero() :
+Hero::Hero(Audio& rAudio) :
+	MoveableObject(rAudio),
 	m_playerIndex(0),
 	m_occupiedTileIndex(0),
 	m_currentNumberOfUnits(0),
@@ -21,6 +22,8 @@ Hero::Hero() :
 	{
 		m_heroUnits.push_back(std::shared_ptr<Unit>(new Unit()));
 	}
+
+	m_SFXToPlayWhileMoving = MovementSFXEnum::heroMovement;
 }
 
 Hero::~Hero()

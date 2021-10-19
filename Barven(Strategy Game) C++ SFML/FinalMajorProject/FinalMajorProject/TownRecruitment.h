@@ -23,8 +23,8 @@ class TownRecruitment
 private:
 
 	sf::RenderWindow& m_window;
-	Textures* m_pTextures;
-	ConfirmationWindow* m_pConfirmationWindow;
+	Textures& m_textures;
+	ConfirmationWindow& m_confirmationWindow;
 	UnitsPanel& m_unitsPanel;
 	ResourcesBar& m_resourcesBar;
 
@@ -52,7 +52,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	TownRecruitment(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts, ConfirmationWindow* pConfirmationWindow, UnitsPanel& rTownHeroesUnitsPanel, ResourcesBar& rResourcesBar);
+	TownRecruitment(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow, UnitsPanel& rTownHeroesUnitsPanel, ResourcesBar& rResourcesBar);
 
 	//===========================================================================================
 	//Description: Class constructor
@@ -124,7 +124,7 @@ public:
 	//===========================================================================================
 	//Description: Updates class logic
 	//===========================================================================================
-	bool update(const sf::Vector2f& mousePosition, const float& deltaTime);
+	void update(const sf::Vector2f& mousePosition, const float& deltaTime);
 
 	//===========================================================================================
 	//Description: Sets a bool that determines if hero is in town

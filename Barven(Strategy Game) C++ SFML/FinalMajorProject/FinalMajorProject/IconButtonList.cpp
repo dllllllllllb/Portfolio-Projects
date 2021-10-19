@@ -1,10 +1,11 @@
 #include "IconButtonList.h"
 
-IconButtonList::IconButtonList(sf::RenderWindow& rWindow, Textures& rTextures) :
+IconButtonList::IconButtonList(sf::RenderWindow& rWindow, Textures& rTextures, Audio& rAudio) :
 	m_window(rWindow),
 	m_textures(rTextures),
-	m_upNavigationButton(rWindow, &rTextures, true),
-	m_downNavigationButton(rWindow, &rTextures, true),
+	m_audio(rAudio),
+	m_upNavigationButton(rWindow, rTextures, rAudio, true),
+	m_downNavigationButton(rWindow, rTextures, rAudio, true),
 	m_borderSize(2),
 	m_numberOfButtons(0),
 	m_numberOfButtonsToDisplay(0),
@@ -36,7 +37,7 @@ void IconButtonList::setUpIconButtonList(const int& posX, const int& topPosY, co
 	int buttonIconsStartPosY = m_upNavigationButton.getIconSprite().getPosition().y + m_upNavigationButton.getIconSprite().getGlobalBounds().height * 0.5f + buttonHeight * 0.5f;
 	for (int i = 0; i < m_numberOfButtonsToDisplay; i++)
 	{
-		m_iconButtons.push_back(std::unique_ptr<IconButton>(new IconButton(m_window, &m_textures, true)));
+		m_iconButtons.push_back(std::unique_ptr<IconButton>(new IconButton(m_window, m_textures, m_audio, true)));
 		m_iconButtons[i]->setUp(posX, buttonIconsStartPosY + i * buttonHeight + m_borderSize, buttonWidth, buttonHeight, &m_textures.m_UIFill);
 	}
 
@@ -67,7 +68,7 @@ void IconButtonList::addNewButtonIcon(const sf::Texture& buttonIcon)
 	m_numberOfButtonsInUse++;
 	if (m_numberOfButtonsInUse > m_numberOfButtons) //Make new button
 	{
-		m_iconButtons.push_back(std::unique_ptr<IconButton>(new IconButton(m_window, &m_textures, true)));
+		m_iconButtons.push_back(std::unique_ptr<IconButton>(new IconButton(m_window, m_textures, m_audio, true)));
 		m_iconButtons[m_numberOfButtonsInUse - 1]->setUpAndResizeToSprite(0, 0, buttonIcon);
 		m_numberOfButtons++;
 	}
@@ -85,9 +86,8 @@ const bool IconButtonList::update(const sf::Vector2f& mousePosition)
 	if (Global::g_isLMBPressed)
 	{
 		//Up navigation button
-		if (m_upNavigationButton.collisionCheck(mousePosition)) 
+		if (m_upNavigationButton.checkIfButtonWasPressed(mousePosition)) 
 		{
-			Global::objectPressed();
 			if (m_numberOfButtonsInUse > m_numberOfButtonsToDisplay)
 			{
 				m_firstButtonToDisplay--;
@@ -99,9 +99,8 @@ const bool IconButtonList::update(const sf::Vector2f& mousePosition)
 			}
 
 		}
-		else if (m_downNavigationButton.collisionCheck(mousePosition)) //Down navigation button
+		else if (m_downNavigationButton.checkIfButtonWasPressed(mousePosition)) //Down navigation button
 		{
-			Global::objectPressed();
 			if (m_numberOfButtonsInUse > m_numberOfButtonsToDisplay)
 			{
 				m_firstButtonToDisplay++;
@@ -116,9 +115,8 @@ const bool IconButtonList::update(const sf::Vector2f& mousePosition)
 		//Icon buttons
 		for (int i = m_firstButtonToDisplay; i < m_firstButtonToDisplay + m_numberOfButtonsToDisplay; i++)
 		{
-			if (m_iconButtons[i]->collisionCheck(mousePosition))
+			if (m_iconButtons[i]->checkIfButtonWasPressed(mousePosition))
 			{
-				Global::objectPressed();
 				m_indexOfButtonClicked = i;
 				wasButtonClicked = true;
 				break;

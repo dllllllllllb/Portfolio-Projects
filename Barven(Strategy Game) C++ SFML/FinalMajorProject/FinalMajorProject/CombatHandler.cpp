@@ -2,18 +2,19 @@
 
 namespace settings = CombatHandlerSettings;
 
-CombatHandler::CombatHandler(sf::RenderWindow& rWindow, Textures& rTextures, DataHandler& rDataHandler, Fonts& rFonts) :
+CombatHandler::CombatHandler(sf::RenderWindow& rWindow, Textures& rTextures, DataHandler& rDataHandler, Fonts& rFonts, Audio& rAudio) :
 	m_window(rWindow),
 	m_textures(rTextures),
 	m_fonts(rFonts),
+	m_audio(rAudio),
 	m_dataHandler(rDataHandler),
-	m_tileHandler(rWindow, &rTextures),
-	m_unitTurnOrderBar(rWindow, rTextures, rFonts),
+	m_tileHandler(rWindow, rTextures),
+	m_unitTurnOrderBar(rWindow, rTextures, rFonts, rAudio),
 	m_combatCursor(m_combatUnits, m_tileIndexesThatAreWithinUnitsMovementRange),
 	m_unitInformationCard(rWindow, rTextures, rFonts),
-	m_background(rWindow, &rTextures),
-	m_combatBackgroundBorder(rWindow, &rTextures),
-	m_combatEndPopUp(rWindow, rTextures, rFonts),
+	m_background(rWindow, rTextures),
+	m_combatBackgroundBorder(rWindow, rTextures),
+	m_combatEndPopUp(rWindow, rTextures, rFonts, rAudio),
 	m_logsConsole(rWindow, rTextures, rFonts),
 	m_attackerAI(m_tileHandler, m_combatUnits),
 	m_defenderAI(m_tileHandler, m_combatUnits),
@@ -74,7 +75,7 @@ void CombatHandler::setUpCombatAreaAndUI()
 	//Buttons
 	for (int i = 0; i < settings::c_numOfButtons; i++)
 	{
-		m_buttons.push_back(std::unique_ptr<IconButton>(new IconButton(m_window, &m_textures, true)));
+		m_buttons.push_back(std::unique_ptr<IconButton>(new IconButton(m_window, m_textures, m_audio, true)));
 		m_buttons[i]->setUpAndResizeToSprite(m_combatBackground.getPosition().x + m_combatBackground.getGlobalBounds().width * 0.5f - UnitTurnOrderBarSettings::c_unitIconWidth * 1.25f - i * (UnitTurnOrderBarSettings::c_unitIconWidth + UnitTurnOrderBarSettings::c_unitIconBorder), m_combatBackground.getPosition().y + m_combatBackground.getTexture()->getSize().y * 0.5f, m_textures.m_battleButtonIcons[i]);
 	}
 
@@ -204,7 +205,7 @@ void CombatHandler::setHeroUnits(Hero* hero, const int& m_numberOfUnitsToSet)
 {
 	for (int i = m_numOfAttackerUnits; i < m_numOfAttackerUnits + m_numberOfUnitsToSet; i++)
 	{
-		m_combatUnits.push_back(std::unique_ptr<CombatUnit>(new CombatUnit(m_window, m_textures, m_fonts))); //Allocate memory for new units
+		m_combatUnits.push_back(std::unique_ptr<CombatUnit>(new CombatUnit(m_window, m_textures, m_audio, m_fonts))); //Allocate memory for new units
 		m_combatUnits[i]->setFunctionToCallWhenObjectArrivesAtDestination(std::bind(&CombatHandler::attack, this));
 	}
 
@@ -230,7 +231,7 @@ void CombatHandler::setMapUnitObjectUnits(UnitMapObject* mapUnit)
 
 	for (int i = 0; i < m_numOfDefenderUnits; i++)
 	{
-		m_combatUnits.push_back(std::unique_ptr<CombatUnit>(new CombatUnit(m_window, m_textures, m_fonts))); //Allocate memory for new units
+		m_combatUnits.push_back(std::unique_ptr<CombatUnit>(new CombatUnit(m_window, m_textures, m_audio, m_fonts))); //Allocate memory for new units
 		m_combatUnits[m_numOfAttackerUnits + i]->setFunctionToCallWhenObjectArrivesAtDestination(std::bind(&CombatHandler::attack, this));
 	}
 
@@ -259,7 +260,7 @@ void CombatHandler::setTownUnits(std::vector<std::shared_ptr<Unit>>& townUnits)
 	{
 		if (unit->getIsDataSet())
 		{
-			m_combatUnits.push_back(std::unique_ptr<CombatUnit>(new CombatUnit(m_window, m_textures, m_fonts))); //Allocate memory for new units
+			m_combatUnits.push_back(std::unique_ptr<CombatUnit>(new CombatUnit(m_window, m_textures, m_audio, m_fonts))); //Allocate memory for new units
 			m_combatUnits[m_numOfAttackerUnits + numberOfUnits]->setFunctionToCallWhenObjectArrivesAtDestination(std::bind(&CombatHandler::attack, this));
 			m_combatUnits[m_numOfAttackerUnits + numberOfUnits]->setUnit(*unit);
 
@@ -375,6 +376,8 @@ void CombatHandler::setUpCombatUnits()
 	showTileProperties();
 
 	setTilesThatAreWithinUnitMovementRange();
+
+	m_audio.playMusic(MusicEnum::combatMusic, rand() % AudioSettings::c_numOfCombatMusic);
 
 	m_isCombatActive = true;
 }
@@ -540,9 +543,8 @@ void CombatHandler::updateIfAtLeastOnePlayer(const sf::Vector2f& mousePosition, 
 	}
 	else
 	{
-		if (Global::g_isLMBPressed && m_combatEndPopUp.update(mousePosition))
+		if (m_combatEndPopUp.update(mousePosition))
 		{
-			Global::objectPressed();
 			endCombat();
 		}
 	}
@@ -554,10 +556,8 @@ void CombatHandler::updateUI(const sf::Vector2f& mousePosition)
 	{
 		for (int i = 0; i < settings::c_numOfButtons; i++)
 		{
-			if (m_buttons[i]->collisionCheck(mousePosition))
+			if (m_buttons[i]->checkIfButtonWasPressed(mousePosition))
 			{
-				Global::objectPressed();
-
 				switch (static_cast<CombatHandlerButtons>(i))
 				{
 				case CombatHandlerButtons::wait:

@@ -35,8 +35,8 @@ class MapCreator
 {
 private:
 	sf::RenderWindow& m_window;
-	Textures* m_pTextures;
-	DataHandler* m_pDataHandler;
+	Textures& m_textures;
+	DataHandler& m_dataHandler;
 	TileHandler				m_tileHandler;
 	ViewManager				m_viewManager;
 	MapObjectEditorWindow	m_editorWindow;
@@ -66,7 +66,6 @@ private:
 	float m_deltaTime;
 
 	bool m_isSetMapSizeActive;
-	bool m_wasButtonPressed;
 	bool m_isEditorActive;
 	bool m_isMapObjectSelected;
 	bool m_drawTileOverlap;
@@ -127,7 +126,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor, allocates memory for buttons and sets function pointers
 	//===========================================================================================
-	MapCreator(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, DataHandler* pDataHandler, sf::Mouse& rMouse);
+	MapCreator(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler, sf::Mouse& rMouse);
 
 	//===========================================================================================
 	//Description: Class destructor
@@ -153,51 +152,45 @@ public:
 	//Description: Updates UI components of the scene, checks for mouse collisions and button
 	//			   presses. Holds logic that determines what map object is selected
 	//===========================================================================================
-	void updateUI(const bool isLMBPressed, const sf::Vector2f& mousePosition);
+	void updateUI(const sf::Vector2f& mousePosition);
 
 	//===========================================================================================
 	//Description: Updates any interactions with the map. Responsible for placing objects, moving
 	//			   the view and interactions with objects on the map
 	//===========================================================================================
-	void updateGame(const bool isLMBPressed);
+	void updateGame();
 
 	//===========================================================================================
 	//Description: Updates primary buttons, determines which drop down list to display
 	//===========================================================================================
-	bool updatePrimaryButtons(const bool isLMBPressed, const sf::Vector2f& mousePosition);
+	void updatePrimaryButtons(const sf::Vector2f& mousePosition);
 
 	//===========================================================================================
 	//Description: Updates secondary buttons, determines which map object is selected
 	//===========================================================================================
-	bool updateSecondaryButtons(const bool isLMBPressed, const sf::Vector2f& mousePosition);
+	void updateSecondaryButtons(const sf::Vector2f& mousePosition);
 
 	//===========================================================================================
 	//Description: Updates input boxes, these are used to determine map size
 	//===========================================================================================
-	bool updateInputBoxes(const bool isLMBPressed, const sf::Vector2f& mousePosition);
+	void updateInputBoxes(const sf::Vector2f& mousePosition);
 
 	//===========================================================================================
 	//Description: Updates unit icon buttons. It determines which unit is selected to be placed
 	//===========================================================================================
-	bool updateUnitIconButtons(const bool isLMBPressed, const sf::Vector2f& mousePosition);
+	void updateUnitIconButtons(const sf::Vector2f& mousePosition);
 
 	//===========================================================================================
 	//Description: Based on selected object, it will create an instance of the selected object
 	//			   inside an appropriate vector, set its appropriate texture, place it on the
 	//			   map and update tile properties the object occupies
 	//===========================================================================================
-	bool updateMapObjectPlacement(const int& tileIndex);
+	const bool updateMapObjectPlacement(const int& tileIndex);
 
 	//===========================================================================================
 	//Description: Resets focus of input boxes
 	//===========================================================================================
 	void resetInputBoxesFocus();
-
-	//===========================================================================================
-	//Description: Checks if a button was pressed, makes sure that player cant click multiple
-	//			   objects with one click
-	//===========================================================================================
-	void checkIfMouseWasPressed(const bool wasButtonPressed);
 
 	//===========================================================================================
 	//Description: Returns a vector of tile indexes that the object is occupying/will occupy
@@ -235,7 +228,7 @@ public:
 	//Description: Selects an object on the map and opens up editor window with the objects
 	//			   properties and values
 	//===========================================================================================
-	bool selectMapObject(const int& tileIndex);
+	void selectMapObject(const int& tileIndex);
 
 	//===========================================================================================
 	//Description: Applies object editor values to the object selected

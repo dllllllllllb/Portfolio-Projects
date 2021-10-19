@@ -17,7 +17,7 @@ class UIElement : public sf::Sprite
 {
 protected:
 	sf::RenderWindow& m_window;
-	Textures* m_pTextures;
+	Textures& m_textures;
 	sf::Sprite m_fillShader;
 	sf::Sprite m_borderTop;
 	sf::Sprite m_borderBottom;
@@ -35,12 +35,12 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	UIElement(sf::RenderWindow& window, Textures* textures);
+	UIElement(sf::RenderWindow& window, Textures& rTextures);
 
 	//===========================================================================================
 	//Description: Class constructor that sets border type
 	//===========================================================================================
-	UIElement(sf::RenderWindow& window, Textures* textures, const bool useThinBorder);
+	UIElement(sf::RenderWindow& window, Textures& rTextures, const bool useThinBorder);
 
 	//===========================================================================================
 	//Description: Class destructor

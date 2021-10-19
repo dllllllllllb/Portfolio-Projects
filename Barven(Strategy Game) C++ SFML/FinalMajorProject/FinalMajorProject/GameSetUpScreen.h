@@ -18,8 +18,8 @@ class GameSetUpScreen
 {
 private:
 	sf::RenderWindow& m_window;
-	DataHandler* m_pDataHandler;
-	Textures* m_pTextures;
+	DataHandler& m_dataHandler;
+	Textures& m_textures;
 	PlayerSettingsTable m_playerSettingsTable;
 	DropDownList m_mapSelectionDropDown;
 	Button m_startGameButton;
@@ -33,7 +33,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	GameSetUpScreen(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, DataHandler* pDataHandler);
+	GameSetUpScreen(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler);
 
 	//===========================================================================================
 	//Description: Class destructor

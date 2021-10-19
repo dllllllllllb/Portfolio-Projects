@@ -1,9 +1,9 @@
 #include "LogsConsole.h"
 
 LogsConsole::LogsConsole(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts):
-	TextBox(rWindow, &rTextures, &rFonts),
-	UIElement(rWindow, &rTextures),
-	TextBoxTitle(rWindow, &rTextures, &rFonts)
+	TextBox(rWindow, rTextures, rFonts),
+	UIElement(rWindow, rTextures),
+	TextBoxTitle(rWindow, rTextures, rFonts)
 {
 }
 

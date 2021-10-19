@@ -35,7 +35,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	UnitsPanel(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts);
+	UnitsPanel(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor

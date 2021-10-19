@@ -4,8 +4,10 @@
 #ifndef ICONBUTTON_H
 #define ICONBUTTON_H
 
-#include "UIElement.h"
+#include "Audio.h"
 #include "CollidableObject.h"
+#include "GlobalVariables.h"
+#include "UIElement.h"
 
 //===========================================================================================
 //Description: A button with no text that displays an Icon at its centre
@@ -16,18 +18,20 @@ private:
 
 protected:
 	sf::Sprite m_buttonIcon;
+	Audio& m_audio;
+	SFXEnum m_SFXToPlay;
 
 public:
 
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	IconButton(sf::RenderWindow& rWindow, Textures* pTextures);
+	IconButton(sf::RenderWindow& rWindow, Textures& rTextures, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class constructor that sets border type
 	//===========================================================================================
-	IconButton(sf::RenderWindow& rWindow, Textures* pTextures, const bool setThinBorder);
+	IconButton(sf::RenderWindow& rWindow, Textures& rTextures, Audio& rAudio, const bool setThinBorder);
 
 	//===========================================================================================
 	//Description: Class destructor
@@ -38,6 +42,11 @@ public:
 	//Description: Sets position of all class elements
 	//===========================================================================================
 	void setPosition(const int& positionX, const int& positionY);
+
+	//===========================================================================================
+	//Description: Checks if the button was pressed and plays a sound
+	//===========================================================================================
+	const bool checkIfButtonWasPressed(const sf::Vector2f& otherObjectPosition);
 
 	//===========================================================================================
 	//Description: Sets up contents of the button, icon is resized to fit inside the button

@@ -1,7 +1,8 @@
 #include "PlayerHandler.h"
-PlayerHandler::PlayerHandler(sf::RenderWindow& rWindow, DataHandler* pDataHandler, ResourcesBar& rResourceBar, TurnHandler& rTurnHandler) :
+PlayerHandler::PlayerHandler(sf::RenderWindow& rWindow, Audio& rAudio, DataHandler& rDataHandler, ResourcesBar& rResourceBar, TurnHandler& rTurnHandler) :
     m_window(rWindow),
-    m_pDataHandler(pDataHandler),
+    m_audio(rAudio),
+    m_dataHandler(rDataHandler),
     m_resourcesBar(rResourceBar),
     m_turnHandler(rTurnHandler)
 
@@ -19,7 +20,7 @@ Player& PlayerHandler::getPlayer(const int& playerIndex)
 
 void PlayerHandler::makeNewPlayer(const int& factionIndex)
 {
-    m_players.push_back(std::unique_ptr<Player>(new Player(m_window)));
+    m_players.push_back(std::unique_ptr<Player>(new Player(m_window, m_audio)));
     m_players[m_players.size() - 1]->setFactionIndex(factionIndex);
     m_turnHandler.incrementNumberOfPlayers();
 

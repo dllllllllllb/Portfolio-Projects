@@ -20,7 +20,7 @@ private:
 	sf::Mouse m_mouse;
 
 public:
-	Menu(sf::RenderWindow& window, Textures* textures, Fonts* fonts);
+	Menu(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 	~Menu();
 
 	void setUpButtons();

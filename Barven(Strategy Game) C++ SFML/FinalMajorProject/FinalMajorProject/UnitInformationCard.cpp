@@ -5,9 +5,9 @@ namespace settings = UnitInformationCardSettings;
 UnitInformationCard::UnitInformationCard(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts) :
 	m_window(rWindow),
 	m_textures(rTextures),
-	m_background(rWindow, &rTextures),
-	m_unitBackground(rWindow, &rTextures, true),
-	m_unitInformation(rWindow, &rTextures, &rFonts, true),
+	m_background(rWindow, rTextures),
+	m_unitBackground(rWindow, rTextures, true),
+	m_unitInformation(rWindow, rTextures, rFonts, true),
 	m_isActive(false)
 {
 	

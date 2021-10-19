@@ -47,7 +47,7 @@ public:
 	//Description: Class constructor, isSliderHorizontal determines if the sliter is horizontal 
 	//			   or vertical
 	//===========================================================================================
-	Slider(sf::RenderWindow& rWindow, Textures* pTextures, const bool isSliderHorizontal);
+	Slider(sf::RenderWindow& rWindow, Textures& rTextures, const bool isSliderHorizontal);
 
 	//===========================================================================================
 	//Description: Class destructor

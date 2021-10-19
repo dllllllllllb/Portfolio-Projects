@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 30/08/2021
+//Last Accessed: 19/10/2021
 
 #ifndef UIHANDLER_H
 #define UIHANDLER_H
@@ -23,12 +23,13 @@ private:
 	MapUI m_mapUI;
 	HeroPanel m_heroPanel;
 	MapObjectsInformationBox m_mapObjInfoBox;
+	TextBox m_AITakingTurnInformation;
 
 public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	UIHandler(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, ConfirmationWindow& rConfirmationWindow);
+	UIHandler(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow);
 
 	//===========================================================================================
 	//Description: Class destructor
@@ -79,6 +80,11 @@ public:
 	//Description: Draws contents of this class
 	//===========================================================================================
 	void draw();
+
+	//===========================================================================================
+	//Description: Draws AI turn indicator
+	//===========================================================================================
+	void drawAITurnInformation();
 };
 
 #endif // !UIHANDLER_H

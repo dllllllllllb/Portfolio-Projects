@@ -1,12 +1,12 @@
 #include "MapCreatorSaveWindow.h"
 
-MapCreatorSaveWindow::MapCreatorSaveWindow(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts) :
+MapCreatorSaveWindow::MapCreatorSaveWindow(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
 	m_window(rWindow),
-	m_background(rWindow, pTextures),
-	m_mapNameInputBox(rWindow, pTextures, pFonts, true),
-	m_numOfPlayersInputBox(rWindow, pTextures, pFonts, true),
-	m_acceptButton(pTextures, true),
-	m_declineButton(pTextures, false)
+	m_background(rWindow, rTextures),
+	m_mapNameInputBox(rWindow, rTextures, rFonts, rAudio, true),
+	m_numOfPlayersInputBox(rWindow, rTextures, rFonts, rAudio, true),
+	m_acceptButton(rTextures, rAudio, true),
+	m_declineButton(rTextures, rAudio, false)
 {
 }
 
@@ -61,50 +61,41 @@ void MapCreatorSaveWindow::resetInputButtonFocus()
 	m_numOfPlayersInputBox.setButtonPressed(false);
 }
 
-const bool MapCreatorSaveWindow::update(const bool isLMBPressed, const sf::Vector2f& mousePosition)
+void MapCreatorSaveWindow::update(const sf::Vector2f& mousePosition)
 {
-	bool toggleButtonPress = false;
-
-	if (isLMBPressed)
+	if (Global::g_isLMBPressed)
 	{
 		resetInputButtonFocus();
 	}
 
-	if (isLMBPressed && m_mapNameInputBox.getIsButtonPressed())
+	if (Global::g_isLMBPressed && m_mapNameInputBox.getIsButtonPressed())
 	{
 		m_mapNameInputBox.setButtonPressed(false);
 	}
 
 
-	if (m_mapNameInputBox.checkMouseCollision(mousePosition) && isLMBPressed)
+	if (m_mapNameInputBox.checkIfButtonWasPressed(mousePosition))
 	{
 		m_mapNameInputBox.setButtonPressed(true);
-		toggleButtonPress = true;
 	}
 
-	if (m_numOfPlayersInputBox.checkMouseCollision(mousePosition) && isLMBPressed)
+	if (m_numOfPlayersInputBox.checkIfButtonWasPressed(mousePosition))
 	{
 		m_numOfPlayersInputBox.setButtonPressed(true);
-		toggleButtonPress = true;
 	}
 
-	if (m_acceptButton.collisionCheck(mousePosition) && isLMBPressed)
+	if (m_acceptButton.checkIfButtonWasPressed(mousePosition))
 	{
 		m_saveMapFunction();
-		toggleButtonPress = true;
 	}
 
-	if (m_declineButton.collisionCheck(mousePosition) && isLMBPressed)
+	if (m_declineButton.checkIfButtonWasPressed(mousePosition))
 	{
 		m_exitSaveWindowFunction();
-		toggleButtonPress = true;
 	}
 
 	m_mapNameInputBox.update();
-	m_numOfPlayersInputBox.update();
-
-	return toggleButtonPress;
-	
+	m_numOfPlayersInputBox.update();	
 }
 
 const std::string& MapCreatorSaveWindow::getMapName() const

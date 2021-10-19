@@ -30,7 +30,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	MapCreatorSaveWindow(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts);
+	MapCreatorSaveWindow(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 
 	//===========================================================================================
 	//Description: Class destructor
@@ -60,7 +60,7 @@ public:
 	//===========================================================================================
 	//Description: Checks for button presses and updates input box
 	//===========================================================================================
-	const bool update(const bool isLMBPressed, const sf::Vector2f& mousePosition);
+	void update(const sf::Vector2f& mousePosition);
 
 	//===========================================================================================
 	//Description: Returns map name typed by the player in the input box

@@ -2,18 +2,18 @@
 
 namespace settings = UpgradeHeroStatsPanelSettings;
 
-UpgradeHeroStatsPanel::UpgradeHeroStatsPanel(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts) :
+UpgradeHeroStatsPanel::UpgradeHeroStatsPanel(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
 	m_window(rWindow),
 	m_textures(rTextures),
-	m_basePanel(rWindow, &rTextures, &rFonts),
-	m_exitButton(rWindow, &rTextures, true),
+	m_basePanel(rWindow, rTextures, rFonts),
+	m_exitButton(rWindow, rTextures, rAudio, true),
 	m_isActive(false),
 	m_pHeroPointer(nullptr)
 {
 	//Create hero stats button and text
 	for (int i = 0; i < settings::c_numOfSkills; i++)
 	{
-		m_heroStatsUpgradeButtons.push_back(std::unique_ptr<IconButton>(new IconButton(rWindow, &rTextures, true)));
+		m_heroStatsUpgradeButtons.push_back(std::unique_ptr<IconButton>(new IconButton(rWindow, rTextures, rAudio, true)));
 	}
 	setUpUpgradeHeroStatsPanel();
 }
@@ -75,7 +75,7 @@ const bool UpgradeHeroStatsPanel::update(const sf::Vector2f& mousePosition)
 			{
 				for (int i = 0; i < settings::c_numOfSkills; i++)
 				{
-					if (m_heroStatsUpgradeButtons[i]->collisionCheck(mousePosition))
+					if (m_heroStatsUpgradeButtons[i]->checkIfButtonWasPressed(mousePosition))
 					{
 						m_pHeroPointer->incrementHeroStat(static_cast<HeroStatsEnum>(i), 1);
 						m_pHeroPointer->decrementStatUpgradePoints();
@@ -86,12 +86,10 @@ const bool UpgradeHeroStatsPanel::update(const sf::Vector2f& mousePosition)
 				}
 			}
 
-			if (m_exitButton.collisionCheck(mousePosition))
+			if (m_exitButton.checkIfButtonWasPressed(mousePosition))
 			{
 				toggleIsActive();
 			}
-
-			Global::objectPressed();
 		}
 	}
 

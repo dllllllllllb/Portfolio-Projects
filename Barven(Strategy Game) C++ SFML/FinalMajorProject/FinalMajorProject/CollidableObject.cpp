@@ -10,7 +10,7 @@ CollidableObject::~CollidableObject()
 {
 }
 
-bool CollidableObject::collisionCheck(const sf::Vector2f& otherObjectPosition)
+const bool CollidableObject::collisionCheck(const sf::Vector2f& otherObjectPosition)
 {
 	float positionX = getPosition().x;
 	float positionY = getPosition().y;

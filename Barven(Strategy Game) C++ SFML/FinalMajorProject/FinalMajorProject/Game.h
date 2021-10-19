@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 10/09/2021
+//Last Accessed: 19/10/2021
 
 #ifndef GAME_H
 #define GAME_H
@@ -32,7 +32,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	Game(sf::RenderWindow& rWindow, Textures* pTextures, Fonts* pFonts, DataHandler* pDataHandler, GameSetUpScreen* pGameSetUpScreen, sf::Mouse& rMouse);
+	Game(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler, GameSetUpScreen& rGameSetUpScreen, sf::Mouse& rMouse);
 
 	//===========================================================================================
 	//Description: Class destructor

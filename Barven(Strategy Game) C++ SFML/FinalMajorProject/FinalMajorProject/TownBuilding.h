@@ -25,15 +25,16 @@ class TownBuilding
 private:
 
 	sf::RenderWindow& m_window;
-	Textures* m_pTextures;
+	Textures& m_textures;
+	Audio& m_audio;
 	ResourcesBar& m_resourcesBar;
 	
 	FactionBuildingData* m_pFactionBuildingData;
 	TownBuildingData* m_pTownBuildingData;
 	Resources* m_pResources;
 	TownData* m_pTownData;
-	ConfirmationWindow* m_pConfirmationWindow;
-	PopUpTextBox* m_pPopUpTextBox;
+	ConfirmationWindow& m_confirmationWindow;
+	PopUpTextBox& m_popUpTextBox;
 	int m_selectedBuildingIndex;
 
 	std::vector<std::unique_ptr<TownBuildingUpgrade>> m_upgradeButtons;
@@ -43,7 +44,7 @@ public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	TownBuilding(sf::RenderWindow& window, Textures* pTextures, Fonts* pFonts, ConfirmationWindow* pConfirmationWindow, PopUpTextBox* pPopUpTextBox, ResourcesBar& rResourcesBar);
+	TownBuilding(sf::RenderWindow& window, Textures& rTextures, Fonts& rFonts, Audio& rAudio, ConfirmationWindow& rConfirmationWindow, PopUpTextBox& rPopUpTextBox, ResourcesBar& rResourcesBar);
 	
 	//===========================================================================================
 	//Description: Class destructor
@@ -119,7 +120,7 @@ public:
 	//===========================================================================================
 	//Description: Updates logic 
 	//===========================================================================================
-	bool update(const sf::Vector2f& mousePosition);
+	void update(const sf::Vector2f& mousePosition);
 
 	//===========================================================================================
 	//Description: Increments town building level
