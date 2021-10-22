@@ -56,6 +56,7 @@ Framework::~Framework()
 	if (m_pDevTools != nullptr) { safeDelete(m_pDevTools); }
 	safeDelete(m_pGameSetUpScreen);
 	safeDelete(m_pGame);
+	safeDelete(m_pBackground);
 }
 
 void Framework::run()
