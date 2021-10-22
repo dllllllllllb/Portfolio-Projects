@@ -48,7 +48,13 @@ void Menu::update(const sf::Vector2f& mousePosition)
 	if (m_devToolsButton.checkIfButtonWasPressed(mousePosition))
 	{
 		Global::g_gameState = GameState::devTools;
+		m_initializeDevTools();
 	}
+}
+
+void Menu::setInitializeDevTools(std::function<void()> initializeDevTools)
+{
+	m_initializeDevTools = initializeDevTools;
 }
 
 void Menu::draw()

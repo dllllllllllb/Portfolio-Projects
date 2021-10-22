@@ -24,13 +24,13 @@ private:
 
 	Button m_createUnitButton;
 
-	DataHandler m_dataHandler;
+	DataHandler& m_dataHandler;
 
 public:
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	UnitCreationTool(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
+	UnitCreationTool(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler);
 
 	//===========================================================================================
 	//Description: Class destructor

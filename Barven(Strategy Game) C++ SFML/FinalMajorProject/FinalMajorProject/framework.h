@@ -22,8 +22,9 @@ class Framework
 {
 private:
 	sf::RenderWindow& m_window;
-	sf::Clock m_clock;
 
+	//Time
+	sf::Clock m_clock;
 	float m_deltaTime;
 
 	//Mouse and Keyboard control
@@ -37,6 +38,11 @@ private:
 	Textures* m_pTextures;
 	Fonts* m_pFonts;
 	Audio* m_pAudio;
+
+	//Background and logo
+	UIElement* m_pBackground;
+	sf::Sprite m_logo;
+
 
 	void checkWindowEvents();
 
@@ -60,6 +66,9 @@ public:
 	~Framework();
 
 	void run();
+
+	void initializeDevTools();
+	void deleteDevTools();
 };
 
 #endif // !FRAMEWORK_H

@@ -22,7 +22,10 @@ class DevTools
 {
 private:
 	sf::RenderWindow& m_window;
-	DevToolsEnum m_DevToolsEnum;
+	Textures& m_textures;
+	Fonts& m_fonts;
+	Audio& m_audio;
+	DevToolsEnum m_devToolsEnum;
 	DataHandler& m_dataHandler;
 
 	ConfirmationWindow m_confirmationWindow;
@@ -48,6 +51,10 @@ private:
 	ResourcesBar m_resourcesBar;
 
 	Town m_townTool;
+
+	bool m_deleteSelf;
+
+	std::function<void()> m_deleteDevTools;
 
 public:
 
@@ -80,6 +87,11 @@ public:
 	//Description: Updates dev tool
 	//===========================================================================================
 	void updateDevTools(const sf::Vector2f& mousePosition);
+
+	//===========================================================================================
+	//Description: Sets function outside of this class that deletes this object
+	//===========================================================================================
+	void setFunctionToDeleteDevTools(std::function<void()> deleteDevTools);
 
 	//===========================================================================================
 	//Description: Draws dev tool

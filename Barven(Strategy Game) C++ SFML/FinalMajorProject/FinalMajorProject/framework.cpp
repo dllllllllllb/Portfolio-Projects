@@ -16,23 +16,32 @@ Framework::Framework(sf::RenderWindow& window) :
 	m_window(window),
 	m_deltaTime(0),
 	m_canObjectBePressed(false),
-	m_canRMBBePressed(false)
+	m_canRMBBePressed(false),
+	m_pDevTools(nullptr)
 {
 	m_pDataHandler = new DataHandler();
 	m_pTextures = new Textures();
 	m_pFonts = new Fonts();
 	m_pAudio = new Audio();
 	m_pMenu = new Menu(window, *m_pTextures, *m_pFonts, *m_pAudio);
-	m_pDevTools = new DevTools(window, *m_pTextures, *m_pFonts, *m_pAudio, *m_pDataHandler, m_mouse);
 	m_pGameSetUpScreen = new GameSetUpScreen(window, *m_pTextures, *m_pFonts, *m_pAudio, *m_pDataHandler);
 	m_pGame = new Game(window, *m_pTextures, *m_pFonts, *m_pAudio, *m_pDataHandler, *m_pGameSetUpScreen, m_mouse);
 
 	m_window.setFramerateLimit(144);
 	m_window.setKeyRepeatEnabled(false);
 	m_pDataHandler->loadData();
+	m_pMenu->setInitializeDevTools(std::bind(&Framework::initializeDevTools, this));
 	m_pGameSetUpScreen->initialize();
-	m_pDevTools->initialize();
 	m_pGame->initialize();
+
+	m_pBackground = new UIElement(m_window, *m_pTextures);
+
+	m_pBackground->setPosition(m_window.getDefaultView().getCenter());
+	m_pBackground->setUpUIBorder(m_window.getSize().x - c_UIBorder, m_window.getSize().y - c_UIBorder);
+	m_logo.setTexture(m_pTextures->m_logo);
+	m_logo.setScale(0.6f, 0.6f);
+	m_logo.setOrigin(m_logo.getLocalBounds().width * 0.5f, 0);
+	m_logo.setPosition(m_window.getDefaultView().getCenter().x, 10);
 
 	m_pAudio->playMusic(MusicEnum::menuMusic, 0);
 }
@@ -44,7 +53,7 @@ Framework::~Framework()
 	safeDelete(m_pFonts);
 	safeDelete(m_pAudio);
 	safeDelete(m_pMenu);
-	safeDelete(m_pDevTools);
+	if (m_pDevTools != nullptr) { safeDelete(m_pDevTools); }
 	safeDelete(m_pGameSetUpScreen);
 	safeDelete(m_pGame);
 }
@@ -97,6 +106,18 @@ void Framework::run()
 	}
 }
 
+void Framework::initializeDevTools()
+{
+	m_pDevTools = new DevTools(m_window, *m_pTextures, *m_pFonts, *m_pAudio, *m_pDataHandler, m_mouse);
+	m_pDevTools->setFunctionToDeleteDevTools(std::bind(&Framework::deleteDevTools, this));
+	m_pDevTools->initialize();
+}
+
+void Framework::deleteDevTools()
+{
+	safeDelete(m_pDevTools);
+}
+
 void Framework::checkWindowEvents()
 {
 	while (m_window.pollEvent(Global::g_event))
@@ -127,18 +148,25 @@ void Framework::checkWindowEvents()
 
 void Framework::menu()
 {
+	m_pBackground->drawUIBackground();
 	m_pMenu->update(m_mousePosition);
 	m_pMenu->draw();
+	m_window.draw(m_logo);
+	m_pBackground->drawUIBorder();
 }
 
 void Framework::gameSetUpScreen()
 {
+	m_pBackground->drawUIBackground();
 	m_pGameSetUpScreen->update(m_mousePosition);
 	m_pGameSetUpScreen->draw();
+	m_window.draw(m_logo);
+	m_pBackground->drawUIBorder();
 }
 
 void Framework::devTools()
 {
+	m_pBackground->drawUIBorderAndBackground();
 	m_pDevTools->update(m_mousePosition, m_deltaTime);
 }
 

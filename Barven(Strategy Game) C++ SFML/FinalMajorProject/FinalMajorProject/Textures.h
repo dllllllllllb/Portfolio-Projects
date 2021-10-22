@@ -41,6 +41,7 @@ struct Textures
 	sf::Texture m_mapUIIconButtons[4];
 	sf::Texture m_defaultHeroButtonIcon;
 	sf::Texture m_plusButton;
+	sf::Texture m_logo;
 
 	//Resource Map Textures
 	sf::Texture m_resourceTextures[4];

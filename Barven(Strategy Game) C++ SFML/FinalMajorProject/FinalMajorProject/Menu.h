@@ -2,6 +2,7 @@
 #define MENU_H
 
 #include <SFML/Window/Mouse.hpp>
+#include <functional>
 
 #include "Button.h"
 #include "Fonts.h"
@@ -19,6 +20,8 @@ private:
 
 	sf::Mouse m_mouse;
 
+	std::function<void()> m_initializeDevTools;
+
 public:
 	Menu(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio);
 	~Menu();
@@ -26,6 +29,9 @@ public:
 	void setUpButtons();
 
 	void update(const sf::Vector2f& mousePosition);
+
+	void setInitializeDevTools(std::function<void()> initializeDevTools);
+
 	void draw();
 };
 

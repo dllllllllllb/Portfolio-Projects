@@ -1,10 +1,10 @@
 #include "UnitCreationTool.h"
 
-UnitCreationTool::UnitCreationTool(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio) :
+UnitCreationTool::UnitCreationTool(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler) :
 	m_window(rWindow),
 	m_unitImageBackground(rWindow, rTextures),
 	m_createUnitButton(rWindow, rTextures, rFonts, rAudio),
-	m_dataHandler()
+	m_dataHandler(rDataHandler)
 
 {
 	for (int i = 0; i < UnitCreator::c_numOfButtons; i++)

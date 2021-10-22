@@ -4,23 +4,23 @@ namespace settings = DevToolsSettings;
 
 DevTools::DevTools(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler, sf::Mouse& mouse) :
 	m_window(rWindow),
-	m_DevToolsEnum(DevToolsEnum::devTools),
+	m_textures(rTextures),
+	m_fonts(rFonts),
+	m_audio(rAudio),
+	m_devToolsEnum(DevToolsEnum::devTools),
 	m_dataHandler(rDataHandler),
 	m_confirmationWindow(rWindow, rTextures, rFonts, rAudio),
 	m_UITool(rWindow, rTextures, rFonts, rAudio),
 	m_pathFindingTool(rWindow, rTextures, rFonts, rAudio),
-	m_unitCreationTool(rWindow, rTextures, rFonts, rAudio),
+	m_unitCreationTool(rWindow, rTextures, rFonts, rAudio, rDataHandler),
 	m_mapCreator(rWindow, rTextures, rFonts, rAudio, rDataHandler, mouse),
 	m_commbatHandler(rWindow, rTextures, rDataHandler, rFonts, rAudio),
 	m_testTextBox(rWindow, rTextures, rFonts),
 	m_player(rWindow, rAudio),
 	m_resourcesBar(rWindow, rTextures, rFonts),
-	m_townTool(rWindow, rTextures, rFonts, rAudio, m_confirmationWindow, m_resourcesBar)
+	m_townTool(rWindow, rTextures, rFonts, rAudio, m_confirmationWindow, m_resourcesBar),
+	m_deleteSelf(false)
 {
-	for (int i = 0; i < settings::c_numOfButtons; i++)
-	{
-		m_buttons.push_back(std::unique_ptr<Button>(new Button(rWindow, rTextures, rFonts, rAudio)));
-	}
 	m_player.setDataHandlerPointer(&rDataHandler);
 	m_player.setFunctionToCallWhenHeroArrivesAtDestination(std::bind(&DevTools::drawDevTools, this));
 }
@@ -48,7 +48,6 @@ void DevTools::initialize()
 		}
 	}
 
-	m_townTool.setTownData(0, m_townData, m_dataHandler.getFactionData(0).getBuildingsData(), m_player, true);
 	m_resourcesBar.setUp();
 	m_resourcesBar.updateResourcesBarValues(m_player.getResources());
 
@@ -95,7 +94,6 @@ void DevTools::initialize()
 
 	m_player.getSelectedHero().updateUnitsStats();
 
-	m_commbatHandler.setUpPlayerVsMapUnit(&m_player.getSelectedHero(), &m_unitMapObject, false);
 	m_commbatHandler.setFunctionToCallWhenCombatIsWon(std::bind(&DevTools::drawDevTools, this));
 }
 
@@ -103,6 +101,7 @@ void DevTools::setUpButtons()
 {
 	for (int i = 0; i < settings::c_numOfButtons; i++)
 	{
+		m_buttons.push_back(std::unique_ptr<Button>(new Button(m_window, m_textures, m_fonts, m_audio)));
 		m_buttons[i]->setPosition(settings::c_positionX[i], settings::c_positionY[i]);
 		m_buttons[i]->setUpUIBorder(settings::c_buttonWidth, settings::c_buttonHeight);
 		m_buttons[i]->setCollisionBounds(settings::c_buttonWidth, settings::c_buttonHeight);
@@ -123,17 +122,22 @@ void DevTools::setUpButtons()
 
 void DevTools::update(const sf::Vector2f& mousePosition, const float& deltaTime)
 {
-	if (m_DevToolsEnum != DevToolsEnum::devTools)
+	if (m_devToolsEnum != DevToolsEnum::devTools)
 	{
 		//Each tool uses the same back button that lives inside this class
 		if (m_buttons[0]->checkIfButtonWasPressed(mousePosition))
 		{
-			m_DevToolsEnum = DevToolsEnum::devTools;
+			if (m_devToolsEnum == DevToolsEnum::combatTool || m_devToolsEnum == DevToolsEnum::townTool)
+			{
+				m_audio.playMusic(MusicEnum::menuMusic, 0);
+			}
+
+			m_devToolsEnum = DevToolsEnum::devTools;
 			m_townTool.setIsTownActive(false);
 		}
 	}
 
-	switch (m_DevToolsEnum)
+	switch (m_devToolsEnum)
 	{
 	case DevToolsEnum::devTools:
 	{
@@ -185,6 +189,8 @@ void DevTools::update(const sf::Vector2f& mousePosition, const float& deltaTime)
 	}
 
 	m_buttons[0]->draw(); //Back button, used in every tool hence always drawn
+
+	if (m_deleteSelf) { m_deleteDevTools(); };
 }
 
 void DevTools::updateDevTools(const sf::Vector2f& mousePosition)
@@ -197,19 +203,30 @@ void DevTools::updateDevTools(const sf::Vector2f& mousePosition)
 			{
 				Global::g_gameState = GameState::menu; //Returns player to the main menu
 				m_townTool.setIsTownActive(false);
+				m_deleteSelf = true;
 			}
 			else
 			{
-				m_DevToolsEnum = static_cast<DevToolsEnum>(i);
-				if (m_DevToolsEnum == DevToolsEnum::townTool)
+				m_devToolsEnum = static_cast<DevToolsEnum>(i);
+				if (m_devToolsEnum == DevToolsEnum::townTool)
 				{
+					m_townTool.setTownData(0, m_townData, m_dataHandler.getFactionData(0).getBuildingsData(), m_player, true);
 					m_townTool.setIsTownActive(true);
 					Global::g_UILayer = UILayerEnum::town;
+				}
+				else if (m_devToolsEnum == DevToolsEnum::combatTool)
+				{
+					m_commbatHandler.setUpPlayerVsMapUnit(&m_player.getSelectedHero(), &m_unitMapObject, false);
 				}
 			}
 			break;
 		}
 	}
+}
+
+void DevTools::setFunctionToDeleteDevTools(std::function<void()> deleteDevTools)
+{
+	m_deleteDevTools = deleteDevTools;
 }
 
 void DevTools::drawDevTools()
