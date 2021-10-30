@@ -1,93 +1,116 @@
 //Author: Maciej Dowbor
-//Last Accessed: 29/04/2021
+//Last Accessed: 30/09/2021
 
-#ifndef TEXTINPUTBOX_H
-#define TEXTINPUTBOX_H
+#ifndef COMBATUNITEDITOR_H
+#define COMBATUNITEDITOR_H
 
-#include "Button.h"
-#include "TextBoxTitle.h"
-#include "GlobalVariables.h"
+#include "CombatUnitEditorEnum.h"
+#include "CombatUnitEditorSettings.h"
+#include "DataHandler.h"
+#include "IconButtonList.h"
+#include "TextInputBox.h"
+#include "Hero.h"
+#include "UnitsPanel.h"
 
 //===========================================================================================
-//Description: Allows the player to enter text inside this box when clicked on
+//Description: Interface to edit battling armies in combat tool
 //===========================================================================================
-class TextInputBox : public virtual Button
+class CombatUnitEditor
 {
 private:
-	std::string m_playerInput;
-	bool m_isButtonPressed;
-	bool m_canGetInput;
+	sf::RenderWindow& m_window;
+	Textures& m_textures;
+	DataHandler& m_dataHandler;
+
+	Hero* m_pAttackerHero;
+	Hero* m_pDefenderHero;
+
+	UnitsPanel m_attackerUnits;
+	UnitsPanel m_defenderUnits;
+
+	UIElement m_background;
+	IconButtonList m_unitList;
+	UIElement m_unitListOutline;
+	TextInputBox m_setNumberOfUnitsInputBox;
+	Button m_applySettingsButton;
+	std::vector<std::unique_ptr<Button>> m_buttons;
+
+	bool m_isEditorActive;
+	bool m_isAttackerSelected;
+	int m_selectedUnitPositionIndex;
 
 public:
+
 	//===========================================================================================
 	//Description: Class constructor
 	//===========================================================================================
-	TextInputBox( sf::RenderWindow& rWindow, Textures &rTextures, Fonts& rFonts, Audio& rAudio);
-
-	//===========================================================================================
-	//Description: Class constructor that sets border type
-	//===========================================================================================
-	TextInputBox(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, const bool setThinBorder);
+	CombatUnitEditor(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts, Audio& rAudio, DataHandler& rDataHandler);
 
 	//===========================================================================================
 	//Description: Class destructor
 	//===========================================================================================
-	~TextInputBox();
+	~CombatUnitEditor();
 
 	//===========================================================================================
-	//Description: Sets the position of the input text
+	//Description: Initializes elements of this class. Sets up bottons, pannels etc.
 	//===========================================================================================
-	void updateInputTextPosition();
+	void initialize();
 
 	//===========================================================================================
-	//Description: Registers key pressed and adds it to playerInput string
+	//Description: Sets pointers to combating heroes
 	//===========================================================================================
-	void textInput();
+	void setHeroPointers(Hero* attackingHero, Hero* defenderHero);
 
 	//===========================================================================================
-	//Description: Sets drawable text to playerInput string
+	//Description: Sets editor window variables
 	//===========================================================================================
-	void updateInputText();
+	void setEditorWindowVariables();
 
 	//===========================================================================================
-	//Description: Checks if the button is selected and calls userFeedback()
+	//Description: Applies changes made to the selected unit in unit editor
 	//===========================================================================================
-	void update();
+	void applyUnitChanges();
 
 	//===========================================================================================
-	//Description: Draws content of this class
+	//Description: Deletes selected unit from heroes army
+	//===========================================================================================
+	void deleteUnit();
+
+	//===========================================================================================
+	//Description: Updates unit cards to display appropriate information
+	//===========================================================================================
+	void updateUnitCards();
+
+	//===========================================================================================
+	//Description: Resets selected unit cards in each unit panel
+	//===========================================================================================
+	void resetSelectedUnitCards();
+
+	//===========================================================================================
+	//Description: Updates elements of this class
+	//===========================================================================================
+	const bool update(const sf::Vector2f& mousePosition);
+
+	//===========================================================================================
+	//Description: Updates position of selected unit in unit icon list
+	//===========================================================================================
+	void updateUnitListOutline();
+
+	//===========================================================================================
+	//Description: Draws elements of this class
 	//===========================================================================================
 	void draw();
 
 	//===========================================================================================
-	//Description: Toggles is the button is pressed bool
+	//Description: Returns if the editor is active
 	//===========================================================================================
-	void buttonPressedToggle();
+	const bool getIsEditorActive() const;
 
 	//===========================================================================================
-	//Description: Sets button pressed bool
+	//Description: Returns selected unit pointer
 	//===========================================================================================
-	void setButtonPressed(bool state);
-
-	//===========================================================================================
-	//Description: Returns button pressed bool
-	//===========================================================================================
-	const bool getIsButtonPressed() const;
-
-	//===========================================================================================
-	//Description: Changes colour of the input box based on if its selected
-	//===========================================================================================
-	void userFeedback();
-
-	//===========================================================================================
-	//Description: Sets player input
-	//===========================================================================================
-	void setPlayerInput(const std::string& string);
-
-	//===========================================================================================
-	//Description: Returns player input
-	//===========================================================================================
-	const std::string& getPlayerInput() const;
+	Unit* getSelectedUnit();
 };
 
-#endif // !TEXTINPUTBOX_H
+#endif // !COMBATUNITEDITOR_H
+

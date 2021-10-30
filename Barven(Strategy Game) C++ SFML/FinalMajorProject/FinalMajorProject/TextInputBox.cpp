@@ -26,7 +26,7 @@ TextInputBox::~TextInputBox()
 
 }
 
-void TextInputBox::setInputTextPosition()
+void TextInputBox::updateInputTextPosition()
 {
 	//Takes in account title text and UI Element to work out appropriate input text position 
 	float tempY = ((UIElement::getGlobalBounds().height * 0.5f) + UIElement::getPosition().y) + (m_titleText.getPosition().y + (m_titleText.getLocalBounds().height * 0.5f)) - 6;

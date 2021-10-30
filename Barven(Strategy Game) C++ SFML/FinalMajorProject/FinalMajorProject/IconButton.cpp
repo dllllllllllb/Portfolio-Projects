@@ -47,15 +47,16 @@ void IconButton::setUp(const float& positionX, const float& positionY, const flo
 	float iconScale = 1.0f;
 	if (height < width) //Determines most effective way to scale the icon to fit inside the button
 	{
-		iconScale = (height - height * 0.2f) / m_buttonIcon.getGlobalBounds().height;
+		iconScale = height / m_buttonIcon.getGlobalBounds().height;
 	}
 	else
 	{
-		iconScale = (width - width * 0.2f) / m_buttonIcon.getGlobalBounds().width;
+		iconScale = width / m_buttonIcon.getGlobalBounds().width;
 	}
+	iconScale *= 0.9f;
 
 	m_buttonIcon.setScale(iconScale, iconScale);
-	m_buttonIcon.setOrigin(m_buttonIcon.getGlobalBounds().width * 0.5f, m_buttonIcon.getGlobalBounds().height * 0.5f);
+	m_buttonIcon.setOrigin(m_buttonIcon.getLocalBounds().width * 0.5f, m_buttonIcon.getLocalBounds().height * 0.5f);
 	m_buttonIcon.setPosition(positionX, positionY);
 }
 

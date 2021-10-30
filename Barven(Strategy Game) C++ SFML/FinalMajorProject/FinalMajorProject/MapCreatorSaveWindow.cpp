@@ -26,7 +26,7 @@ void MapCreatorSaveWindow::initialize()
 	m_mapNameInputBox.setCollisionBounds(MapCreatorSaveWindowSettings::c_inputButtonWidth, MapCreatorSaveWindowSettings::c_inputButtonHeight);
 	m_mapNameInputBox.setUpText(MapCreatorSaveWindowSettings::c_inputButtonContent, MapCreatorSaveWindowSettings::c_inputButtonContentCharSize, TextAlignmentEnum::middleHorizontal, TextAlignmentEnum::middleVertical);
 	m_mapNameInputBox.setUpTitleText(MapCreatorSaveWindowSettings::c_mapNameInputBoxTitle, MapCreatorSaveWindowSettings::c_inputButtonTitleCharSize);
-	m_mapNameInputBox.setInputTextPosition();
+	m_mapNameInputBox.updateInputTextPosition();
 
 	//Number of players input box
 	m_numOfPlayersInputBox.setPosition(m_background.getPosition().x, m_background.getPosition().y + MapCreatorSaveWindowSettings::c_numOfPlayersInputButtonOffset);
@@ -34,7 +34,7 @@ void MapCreatorSaveWindow::initialize()
 	m_numOfPlayersInputBox.setCollisionBounds(MapCreatorSaveWindowSettings::c_inputButtonWidth, MapCreatorSaveWindowSettings::c_inputButtonHeight);
 	m_numOfPlayersInputBox.setUpText(MapCreatorSaveWindowSettings::c_inputButtonContent, MapCreatorSaveWindowSettings::c_inputButtonContentCharSize, TextAlignmentEnum::middleHorizontal, TextAlignmentEnum::middleVertical);
 	m_numOfPlayersInputBox.setUpTitleText(MapCreatorSaveWindowSettings::c_numOfPlayersInputBoxTitle, MapCreatorSaveWindowSettings::c_inputButtonTitleCharSize);
-	m_numOfPlayersInputBox.setInputTextPosition();
+	m_numOfPlayersInputBox.updateInputTextPosition();
 
 	//Basic buttons
 	m_acceptButton.sf::Sprite::setPosition(m_background.getPosition().x - MapCreatorSaveWindowSettings::c_basicButtonXOffset, m_background.getPosition().y + MapCreatorSaveWindowSettings::c_basicButtonYOffset);

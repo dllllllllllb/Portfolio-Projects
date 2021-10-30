@@ -44,7 +44,7 @@ void HeroPanel::setUpHeroPanel()
 	m_heroStatsDisplay.setUpHeroStatsDisplay(posX, m_heroLevel.UIElement::getPosition().y + settings::c_heroLevelTextBoxHeight, settings::c_panelWidth, settings::c_iconScale, settings::c_textCharSize);
 
 	//Units Panel
-	m_unitsPanel.setUpPanel(posX, settings::c_unitPanelPositionY, false);
+	m_unitsPanel.setUpPanel(posX, settings::c_unitPanelPositionY, false, true);
 
 	//Close button
 	int closeButtonHeight = m_closeButton.getGlobalBounds().height;

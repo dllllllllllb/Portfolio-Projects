@@ -31,7 +31,7 @@ void UITool::initialize()
 		m_dataInputButton[i]->setCollisionBounds(UIToolSettings::c_buttonWidth, UIToolSettings::c_buttonHeight);
 		m_dataInputButton[i]->setUpText(UIToolSettings::c_buttonContentText, UIToolSettings::c_contentCharSize, TextAlignmentEnum::middleHorizontal, TextAlignmentEnum::middleVertical);
 		m_dataInputButton[i]->setUpTitleText(UIToolSettings::c_buttonTitle[i], 24);
-		m_dataInputButton[i]->setInputTextPosition();
+		m_dataInputButton[i]->updateInputTextPosition();
 	}
 }
 

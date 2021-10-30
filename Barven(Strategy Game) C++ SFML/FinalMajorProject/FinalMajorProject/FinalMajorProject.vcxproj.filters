@@ -128,6 +128,9 @@
     <Filter Include="Game\Player\Hero">
       <UniqueIdentifier>{2f501f96-611b-43a7-a50c-f1043d67f271}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\UI\IconButtonList">
+      <UniqueIdentifier>{134201d2-652f-4c85-8c7e-fa7549da25cf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -367,9 +370,6 @@
     <ClCompile Include="CombatAI.cpp">
       <Filter>Game\AI</Filter>
     </ClCompile>
-    <ClCompile Include="IconButtonList.cpp">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClCompile>
     <ClCompile Include="MapAI.cpp">
       <Filter>Game\AI</Filter>
     </ClCompile>
@@ -411,6 +411,12 @@
     </ClCompile>
     <ClCompile Include="Audio.cpp">
       <Filter>Engine\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="IconButtonList.cpp">
+      <Filter>Engine\UI\IconButtonList</Filter>
+    </ClCompile>
+    <ClCompile Include="CombatUnitEditor.cpp">
+      <Filter>Game\Special UI Elements</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -795,9 +801,6 @@
     <ClInclude Include="CombatAI.h">
       <Filter>Game\AI</Filter>
     </ClInclude>
-    <ClInclude Include="IconButtonList.h">
-      <Filter>Game\Special UI Elements</Filter>
-    </ClInclude>
     <ClInclude Include="MapUISettings.h">
       <Filter>Settings</Filter>
     </ClInclude>
@@ -886,6 +889,18 @@
       <Filter>Enums</Filter>
     </ClInclude>
     <ClInclude Include="MovementSFXEnum.h">
+      <Filter>Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="IconButtonList.h">
+      <Filter>Engine\UI\IconButtonList</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatUnitEditor.h">
+      <Filter>Game\Special UI Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatUnitEditorSettings.h">
+      <Filter>Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="CombatUnitEditorEnum.h">
       <Filter>Enums</Filter>
     </ClInclude>
   </ItemGroup>

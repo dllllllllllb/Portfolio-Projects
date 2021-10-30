@@ -164,7 +164,7 @@ void MapCreator::setUpButtons()
 		m_inputBoxes[i]->setCollisionBounds(MapCreatorSettings::c_buttonWidth, MapCreatorSettings::c_buttonHeight);
 		m_inputBoxes[i]->setUpText(MapCreatorSettings::c_inputBoxText, MapCreatorSettings::c_inputBoxTextSize, TextAlignmentEnum::middleHorizontal, TextAlignmentEnum::middleVertical);
 		m_inputBoxes[i]->setUpTitleText(MapCreatorSettings::c_inputBoxTitle[i], MapCreatorSettings::c_inputBoxTitleSize);
-		m_inputBoxes[i]->setInputTextPosition();
+		m_inputBoxes[i]->updateInputTextPosition();
 	}
 
 	//Apply Map Size Button

@@ -60,7 +60,7 @@ void MapObjectEditorWindow::setUpButtons(const int& buttonIndex, const std::stri
 	m_inputButtons[buttonIndex]->setUpTitleText(buttonName, MapCreatorSettings::c_editorInputButtonNameCharSize);
 	m_inputButtons[buttonIndex]->setUpText(std::to_string(contentValue), MapCreatorSettings::c_editorInputButtonContentCharSize, TextAlignmentEnum::middleHorizontal, TextAlignmentEnum::middleVertical);
 	m_inputButtons[buttonIndex]->setPlayerInput(std::to_string(contentValue));
-	m_inputButtons[buttonIndex]->setInputTextPosition();
+	m_inputButtons[buttonIndex]->updateInputTextPosition();
 }
 
 void MapObjectEditorWindow::setApplyValuesToObjectFunction(std::function<void()> function)

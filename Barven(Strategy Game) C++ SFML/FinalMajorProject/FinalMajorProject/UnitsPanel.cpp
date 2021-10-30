@@ -24,12 +24,26 @@ UnitsPanel::~UnitsPanel()
 {
 }
 
-void UnitsPanel::setUpPanel(const int& positionX, const int& positionY, const bool setUnitCardInfoOnTheRight)
+void UnitsPanel::setUpPanel(const int& positionX, const int& positionY, const bool setUnitCardInfoOnTheRight, const bool setVerticalPanel)
 {
-	int panelWidth = settings::c_unitCardWidth + (2 * (settings::c_backgroundSpaceing + settings::c_unitCardBorderSize));
-	int panelHeight = (settings::c_unitCardHeight + settings::c_unitCardBorderSize) * c_numOfUnitsPerFaction + (2 * settings::c_backgroundSpaceing) + settings::c_unitCardBorderSize;
+	int panelWidth = 0;
+	int panelHeight = 0;
 
-	int firstUnitCardYPos = positionY - panelHeight * 0.5f + settings::c_unitCardHeight * 0.5f + settings::c_backgroundSpaceing + settings::c_unitCardBorderSize + settings::c_unitCardBorderSize;
+	int firstUnitCardYPos = 0;
+	int firstUnitCardXPos = 0;
+
+	if (setVerticalPanel)
+	{
+		panelWidth = settings::c_unitCardWidth + (2 * (settings::c_backgroundSpaceing + settings::c_unitCardBorderSize));
+		panelHeight = (settings::c_unitCardHeight + settings::c_unitCardBorderSize) * c_numOfUnitsPerFaction + (2 * settings::c_backgroundSpaceing) + settings::c_unitCardBorderSize;
+		firstUnitCardYPos = positionY - panelHeight * 0.5f + settings::c_unitCardHeight * 0.5f + settings::c_backgroundSpaceing + settings::c_unitCardBorderSize + settings::c_unitCardBorderSize;
+	}
+	else
+	{
+		panelWidth = (settings::c_unitCardWidth + settings::c_unitCardBorderSize) * c_numOfUnitsPerFaction + (2 * settings::c_backgroundSpaceing) + settings::c_unitCardBorderSize;
+		panelHeight = settings::c_unitCardHeight + (2 * (settings::c_backgroundSpaceing + settings::c_unitCardBorderSize));
+		firstUnitCardXPos = positionX - panelWidth * 0.5f + settings::c_unitCardWidth * 0.5f + settings::c_backgroundSpaceing + settings::c_unitCardBorderSize * 2;
+	}
 
 	//Setup background
 	m_background.setPosition(positionX, positionY);
@@ -38,7 +52,14 @@ void UnitsPanel::setUpPanel(const int& positionX, const int& positionY, const bo
 	//Set up empty unit cards
 	for (int i = 0; i < c_numOfUnitsPerFaction; i++)
 	{
-		m_unitCards[i]->IconButton::setPosition(m_background.getPosition().x, firstUnitCardYPos + (i * settings::c_unitCardHeight) + settings::c_unitCardBorderSize + settings::c_unitCardBorderSize);
+		if (setVerticalPanel)
+		{
+			m_unitCards[i]->IconButton::setPosition(m_background.getPosition().x, firstUnitCardYPos + (i * settings::c_unitCardHeight) + settings::c_unitCardBorderSize + settings::c_unitCardBorderSize);
+		}
+		else
+		{
+			m_unitCards[i]->IconButton::setPosition(firstUnitCardXPos + (i * settings::c_unitCardWidth) + settings::c_unitCardBorderSize * 2, m_background.getPosition().y);
+		}
 		m_unitCards[i]->setUpText("", settings::c_charSize, TextAlignmentEnum::left, TextAlignmentEnum::bottom);
 		m_unitCards[i]->sf::Text::setPosition(m_unitCards[i]->getPosition().x - settings::c_textOffsetX, m_unitCards[i]->getPosition().y + settings::c_textOffsetY);
 		m_unitCards[i]->sf::Text::setOutlineColor(sf::Color::Black);
@@ -234,4 +255,9 @@ std::vector<std::shared_ptr<Unit>>* UnitsPanel::getVectorOfUnitsUsedByThisPanel(
 const int& UnitsPanel::getSelectedCardIndex() const
 {
 	return m_selectedCardIndex;
+}
+
+const UIElement& UnitsPanel::getBackground()
+{
+	return m_background;
 }

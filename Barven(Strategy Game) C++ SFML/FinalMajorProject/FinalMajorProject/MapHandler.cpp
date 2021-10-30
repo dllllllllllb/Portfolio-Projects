@@ -934,15 +934,21 @@ void MapHandler::updateResourcesPerTurnMapUI()
 
 void MapHandler::enterTown(const int& townIndex)
 {
-	int townObjectVectorIndex = m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getVectorOfOwnedTownsIndexes()[townIndex];
-	m_UIHandler.getTownReference().setTownData(m_townMapObjects[townObjectVectorIndex]->getFactionIndex(), *m_townData[townObjectVectorIndex], m_dataHandler.getFactionData(m_townMapObjects[townObjectVectorIndex]->getFactionIndex()).getBuildingsData(), m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()), false);
+	if (m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getVectorOfOwnedTownsIndexes().size() > townIndex)
+	{
+		int townObjectVectorIndex = m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getVectorOfOwnedTownsIndexes()[townIndex];
+		m_UIHandler.getTownReference().setTownData(m_townMapObjects[townObjectVectorIndex]->getFactionIndex(), *m_townData[townObjectVectorIndex], m_dataHandler.getFactionData(m_townMapObjects[townObjectVectorIndex]->getFactionIndex()).getBuildingsData(), m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()), false);
+	}
 }
 
 void MapHandler::selectHero(const int& heroIndex)
 {
-	m_viewManager.setGameViewPosition(m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getHero(heroIndex).getPosition());
-	m_UIHandler.getHeroPanelReference().setHeroData(&m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getHero(heroIndex), true);
-	m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).setSelectedHeroIndex(heroIndex);
+	if (m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getVectorOfOwnedHeroes().size() > heroIndex)
+	{
+		m_viewManager.setGameViewPosition(m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getHero(heroIndex).getPosition());
+		m_UIHandler.getHeroPanelReference().setHeroData(&m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).getHero(heroIndex), true);
+		m_playerHandler.getPlayer(m_turnHandler.getCurrentPlayerIndex()).setSelectedHeroIndex(heroIndex);
+	}
 }
 
 const bool MapHandler::checkIfAHeroWasPressed(const int& tilePressed)

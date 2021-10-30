@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 24/08/2021
+//Last Accessed: 30/09/2021
 
 #ifndef ICONBUTTONLIST_H
 #define ICONBUTTONLIST_H
@@ -27,6 +27,7 @@ private:
 	int m_firstButtonToDisplay;
 	int m_numberOfButtonsInUse;
 	int m_indexOfButtonClicked;
+	int m_buttonWidth;
 	int m_buttonHeight;
 	int m_firstButtonPosX;
 	int m_firstButtonPosY;
@@ -61,6 +62,16 @@ public:
 	//Description: Adds a new button icon
 	//===========================================================================================
 	void addNewButtonIcon(const sf::Texture& buttonIcon);
+
+	//===========================================================================================
+	//Description: Sets index of latest selected button
+	//===========================================================================================
+	void setIndexOfPressedButton(const int& buttonIndex);
+
+	//===========================================================================================
+	//Description: Return IconButton
+	//===========================================================================================
+	IconButton& getIconButton(const int& buttonIndex);
 
 	//===========================================================================================
 	//Description: Updates mouse interactions with buttons

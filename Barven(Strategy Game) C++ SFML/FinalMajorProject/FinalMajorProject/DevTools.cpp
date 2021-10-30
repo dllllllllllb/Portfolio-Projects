@@ -14,7 +14,9 @@ DevTools::DevTools(sf::RenderWindow& rWindow, Textures& rTextures, Fonts& rFonts
 	m_pathFindingTool(rWindow, rTextures, rFonts, rAudio),
 	m_unitCreationTool(rWindow, rTextures, rFonts, rAudio, rDataHandler),
 	m_mapCreator(rWindow, rTextures, rFonts, rAudio, rDataHandler, mouse),
+	m_combatUnitEditor(rWindow, rTextures, rFonts, rAudio, rDataHandler),
 	m_commbatHandler(rWindow, rTextures, rDataHandler, rFonts, rAudio),
+	m_defenderHero(rAudio),
 	m_testTextBox(rWindow, rTextures, rFonts),
 	m_player(rWindow, rAudio),
 	m_resourcesBar(rWindow, rTextures, rFonts),
@@ -51,6 +53,7 @@ void DevTools::initialize()
 	m_resourcesBar.setUp();
 	m_resourcesBar.updateResourcesBarValues(m_player.getResources());
 
+	m_combatUnitEditor.initialize();
 	m_commbatHandler.setUpCombatAreaAndUI();
 
 	//////////////////////////////////////////////////////////////////////////////////////////
@@ -87,13 +90,21 @@ void DevTools::initialize()
 	
 	m_player.getSelectedHero().addUnit(6, &m_dataHandler.getFactionData(1).getUnitData(4));
 	m_player.getSelectedHero().getUnit(6).incrementNumOfUnits(11);
-
-	m_unitMapObject.setFactionIndex(0);
-	m_unitMapObject.setUnitIndex(2);
-	m_unitMapObject.setNumberOfUnits(80);
-
 	m_player.getSelectedHero().updateUnitsStats();
 
+	//Defender units
+	m_defenderHero.addUnit(0, &m_dataHandler.getFactionData(0).getUnitData(2));
+	m_defenderHero.getUnit(0).incrementNumOfUnits(20);
+
+	m_defenderHero.addUnit(1, &m_dataHandler.getFactionData(0).getUnitData(2));
+	m_defenderHero.getUnit(1).incrementNumOfUnits(20);
+
+	m_defenderHero.addUnit(2, &m_dataHandler.getFactionData(0).getUnitData(2));
+	m_defenderHero.getUnit(2).incrementNumOfUnits(20);
+
+	m_defenderHero.updateUnitsStats();
+
+	m_combatUnitEditor.setHeroPointers(&m_player.getSelectedHero(), &m_defenderHero);
 	m_commbatHandler.setFunctionToCallWhenCombatIsWon(std::bind(&DevTools::drawDevTools, this));
 }
 
@@ -182,8 +193,19 @@ void DevTools::update(const sf::Vector2f& mousePosition, const float& deltaTime)
 
 	case DevToolsEnum::combatTool:
 	{
-		m_commbatHandler.update(mousePosition, deltaTime);
+		if (m_combatUnitEditor.update(mousePosition))
+		{
+			//Apply units to heroes
+			m_commbatHandler.setUpPlayerVsPlayer(&m_player.getSelectedHero(), &m_defenderHero, false, true);
+		}
+
+		if (!m_combatUnitEditor.getIsEditorActive())
+		{
+			m_commbatHandler.update(mousePosition, deltaTime);
+		}
+
 		m_commbatHandler.draw();
+		m_combatUnitEditor.draw();
 	}
 	break;
 	}
@@ -216,7 +238,7 @@ void DevTools::updateDevTools(const sf::Vector2f& mousePosition)
 				}
 				else if (m_devToolsEnum == DevToolsEnum::combatTool)
 				{
-					m_commbatHandler.setUpPlayerVsMapUnit(&m_player.getSelectedHero(), &m_unitMapObject, false);
+					m_commbatHandler.setUpPlayerVsPlayer(&m_player.getSelectedHero(), &m_defenderHero, false, true);
 				}
 			}
 			break;

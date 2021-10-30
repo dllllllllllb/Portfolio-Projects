@@ -15,7 +15,9 @@ UIElement::UIElement(sf::RenderWindow& window, Textures& rTextures) :
 
 UIElement::UIElement(sf::RenderWindow& window, Textures& rTextures, const bool useThinBorder) :
 	m_window(window),
-	m_textures(rTextures)
+	m_textures(rTextures),
+	m_isShaderActive(false),
+	m_setUpFillShader(false)
 {
 	setTexture(m_textures.m_UIFill, true);
 	m_fillShader.setTexture(m_textures.m_UIfillShader, true);

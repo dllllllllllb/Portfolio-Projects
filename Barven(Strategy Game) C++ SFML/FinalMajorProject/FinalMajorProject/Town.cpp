@@ -45,8 +45,8 @@ void Town::initialize()
 
 	m_townBuilding.setUpUpgradeButtons();
 
-	m_townsUnitsPannel.setUpPanel(settings::c_unitPanelPosition, m_window.getView().getCenter().y, true);
-	m_visitingHeroUnitsPannel.setUpPanel(settings::c_unitPanelPosition + m_townsUnitsPannel.getUnitPanelWidth(), m_window.getView().getCenter().y, true);
+	m_townsUnitsPannel.setUpPanel(settings::c_unitPanelPosition, m_window.getView().getCenter().y, true, true);
+	m_visitingHeroUnitsPannel.setUpPanel(settings::c_unitPanelPosition + m_townsUnitsPannel.getUnitPanelWidth(), m_window.getView().getCenter().y, true, true);
 
 	m_recruitment.initialize();
 	m_recruitment.setFunctionToCallAfterPurchasingAHero(std::bind(&Town::setVisitingHeroData, this, std::placeholders::_1));

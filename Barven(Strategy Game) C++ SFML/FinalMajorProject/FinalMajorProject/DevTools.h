@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 02/08/2021
+//Last Accessed: 30/09/2021
 
 #ifndef DEVTOOLS_H
 #define DEVTOOLS_H
@@ -13,6 +13,7 @@
 #include "UITool.h"
 #include "UnitCreationTool.h"
 #include "Town.h"
+#include "CombatUnitEditor.h"
 #include "CombatHandler.h"
 
 //===========================================================================================
@@ -40,13 +41,14 @@ private:
 
 	MapCreator m_mapCreator;
 
+	CombatUnitEditor m_combatUnitEditor;
 	CombatHandler m_commbatHandler;
+	Hero m_defenderHero;
 
 	TextBox m_testTextBox;
 
 	//TownTool data
 	Player m_player;
-	UnitMapObject m_unitMapObject;
 	TownData m_townData;
 	ResourcesBar m_resourcesBar;
 

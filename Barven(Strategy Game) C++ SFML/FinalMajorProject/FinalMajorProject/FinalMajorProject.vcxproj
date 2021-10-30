@@ -160,6 +160,7 @@
     <ClCompile Include="CombatEndPopUp.cpp" />
     <ClCompile Include="CombatHandler.cpp" />
     <ClCompile Include="CombatUnit.cpp" />
+    <ClCompile Include="CombatUnitEditor.cpp" />
     <ClCompile Include="ConfirmationWindow.cpp" />
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="DataHandler.cpp" />
@@ -249,6 +250,9 @@
     <ClInclude Include="AnimatedObject.h" />
     <ClInclude Include="Audio.h" />
     <ClInclude Include="AudioSettings.h" />
+    <ClInclude Include="CombatUnitEditor.h" />
+    <ClInclude Include="CombatUnitEditorEnum.h" />
+    <ClInclude Include="CombatUnitEditorSettings.h" />
     <ClInclude Include="MovementSFXEnum.h" />
     <ClInclude Include="MusicEnum.h" />
     <ClInclude Include="Bar.h" />

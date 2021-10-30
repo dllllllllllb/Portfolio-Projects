@@ -1,5 +1,5 @@
 //Author: Maciej Dowbor
-//Last Accessed: 02/09/2021
+//Last Accessed: 30/09/2021
 
 #ifndef TOWNHEROESUNITSPANEL_H
 #define TOWNHEROESUNITSPANEL_H
@@ -45,7 +45,7 @@ public:
 	//===========================================================================================
 	//Description: Sets up empty unit panel
 	//===========================================================================================
-	void setUpPanel(const int& positionX, const int& positionY, const bool setUnitCardInfoOnTheRight);
+	void setUpPanel(const int& positionX, const int& positionY, const bool setUnitCardInfoOnTheRight, const bool setVerticalPanel);
 
 	//===========================================================================================
 	//Description: Sets unit cards based on units in selected heroes army
@@ -111,6 +111,11 @@ public:
 	//Description: Returns index of selected unit card
 	//===========================================================================================
 	const int& getSelectedCardIndex() const;
+
+	//===========================================================================================
+	//Description: Returns unit panel background
+	//===========================================================================================
+	const UIElement& getBackground();
 };
 
 #endif // !TOWNHEROESUNITSPANEL_H

@@ -47,7 +47,7 @@ void UnitCreationTool::initialize()
 
 		m_dataInputButton[i]->setUpText(UnitCreator::c_buttonContent, UnitCreator::c_buttonContentCharSize, TextAlignmentEnum::middleHorizontal, TextAlignmentEnum::middleVertical);
 		m_dataInputButton[i]->setUpTitleText(UnitCreator::c_buttonName[i], UnitCreator::c_buttonNameCharSize);
-		m_dataInputButton[i]->setInputTextPosition();
+		m_dataInputButton[i]->updateInputTextPosition();
 	}
 
 	//Create Unit Button

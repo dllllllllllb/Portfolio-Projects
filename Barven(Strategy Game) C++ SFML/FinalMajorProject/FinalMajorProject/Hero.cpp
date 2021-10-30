@@ -227,8 +227,9 @@ void Hero::update(const float& deltaTime)
 	updateMovement(deltaTime);
 }
 
-const int& Hero::getCurrentNumberOfUnits() const
+const int& Hero::getCurrentNumberOfUnits() 
 {
+	updateNumberOfUnits();
 	return m_currentNumberOfUnits;
 }
 

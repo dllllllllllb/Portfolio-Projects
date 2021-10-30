@@ -164,7 +164,7 @@ public:
 	//===========================================================================================
 	//Description: Returns current number of units in heroes army
 	//===========================================================================================
-	const int& getCurrentNumberOfUnits() const;
+	const int& getCurrentNumberOfUnits();
 
 	//===========================================================================================
 	//Description: Sets player index that owns this hero
