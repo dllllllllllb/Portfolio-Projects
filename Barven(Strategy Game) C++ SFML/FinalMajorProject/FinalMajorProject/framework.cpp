@@ -195,7 +195,6 @@ void Framework::mouseControl()
 	Global::g_isLMBPressed = (m_canObjectBePressed && m_mouse.isButtonPressed(sf::Mouse::Button::Left) && Global::g_isWindowFocused);
 
 	//RMB
-
 	if (Global::g_wasRMBPressed)
 	{
 		Global::g_isRMBPressed = !Global::g_isRMBPressed;

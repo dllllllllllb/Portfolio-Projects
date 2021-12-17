@@ -7,7 +7,6 @@
 #include "TextInputBox.h"
 #include "DataHandler.h"
 #include "UnitCreationSettings.h"
-#include "DataHandlerSettings.h"
 
 //===========================================================================================
 //Description: Dev tool used to create and save Units that can be used in the game.

@@ -189,7 +189,10 @@ TextBox& MapUI::getResourcesPerTurnTextBox()
 	return m_resourcesPerTurn;
 }
 
-void MapUI::setMapHandlerFunctionPointers(std::function<void(const int&)> townSelectedFunction, std::function<void(const int&)> heroSelectedFunction, std::function<void()> updateResourcesPerTurnFunction, std::function<void()> nextTurnFunction)
+void MapUI::setMapHandlerFunctionPointers(std::function<void(const int&)> townSelectedFunction, 
+											std::function<void(const int&)> heroSelectedFunction, 
+											std::function<void()> updateResourcesPerTurnFunction,
+											std::function<void()> nextTurnFunction)
 {
 	m_townSelectedFunction = townSelectedFunction;
 	m_heroSelectedFunction = heroSelectedFunction;

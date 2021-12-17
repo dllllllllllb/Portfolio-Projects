@@ -84,6 +84,8 @@ public:
 	//===========================================================================================
 	void setTownData(const int& factionIndex, TownData& townData, FactionBuildingData& factionBuildingData, Player& player, const bool isHeroVisiting);
 
+	void clearVisitingHeroData();
+
 	//===========================================================================================
 	//Description: Sets visiting hero data
 	//===========================================================================================

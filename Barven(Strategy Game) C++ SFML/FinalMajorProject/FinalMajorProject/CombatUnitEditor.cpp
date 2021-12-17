@@ -160,6 +160,7 @@ const bool CombatUnitEditor::update(const sf::Vector2f& mousePosition)
 	if (m_applySettingsButton.checkIfButtonWasPressed(mousePosition))
 	{
 		updateUnitCards();
+		m_isEditorActive = false;
 		return true;
 	}
 

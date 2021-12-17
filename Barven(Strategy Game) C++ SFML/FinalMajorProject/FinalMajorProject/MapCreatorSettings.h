@@ -27,7 +27,7 @@ namespace MapCreatorSettings
 	static const int c_numOfSecondaryButtonsSections = 8;
 	static const int c_maxNumOfSecondaryButtonsPerSection = 6;
 	static const int c_numOfSecondaryButtonsPerSection[c_numOfSecondaryButtonsSections]{ 3, 3, 4, 2, 3, c_numOfTreeLandscapes, c_numOfRockyLandscapes, c_numOfOtherLandscapes };
-	static const std::string c_secondaryButtonNames[c_numOfSecondaryButtonsSections][c_maxNumOfSecondaryButtonsPerSection]{ {"Player", "Enemy AI", "Neutral"}, {"Gold", "Wood", "Stone"}, {"Gold", "Wood", "Stone", "Random"}, {"Arena", "Watch Tower"}, {"Castle", "Inferno", "Random"}, {"", "", "", ""}, {"", "", "", "", "", ""}, {"", "", "", "", "", ""} };
+	static const std::string c_secondaryButtonNames[c_numOfSecondaryButtonsSections][c_maxNumOfSecondaryButtonsPerSection]{ {"Player", "Enemy AI", "Neutral"}, {"Gold", "Wood", "Stone"}, {"Gold", "Wood", "Stone", "Random"}, {"Arena", "Watch Tower"}, {"Castle", "Inferno", "Random"}, {"", "", "", ""}, {"", "", "", "", "", ""}, {"", "", "", "", "", ""}};
 
 	//Input Boxes
 	static const int c_numOfInputBoxes = 2;

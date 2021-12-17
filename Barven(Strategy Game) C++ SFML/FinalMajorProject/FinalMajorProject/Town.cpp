@@ -85,6 +85,11 @@ void Town::setTownData(const int& factionIndex, TownData& townData, FactionBuild
 	{
 		setVisitingHeroData(&player.getSelectedHero());
 	}
+	else
+	{
+		clearVisitingHeroData();
+	}
+
 	toggleIsTownActive();
 	m_visitingHeroUnitsPannel.setIsUnitCardSelected(false);
 
@@ -115,6 +120,14 @@ void Town::setTownData(const int& factionIndex, TownData& townData, FactionBuild
 	m_townTrading.setResourcesPointer(&player.getResources());
 
 	m_audio.playMusic(MusicEnum::townMusic, factionIndex);
+}
+
+void Town::clearVisitingHeroData()
+{
+	m_isHeroVisiting = false;
+	m_pVisitingHero = nullptr;
+	m_visitingHeroUnitsPannel.resetUnitCards();
+	m_visitingHeroUnitsPannel.resetSelectedIndexes();
 }
 
 void Town::setVisitingHeroData(Hero* hero)
